@@ -13,5 +13,5 @@ https://github.com/ThiagoVMachado/Algorithms
   [Autopotencial - 2505](https://www.urionlinejudge.com.br/judge/pt/problems/view/2505)
 
 2. Stack:\
-  [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)
-  [Trilos](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - can be made with static stack
+  [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
+  [Trilhos](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - can be made with static stack
