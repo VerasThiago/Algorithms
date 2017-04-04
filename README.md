@@ -8,15 +8,10 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
 _GitHub link:_
 https://github.com/ThiagoVMachado/Algorithms
 
-### Exercícios
+### Excercises:
+1. Fast exponential:\
+  [Autopotencial - 2505](https://www.urionlinejudge.com.br/judge/pt/problems/view/2505)
 
-
-1. Codeforces
-    1. [133A - HQ9+](http://codeforces.com/problemset/problem/133/A)
-    1. [177G1 - Fibonacci Strings](http://codeforces.com/problemset/problem/177/G1)
-    1. [266A - Stones on the Table](http://codeforces.com/problemset/problem/266/A)
-1. UVA
-    1. [153 - Permalex](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=89)
-    1. [263 - Number Chains](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=199)
-    1. [11483 - Code Creator](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=2478)
-    1. [12243 - Flowers Flourish from France](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=24&page=show_problem&problem=3395)
+2. Stack:\
+  [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)
+  [Trilos](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - can be made with static stack
