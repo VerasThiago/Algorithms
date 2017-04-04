@@ -18,4 +18,13 @@ https://github.com/ThiagoVMachado/Algorithms
   [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
   [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
-1.  
+1. Merge Sort:\
+  [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025) **w/ binary search**\
+  [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396) **w/ binary search**\
+  [Pares e Ímpares - 1259](https://www.urionlinejudge.com.br/judge/pt/problems/view/1259)
+ 
+1. Struct Sort:\
+  [Quadro De Medalhas - 2312](https://www.urionlinejudge.com.br/judge/pt/problems/view/2312)\
+  [Estiagem - 1023](https://www.urionlinejudge.com.br/judge/pt/problems/view/1023)\
+  [O Elfo das Trevas - 1766](https://www.urionlinejudge.com.br/judge/pt/problems/view/1766)
+  
