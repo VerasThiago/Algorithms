@@ -14,8 +14,8 @@ https://github.com/ThiagoVMachado/Algorithms
 
 1. Stack:\
   [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
-  [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - can be made with static stack\
+  [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - **can be made with static stack**\
   [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
-  [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)\
+  [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
 1.  
