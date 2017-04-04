@@ -21,7 +21,7 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
   [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
 1. Merge Sort:\
-  [Pares e Ímpares - 1259](https://www.urionlinejudge.com.br/judge/pt/problems/view/1259)
+  [Pares e Ímpares - 1259](https://www.urionlinejudge.com.br/judge/pt/problems/view/1259)\
   [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025) **w/ binary search**\
   [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396) **w/ binary search**\
   
