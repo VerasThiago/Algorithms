@@ -33,3 +33,6 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
  
 1. Coin change:\
   [Festival de Estátuas de Gelo - 1034](https://www.urionlinejudge.com.br/judge/pt/problems/view/1034)
+
+1. Finding substring
+  [Números de Ahmoc - 2049](https://www.urionlinejudge.com.br/judge/pt/problems/view/2049)
