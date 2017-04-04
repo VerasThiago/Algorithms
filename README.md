@@ -5,7 +5,7 @@
 _My URI profile:_
 https://www.urionlinejudge.com.br/judge/pt/profile/113065
 
-### Excercises that was solved with that algorithms:
+### Some excercises that was solved with that algorithms:
 1. Fast exponential:\
   [Autopotencial - 2505](https://www.urionlinejudge.com.br/judge/pt/problems/view/2505)
 
