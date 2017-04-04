@@ -12,6 +12,11 @@ https://github.com/ThiagoVMachado/Algorithms
 1. Fast exponential:\
   [Autopotencial - 2505](https://www.urionlinejudge.com.br/judge/pt/problems/view/2505)
 
+1. List:\
+  [A Fila de Desempregados - 1119](https://www.urionlinejudge.com.br/judge/pt/problems/view/1119)\
+  [Jogando Cartas Fora - 1110](https://www.urionlinejudge.com.br/judge/pt/problems/view/1110)\
+  [Acampamento de Férias - 1167](https://www.urionlinejudge.com.br/judge/pt/problems/view/1167)
+
 1. Stack:\
   [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
   [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - **can be made with static stack**\
