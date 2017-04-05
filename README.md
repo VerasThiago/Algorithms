@@ -35,7 +35,7 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
   [Festival de Estátuas de Gelo - 1034](https://www.urionlinejudge.com.br/judge/pt/problems/view/1034)
 
 1. Substring:\
-  [Números de Ahmoc - 2049](https://www.urionlinejudge.com.br/judge/pt/problems/view/2049)
+  [Números de Ahmoc - 2049](https://www.urionlinejudge.com.br/judge/pt/problems/view/2049)\
   [Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Fast prime:\
