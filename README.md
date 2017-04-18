@@ -38,10 +38,10 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
   [Números de Ahmoc - 2049](https://www.urionlinejudge.com.br/judge/pt/problems/view/2049)\
   [Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
-1. Binary Search
-  Codeforces:
+1. Binary Search:\
+  Codeforces:\
     [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-  Uri:
+  Uri:\
     [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
 
 1. Fast prime:\
