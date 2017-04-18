@@ -40,9 +40,9 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
 
 1. Binary Search:\
   Codeforces:\
-      [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
+     1.[Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
   Uri:\
-      [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
+     1.[Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
 
 1. Fast prime:\
   [Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
