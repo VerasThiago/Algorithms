@@ -41,10 +41,10 @@ http://codeforces.com/profile/Veras
   [Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Binary Search:\
-       Codeforces:        
-             1.[Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-                Uri:
-                    1.[Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
+      Codeforces:\        
+      &nbsp;&nbsp;&nbsp;&nbsp;[Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
+      Uri:\
+      &nbsp;&nbsp;&nbsp;&nbsp;[Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
 
 1. Fast prime:\
   [Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
