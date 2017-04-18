@@ -1,9 +1,11 @@
 ## Welcome to my algorithm repository
 
-**Here you will find some useful algorithms that helped me doing some URI problems**
+**Here you will find some useful algorithms that helped me doing some URI & Codefoces problems**
 
 _My URI profile:_
 https://www.urionlinejudge.com.br/judge/pt/profile/113065
+_My Codefocers profile:_
+http://codeforces.com/profile/Veras
 
 ### Some excercises that was solved with that algorithms:
 1. Fast exponential:\
@@ -39,10 +41,10 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065
   [Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Binary Search:\
-  Codeforces:\
-     1.[Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-  Uri:\
-     1.[Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
+  1.Codeforces:\
+      1. [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
+  1.Uri:\
+      1. [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
 
 1. Fast prime:\
   [Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
