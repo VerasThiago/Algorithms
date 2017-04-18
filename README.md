@@ -43,7 +43,7 @@ http://codeforces.com/profile/Veras
 1. Binary Search:\
       Codeforces:        
       &nbsp;&nbsp;&nbsp;&nbsp;[Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-      Uri:
+      Uri:\
       &nbsp;&nbsp;&nbsp;&nbsp;[Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
 
 1. Fast prime:\
