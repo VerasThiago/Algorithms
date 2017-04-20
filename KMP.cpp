@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
 vector<int> strong_borders(const string& pat)
 {
     int m = pat.size();
@@ -22,10 +20,8 @@ vector<int> strong_borders(const string& pat)
         else
             sbord[j] = sbord[t];
     }
-
     return sbord;
 }
-
 int KMP(const string& text, const string& pat)
 {
     int n = text.size();
@@ -47,13 +43,10 @@ int KMP(const string& text, const string& pat)
         i += KMP_shift;
         j = max(0, j - KMP_shift);
     } 
-
     return occ;
 }
-
 int main (){
  string a , b;
  cin >> a >> b;
  cout << KMP(a,b) << endl;
-
 }
