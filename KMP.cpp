@@ -49,8 +49,7 @@ int period(const string& a){
     vector<int> v = strong_borders(aux);
     
     for(int i = 0 ; i < aux.size(); i++)
-        if(v[i] >= m/2){
-            printf("entrou\n");
+        if(v[i] >= m/2){            
             ans = i - v[i] + 1;
             return ans;
         }
@@ -63,6 +62,6 @@ int main (){
     vector<int> v=  strong_borders(a);
     for(int i = 0 ; i < v.size(); i++)
         cout << v[i] << " ";
-
-    //cout << "The period is " << period(a) << endl;
+    cout << endl;
+    cout << "The period is " << period(a) << endl;
 }
