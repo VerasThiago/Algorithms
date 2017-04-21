@@ -40,27 +40,23 @@ int KMP(const string& text, const string& pat)
     } 
     return occ;
 }
+
 int period(const string& a){
     string aux = a;
     aux += aux;
     int m = aux.size();
     int ans;
     vector<int> v = strong_borders(aux);
+    
     for(int i = 0 ; i < aux.size(); i++)
-        cout << v[i] << " ";
-    cout << endl;
-
-
-    for(int i = 0 ; i < aux.size(); i++){
         if(v[i] >= m/2){
             printf("entrou\n");
             ans = i - v[i] + 1;
             return ans;
         }
-    }
-
-
+    
 }
+
 int main (){
     string a , b;
     cin >> a;
