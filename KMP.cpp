@@ -1,24 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> strong_borders(const string& pat)
-{
+vector<int> strong_borders(const string& pat){
     int m = pat.size();
-    int t = -1;
+    vector<int> sbord(m);
+    int t = 0;
 
-    vector<int> sbord(m + 1);
-    sbord[0] = -1;
-
-    for (int j = 1; j <= m; ++j)    // t é igual a bord[j - 1]
-    {
-        while (t >= 0 and pat[t] != pat[j - 1])
+    for (int j = 1; j < m; ++j){
+        while (t > 0 and pat[t] != pat[j])
             t = sbord[t];
-
-        ++t;
-
-        if (j == m or pat[t] != pat[j])
-            sbord[j] = t;
-        else
-            sbord[j] = sbord[t];
+        if(pat[t] == pat[j])
+            t++;
+        sbord[j] = t;
     }
     return sbord;
 }
@@ -45,8 +37,9 @@ int KMP(const string& text, const string& pat)
     } 
     return occ;
 }
+
 int main (){
- string a , b;
- cin >> a >> b;
- cout << KMP(a,b) << endl;
+    string a , b;
+    cin >> a >> b;
+    cout << KMP(a,b) << endl;
 }
