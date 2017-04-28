@@ -1,6 +1,6 @@
 ## Welcome to my algorithm repository
 
-**Here you will find some useful algorithms that helped me doing some URI & Codefoces problems**
+**Here you will find some useful algorithms that helped me doing some URI, Codefoces and UVA problems**
 
 _My URI profile:_
 https://www.urionlinejudge.com.br/judge/pt/profile/113065 \
@@ -10,6 +10,7 @@ http://codeforces.com/profile/Veras
 ### Some excercises that was solved with that algorithms:
 1. Fast exponential:\
   [Autopotencial - 2505](https://www.urionlinejudge.com.br/judge/pt/problems/view/2505)
+  [Kolya and Tanya](http://codeforces.com/problemset/problem/584/B)
 
 1. List:\
   [A Fila de Desempregados - 1119](https://www.urionlinejudge.com.br/judge/pt/problems/view/1119)\
