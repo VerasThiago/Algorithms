@@ -26,7 +26,7 @@ http://codeforces.com/profile/Veras
 1. Merge Sort:\
   [Pares e Ímpares - 1259](https://www.urionlinejudge.com.br/judge/pt/problems/view/1259)\
   [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025) **w/ binary search**\
-  [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396) **w/ binary search**\
+  [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396) **w/ binary search**
   
  
 1. Struct Sort:\
