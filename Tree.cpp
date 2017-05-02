@@ -2,7 +2,7 @@
 using namespace std;
 
 bool vazia = true;
-
+int folhas_q = 0;
 struct node {
    int data;   
    struct node *FilhoE;
@@ -24,7 +24,7 @@ void insert(node *root, int data) {
 	
 	if(vazia) {
 		root->data = data;
-		printf("base eh o %d\n", root->data);
+		printf("Base eh o %d\n\n", root->data);
 		vazia = false;
 	}
 	else {
@@ -44,7 +44,7 @@ void insert(node *root, int data) {
 bool search(node *root,int data) {
 	if(root == NULL) return false;
 
-	printf("to no %d\n",root->data);
+	printf("To no %d\n",root->data);
 	if(data > root->data){
 		if(root->FilhoD == NULL)return false;
 		return search(root->FilhoD,data);
@@ -54,6 +54,22 @@ bool search(node *root,int data) {
 		return search(root->FilhoE,data);
 	}
 	return true;
+}
+int folhas(node*root){
+
+	if(!vazia){
+		printf("To no %d\n",root->data);
+		if(root->FilhoD == NULL and root->FilhoE == NULL){
+			printf("%d EH FOLHA VIADO\n",root->data );
+			folhas_q++;
+		}
+		else{
+			if(root->FilhoE != NULL)
+				folhas(root->FilhoE);
+			if(root->FilhoD != NULL)
+				folhas(root->FilhoD);
+		}
+	}
 }
 int main(){
 	node *root = cria_tree();
@@ -68,4 +84,7 @@ int main(){
 	cout << "Quer buscar quem ? ";
 	cin >> x;
 	cout << (search(root,x) ? "Achou":"Nao tem") << endl;
+	printf("\n\nCONTANDO AS FOLHAS\n");
+	folhas(root);
+	cout << "Tem " << folhas_q << " folhas" << endl;
 }
