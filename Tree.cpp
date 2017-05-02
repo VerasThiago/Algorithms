@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 
+
+bool vazia = true;
+
 using namespace std;
 struct node {
    int data;   
@@ -16,26 +19,33 @@ node* cria_tree (void){
     return t;
 }
 
+
+
 void insert(node *root, int data) {
 	//if tree is empty, create root node
 	struct node *tempNode = (struct node*) malloc(sizeof(struct node));
 	tempNode->data = data;
 	tempNode->FilhoE = NULL;
 	tempNode->FilhoD = NULL;
-	if(root == NULL) {
-		root = tempNode;
+	
+	if(vazia) {
+		root->data = data;
 		printf("base eh o %d\n", root->data);
+		vazia = false;
 	}
 	else {
 		if(data >= root->data){
-			if(root->FilhoD == NULL)
+			if(root->FilhoD == NULL){
 				root->FilhoD = tempNode;
+				
+			}
 			else
 				insert(root->FilhoD,data);
 		}
 		else{
-			if(root->FilhoE == NULL)
-				root->FilhoE = tempNode;
+			if(root->FilhoE == NULL){
+				root->FilhoE = tempNode;				
+			}
 			else
 				insert(root->FilhoE,data);
 		}
@@ -46,20 +56,21 @@ void insert(node *root, int data) {
 bool search(node *root,int data) {
 	if(root == NULL) return false;
 
+	printf("to no %d\n",root->data);
 	if(data > root->data){
-		if(root->FilhoD == NULL) return false;
-		search(root->FilhoD,data);
+		if(root->FilhoD == NULL)return false;
+		return search(root->FilhoD,data);
 	}
 	else if( data < root->data){
 		if(root->FilhoE == NULL) return false;
-		search(root->FilhoE,data);
+		return search(root->FilhoE,data);
 	}
 	return true;
 }
 
 int main(){
 	node *root = cria_tree();
-	root = NULL;
+	
 	int n, x;
 	cout << "Quantos numeros deseja inserir na arvore ? ";
 	cin >> n;
