@@ -15,88 +15,59 @@ node* cria_tree (void){
     t->FilhoD = NULL;
     return t;
 }
-node *root = cria_tree();
 
-void insert(int data) {
-   struct node *tempNode = (struct node*) malloc(sizeof(struct node));
-   struct node *current;
-   struct node *parent;
+void insert(node *root, int data) {
+	//if tree is empty, create root node
+	struct node *tempNode = (struct node*) malloc(sizeof(struct node));
+	tempNode->data = data;
+	tempNode->FilhoE = NULL;
+	tempNode->FilhoD = NULL;
+	if(root == NULL) {
+		root = tempNode;
+		printf("base eh o %d\n", root->data);
+	}
+	else {
+		if(data >= root->data){
+			if(root->FilhoD == NULL)
+				root->FilhoD = tempNode;
+			else
+				insert(root->FilhoD,data);
+		}
+		else{
+			if(root->FilhoE == NULL)
+				root->FilhoE = tempNode;
+			else
+				insert(root->FilhoE,data);
+		}
 
-   tempNode->data = data;
-   tempNode->FilhoE = NULL;
-   tempNode->FilhoD = NULL;
-
-   //if tree is empty, create root node
-   if(root == NULL) {
-      root = tempNode;
-   } else {
-      current = root;
-      parent  = NULL;
-
-      while(1) {                
-         parent = current;
-
-         //go to left of the tree
-         if(data < parent->data) {
-            current = current->FilhoE;                
-            
-            //insert to the left
-            if(current == NULL) {
-               parent->FilhoE = tempNode;
-               return;
-            }
-         }
-			
-         //go to right of the tree
-         else {
-            current = current->FilhoD;
-            
-            //insert to the right
-            if(current == NULL) {
-               parent->FilhoD = tempNode;
-               return;
-            }
-         }
-      }            
-   }
+	}
+     
 }
-bool search(int data) {
-   struct node *current = root;
-   printf("Visiting elements: ");
+bool search(node *root,int data) {
+	if(root == NULL) return false;
 
-   while(current->data != data) {
-      if(current != NULL)
-      printf("%d ",current->data); 
-      
-      //go to left tree
-
-      if(current->data > data) {
-         current = current->FilhoE;
-      }
-      //else go to right tree
-      else {                
-         current = current->FilhoD;
-      }
-
-      //not found
-      if(current == NULL) {
-         return false;
-      }
-
-      return true;
-   }  
+	if(data > root->data){
+		if(root->FilhoD == NULL) return false;
+		search(root->FilhoD,data);
+	}
+	else if( data < root->data){
+		if(root->FilhoE == NULL) return false;
+		search(root->FilhoE,data);
+	}
+	return true;
 }
 
 int main(){
-   root = NULL;
-   int n, x;
-   cout << "Quantos numeros deseja inserir na arvore ? ";
-   cin >> n;
-   for(int i = 0 ; i < n ; ++i){
-      cin >> x;
-      insert(x);
-   }
-   cout << "Quer buscar quem ? ";
-   cin >> x;
-   cout << (search(x) ? "Achou":"Nao tem") << endl;
+	node *root = cria_tree();
+	root = NULL;
+	int n, x;
+	cout << "Quantos numeros deseja inserir na arvore ? ";
+	cin >> n;
+	for(int i = 0 ; i < n ; ++i){
+	  cin >> x;
+	  insert(root,x);
+	}
+	cout << "Quer buscar quem ? ";
+	cin >> x;
+	cout << (search(root,x) ? "Achou":"Nao tem") << endl;
 }
