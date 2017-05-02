@@ -8,13 +8,6 @@ struct node {
    struct node *FilhoE;
    struct node *FilhoD;
 };
-node* cria_tree (void){
-    node *t; 
-    t = (node*) malloc(sizeof(node));
-    t->FilhoE = NULL;
-    t->FilhoD = NULL;
-    return t;
-}
 void insert(node *root, int data) {
 	//if tree is empty, create root node
 	struct node *tempNode = (struct node*) malloc(sizeof(struct node));
@@ -24,7 +17,6 @@ void insert(node *root, int data) {
 	
 	if(vazia) {
 		root->data = data;
-		printf("Base eh o %d\n\n", root->data);
 		vazia = false;
 	}
 	else {
@@ -44,7 +36,7 @@ void insert(node *root, int data) {
 bool search(node *root,int data) {
 	if(root == NULL) return false;
 
-	printf("To no %d\n",root->data);
+	printf("     To no %d\n",root->data);
 	if(data > root->data){
 		if(root->FilhoD == NULL)return false;
 		return search(root->FilhoD,data);
@@ -55,24 +47,32 @@ bool search(node *root,int data) {
 	}
 	return true;
 }
-int folhas(node*root){
-
+void folhas(node*root, int &ans, int &soma){
 	if(!vazia){
-		printf("To no %d\n",root->data);
+		printf("     To no %d\n",root->data);
+		soma+= root->data;
 		if(root->FilhoD == NULL and root->FilhoE == NULL){
-			printf("%d EH FOLHA VIADO\n",root->data );
-			folhas_q++;
+			printf("%d EH FOLHA, VIADO\n",root->data );
+			ans++;
 		}
 		else{
 			if(root->FilhoE != NULL)
-				folhas(root->FilhoE);
+				folhas(root->FilhoE,ans,soma);
 			if(root->FilhoD != NULL)
-				folhas(root->FilhoD);
+				folhas(root->FilhoD,ans,soma);
 		}
 	}
+	
+}
+
+int somatorio(node*root){
+
+
+
+
 }
 int main(){
-	node *root = cria_tree();
+	node *root =  (node*) malloc(sizeof(node));
 	
 	int n, x;
 	cout << "Quantos numeros deseja inserir na arvore ? ";
@@ -83,8 +83,11 @@ int main(){
 	}
 	cout << "Quer buscar quem ? ";
 	cin >> x;
-	cout << (search(root,x) ? "Achou":"Nao tem") << endl;
-	printf("\n\nCONTANDO AS FOLHAS\n");
-	folhas(root);
-	cout << "Tem " << folhas_q << " folhas" << endl;
+	cout << "\n\n    Buscando...\n" << endl;	
+	cout << (search(root,x) ? "\n   --ACHOU--":"\n   --NAO TEM--") << endl;
+	printf("\n\nContando as folhas...\n\n");
+	int ans = 0, soma = 0;
+	folhas(root,ans,soma);
+ 	cout << "\n  --TEM " << ans << " FOLHAS--\n\n" << endl;
+ 	cout << "----SUA SOMA EH " << soma << "----\n\n\n\n";
 }
