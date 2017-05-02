@@ -1,6 +1,4 @@
-    #include <bits/stdc++.h>
-
-
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef struct nodo{
@@ -8,10 +6,7 @@ typedef struct nodo{
     string resp;
     int len;
     struct nodo* prox;
-    struct nodo* ant;
-    
-        
-    
+    struct nodo* ant;    
 }No;
 
 typedef struct{
@@ -32,23 +27,18 @@ bool lista_vazia (Lista* l) {
 }
 
 void lista_insere (Lista* l, string nome, string resp) {    /* insere no inicio */
-
     No *nodo; 
-
     nodo = (No*) malloc(sizeof(No));
-
     nodo -> nome = nome;
     nodo -> resp = resp;
-   // nodo -> len = len;
+    
     if(lista_vazia(l)){
         l->ult = nodo;
         l->prim = nodo;
         nodo -> ant = NULL;
         nodo -> prox = NULL;
-        
     }
     else{
-
         nodo->prox = NULL;
 
         nodo->ant = l -> ult;
@@ -56,8 +46,6 @@ void lista_insere (Lista* l, string nome, string resp) {    /* insere no inicio 
         l->ult->prox = nodo;
 
         l->ult = nodo;
-
-       
     }
 }
 
