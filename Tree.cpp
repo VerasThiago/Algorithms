@@ -50,9 +50,9 @@ bool search(node *root,int data) {
 void folhas(node*root, int &ans, int &soma){
 	if(!vazia){
 		printf("     To no %d\n",root->data);
-		soma+= root->data;
 		if(root->FilhoD == NULL and root->FilhoE == NULL){
 			printf("%d EH FOLHA, VIADO\n",root->data );
+			soma+= root->data;
 			ans++;
 		}
 		else{
@@ -72,8 +72,7 @@ int somatorio(node*root){
 
 }
 int main(){
-	node *root =  (node*) malloc(sizeof(node));
-	
+	node *root =  (node*) malloc(sizeof(node));	
 	int n, x;
 	cout << "Quantos numeros deseja inserir na arvore ? ";
 	cin >> n;
@@ -89,5 +88,5 @@ int main(){
 	int ans = 0, soma = 0;
 	folhas(root,ans,soma);
  	cout << "\n  --TEM " << ans << " FOLHAS--\n\n" << endl;
- 	cout << "----SUA SOMA EH " << soma << "----\n\n\n\n";
+ 	cout << "----SUA SOMA DAS FOLHAS EH " << soma << "----\n\n\n\n";
 }
