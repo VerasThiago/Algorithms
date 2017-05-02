@@ -1,16 +1,13 @@
 #include <bits/stdc++.h>
-
+using namespace std;
 
 bool vazia = true;
 
-using namespace std;
 struct node {
    int data;   
    struct node *FilhoE;
    struct node *FilhoD;
 };
-
-
 node* cria_tree (void){
     node *t; 
     t = (node*) malloc(sizeof(node));
@@ -18,9 +15,6 @@ node* cria_tree (void){
     t->FilhoD = NULL;
     return t;
 }
-
-
-
 void insert(node *root, int data) {
 	//if tree is empty, create root node
 	struct node *tempNode = (struct node*) malloc(sizeof(struct node));
@@ -35,21 +29,15 @@ void insert(node *root, int data) {
 	}
 	else {
 		if(data >= root->data){
-			if(root->FilhoD == NULL){
-				root->FilhoD = tempNode;
-				
-			}
-			else
-				insert(root->FilhoD,data);
+			if(root->FilhoD == NULL) root->FilhoD = tempNode;	
+			
+			else insert(root->FilhoD,data);
 		}
 		else{
-			if(root->FilhoE == NULL){
-				root->FilhoE = tempNode;				
-			}
-			else
-				insert(root->FilhoE,data);
+			if(root->FilhoE == NULL) root->FilhoE = tempNode;				
+			
+			else insert(root->FilhoE,data);
 		}
-
 	}
      
 }
@@ -67,7 +55,6 @@ bool search(node *root,int data) {
 	}
 	return true;
 }
-
 int main(){
 	node *root = cria_tree();
 	
