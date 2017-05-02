@@ -65,12 +65,6 @@ void folhas(node*root, int &ans, int &soma){
 	
 }
 
-int somatorio(node*root){
-
-
-
-
-}
 int main(){
 	node *root =  (node*) malloc(sizeof(node));	
 	int n, x;
