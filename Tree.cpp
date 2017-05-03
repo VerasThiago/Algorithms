@@ -59,6 +59,27 @@ void folhas(node*root, int &ans, int &soma){
 	}
 	
 }
+void pre_order (node * root){
+	if(root != NULL){
+		printf("%d ",root->data);
+		pre_order(root->FilhoE);
+		pre_order(root->FilhoD);
+	}
+}
+void in_order (node * root){
+	if(root != NULL){
+		pre_order(root->FilhoE);
+		printf("%d ",root->data);
+		pre_order(root->FilhoD);
+	}
+}
+void pos_order (node * root){
+	if(root != NULL){
+		pre_order(root->FilhoE);
+		pre_order(root->FilhoD);
+		printf("%d ",root->data);
+	}
+}
 int main(){
 	node *root =  NULL;
 	int n, x;
@@ -77,5 +98,15 @@ int main(){
 	int ans = 0, soma = 0;
 	folhas(root,ans,soma);
  	cout << "\n  --TEM " << ans << " FOLHAS--\n\n" << endl;
- 	cout << "----SUA SOMA DAS FOLHAS EH " << soma << "----\n\n\n\n";
+ 	cout << "----SUA SOMA DAS FOLHAS EH " << soma << "----\n\n";
+ 	cout << "Pre order:\n";
+ 	pre_order(root);
+ 	cout << "\n\nIn order:\n";
+ 	in_order(root);
+ 	cout << "\n\nPos order:\n";
+ 	pos_order(root);
+
 }
+//Pre.: 9 6 5 7 11 10 12
+//In..: 5 6 7 9 10 11 12
+//Post: 5 7 6 10 12 11 9
