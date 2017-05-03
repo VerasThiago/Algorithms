@@ -68,15 +68,15 @@ void pre_order (node * root){
 }
 void in_order (node * root){
 	if(root != NULL){
-		pre_order(root->FilhoE);
+		in_order(root->FilhoE);
 		printf("%d ",root->data);
-		pre_order(root->FilhoD);
+		in_order(root->FilhoD);
 	}
 }
 void pos_order (node * root){
 	if(root != NULL){
-		pre_order(root->FilhoE);
-		pre_order(root->FilhoD);
+		pos_order(root->FilhoE);
+		pos_order(root->FilhoD);
 		printf("%d ",root->data);
 	}
 }
