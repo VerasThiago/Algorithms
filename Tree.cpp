@@ -1,37 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool vazia = true;
-int folhas_q = 0;
-struct node {
+
+typedef struct nodo {
    int data;   
-   struct node *FilhoE;
-   struct node *FilhoD;
-};
-void insert(node *root, int data) {
-	//if tree is empty, create root node
-	struct node *tempNode = (struct node*) malloc(sizeof(struct node));
+   struct nodo *FilhoE;
+   struct nodo *FilhoD;
+}node;
+
+
+node* cria_node(int data){
+	node *tempNode = (node*) malloc(sizeof(node));
 	tempNode->data = data;
 	tempNode->FilhoE = NULL;
 	tempNode->FilhoD = NULL;
-	
-	if(vazia) {
-		root->data = data;
-		vazia = false;
-	}
-	else {
-		if(data >= root->data){
-			if(root->FilhoD == NULL) root->FilhoD = tempNode;	
-			
-			else insert(root->FilhoD,data);
-		}
-		else{
-			if(root->FilhoE == NULL) root->FilhoE = tempNode;				
-			
-			else insert(root->FilhoE,data);
-		}
-	}
-     
+	return tempNode;
+}
+node* insert (node *root, node *novo) {
+
+    if (root == NULL) return novo;
+
+    if (root->data > novo->data) 
+       root->FilhoE = insert (root->FilhoE, novo);
+    
+    else 
+       root->FilhoD = insert (root->FilhoD, novo);
+    
+    return root;
 }
 bool search(node *root,int data) {
 	if(root == NULL) return false;
@@ -48,7 +43,7 @@ bool search(node *root,int data) {
 	return true;
 }
 void folhas(node*root, int &ans, int &soma){
-	if(!vazia){
+	if(root != NULL){
 		printf("     To no %d\n",root->data);
 		if(root->FilhoD == NULL and root->FilhoE == NULL){
 			printf("%d EH FOLHA, VIADO\n",root->data );
@@ -64,15 +59,15 @@ void folhas(node*root, int &ans, int &soma){
 	}
 	
 }
-
 int main(){
-	node *root =  (node*) malloc(sizeof(node));	
+	node *root =  NULL;
 	int n, x;
 	cout << "Quantos numeros deseja inserir na arvore ? ";
 	cin >> n;
 	for(int i = 0 ; i < n ; ++i){
 	  cin >> x;
-	  insert(root,x);
+	  node* aux = cria_node(x);
+	  root = insert(root,aux);
 	}
 	cout << "Quer buscar quem ? ";
 	cin >> x;
