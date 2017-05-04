@@ -163,6 +163,6 @@ int main(){
     	
     }
 	
-	cout << endl << endl << "Lista ficou :" << endl << endl;
+    cout << endl << endl << "Lista ficou :" << endl << endl;
     imprimeLista(l);
 }
