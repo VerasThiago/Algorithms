@@ -1,5 +1,3 @@
-
-
 typedef struct nodo{
    	char a;
    	char b;
