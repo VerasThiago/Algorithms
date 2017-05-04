@@ -20,11 +20,9 @@ node* insert (node *root, node *novo) {
 
     if (root == NULL) return novo;
 
-    if (root->data > novo->data) 
-       root->FilhoE = insert (root->FilhoE, novo);
+    if (root->data > novo->data) root->FilhoE = insert (root->FilhoE, novo);
     
-    else 
-       root->FilhoD = insert (root->FilhoD, novo);
+    else root->FilhoD = insert (root->FilhoD, novo);
     
     return root;
 }
@@ -80,6 +78,23 @@ void pos_order (node * root){
 		printf("%d ",root->data);
 	}
 }
+void comp_tree(node* root1, node* root2, bool &ans){
+    if(root1 != NULL and root2 != NULL){
+      if(root1->data != root2->data) ans = false;
+      comp_tree(root1->FilhoE, root2->FilhoE,ans);
+      comp_tree(root1->FilhoD, root2->FilhoD,ans);
+    }
+    else if( root1 != NULL or root2 != NULL ) ans = false; 
+}
+int altura(node* root){
+	if (root == NULL) return 0;
+
+	int hr = altura(root->FilhoD)+1;
+	int he = altura(root->FilhoE)+1;
+
+	return (hr >= he ? hr:he);
+
+}
 int main(){
 	node *root =  NULL;
 	int n, x;
@@ -97,8 +112,9 @@ int main(){
 	printf("\n\nContando as folhas...\n\n");
 	int ans = 0, soma = 0;
 	folhas(root,ans,soma);
- 	cout << "\n  --TEM " << ans << " FOLHAS--\n\n" << endl;
+ 	cout << "\n----TEM " << ans << " FOLHAS----\n\n" << endl;
  	cout << "----SUA SOMA DAS FOLHAS EH " << soma << "----\n\n";
+ 	cout << "--- SUA ALTURA EH  "<< altura(root) << " ---\n\n";
  	cout << "Pre order:\n";
  	pre_order(root);
  	cout << "\n\nIn order:\n";
