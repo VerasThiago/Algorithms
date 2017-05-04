@@ -1,101 +1,90 @@
-#include <stdio.h>
-#include <stdbool.h>
-#define MAX 10000
+#include <bits/stdc++.h>
 
-int pilha[MAX];
-int top = -1;
+using namespace std;
 
-int push(int val){
-	if(top < MAX - 1){
-		top++;
-		pilha[top] = val;
-	}
-	else return printf("Can't push\n");
+typedef struct nodo{
+   	char a;
+   	char b;
+   	char c;
+   	char d;
+    struct nodo* prox;
+    struct nodo* ant;
+}No;
 
-	return -1;
+typedef struct{
+    No* prim;
+    No* ult;
+}pilha;
+
+pilha* cria_pilha (void){
+    pilha *l; 
+    l = (pilha*) malloc(sizeof(pilha));
+    l->prim = NULL;
+    l->ult = NULL;
+    return l;
 }
 
-void pop(){
-	if(top != -1)
-		top--;
-	else  printf("Can't pop\n");
+bool pilha_vazia (pilha* l) {
+    return (l->prim == NULL);
 }
 
-void check(){
-	printf("Num of top: %d\n",pilha[top]);
+void empilha (pilha* l, char a, char b , char c , char d) {    /* insere no final */
+
+    No *nodo; 
+
+    nodo = (No*) malloc(sizeof(No));
+
+    
+    nodo -> a = a;
+    nodo -> b = b;
+    nodo -> c = c;
+    nodo -> d = d;
+    if(pilha_vazia(l)){
+       
+        l->ult = nodo;
+        l->prim = nodo;
+        nodo -> ant = NULL;
+        nodo -> prox = NULL;
+        
+    }
+    else{
+
+        nodo->prox = NULL;
+
+        nodo->ant = l -> ult;
+
+        l->ult->prox = nodo;
+
+        l->ult = nodo;
+    }
+}
+void desempilha(pilha *l){
+   	No * aux;
+   	aux = l->ult;
+
+    if(aux == l->ult && aux == l->prim){ /* apenas 1 elemento */
+       
+        l->ult = NULL;
+        l->prim = NULL;
+        free(aux);
+        return;
+    }
+
+	l->ult->ant->prox = NULL;   
+    l->ult = l->ult->ant;
+    free(aux);
 }
 
+void pilha_libera(pilha *l){
 
+    No *aux;
 
+    aux = l->prim;
 
+    for(;aux != l->ult; aux = aux->prox){
+        pilha_remove(l, aux);
+    }
 
-int main(){
-	int  i, n=1, count, x=1, aux, j = 1 ;
-	bool ans = true;
-		
-		while(n){
-			scanf("%d", &n);
-			if(!n)
-				return 0;
+    pilha_remove(l ,aux);
 
-			int comp[n];
-			while(x){
-				
-				scanf("%d", &comp[0]);
-				if(comp[0] == 0)
-					break;
-				else
-					for(i = 1 ; i < n ; i++){
-						scanf("%d", &comp[i]);
-					}
-
-				aux = 1;			
-				count = 0;
-				top = -1;
-				push(1);
-				while(j){					
-				
-					if(count == n - 1){
-						ans = true;
-						break;
-					}	
-					if(pilha[top] == comp[count]){
-						count++;
-						pop();
-						if(top == -1){
-							aux++;
-							push(aux);
-						}
-
-					}
-					else{						
-						aux++;
-						if(aux == n+1){
-							ans = false;
-							break;	
-						}						
-						push(aux);
-					}
-					
-
-				}
-				if(ans)
-					printf("Yes\n");
-				else
-					printf("No\n");
-								
-			}
-			printf("\n");	
-				
-
-		}
-
-
-
-	
-
-
-
-
-	return 0;
 }
