@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
 
-using namespace std;
 
 typedef struct nodo{
    	char a;
