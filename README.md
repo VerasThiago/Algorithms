@@ -53,4 +53,7 @@ http://codeforces.com/profile/Veras
 	[Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)\
 	[Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)
 
+1. Priority Queue:\
+	[Fila do Supermercado - 2065](https://www.urionlinejudge.com.br/judge/pt/problems/view/2065)
+
 
