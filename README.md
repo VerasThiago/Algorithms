@@ -24,11 +24,6 @@ http://codeforces.com/profile/Veras
   	[Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
   	[BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
-1. Merge Sort:\
-  	[Pares e Ímpares - 1259](https://www.urionlinejudge.com.br/judge/pt/problems/view/1259)\
-  	[Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025) **w/ binary search**\
-  	[Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396) **w/ binary search**
-   
 1. Struct Sort:\
   	[Quadro De Medalhas - 2312](https://www.urionlinejudge.com.br/judge/pt/problems/view/2312)\
   	[Estiagem - 1023](https://www.urionlinejudge.com.br/judge/pt/problems/view/1023)\
@@ -42,9 +37,11 @@ http://codeforces.com/profile/Veras
   	[Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Binary Search:\
+    [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025)\
+    [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396)\
     [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
     [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
-
+    
 1. Fast prime:\
   	[Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
   	[Selos - 2402](https://www.urionlinejudge.com.br/judge/pt/problems/view/2402)
