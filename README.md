@@ -20,7 +20,7 @@ http://codeforces.com/profile/Veras
 1. Stack:\
 	[Estacionamento Linear - 1523](https://www.urionlinejudge.com.br/judge/pt/problems/view/1523)\
   	[Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
-  	[Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062) - **can be made with static stack**\
+  	[Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062)\
   	[Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
   	[BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
