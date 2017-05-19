@@ -74,21 +74,20 @@ int main(){
         cin >> x;
         qnt[x]aux++;
         if(aux != x) qnt[aux]++;
-        num[i].first = min(aux,x);
-        num[i].second = max(aux,x);
+        int teste = min(aux,x);
+        if(teste == 1)
+            v1[preco[i]] = max(aux,x);
+        else if (teste == 2)
+            v2[preco[i]] = max(aux,x);
+        else
+            v3[preco[i]] = max(aux,x);
     }    
-
-    for(int i = 0 ; i < n ; i++){
-        v1[i] = num[i]; 
-    }
     int cliente;
     cin >> cliente;
     for(int i = 0 ; i < cliente ; i++){
         cin >> x;
-       cout << busca(x) << " " << endl;        
+       cout << busca(x) << " ";        
     }
+    cout << endl;
 
-}       
-        http://codeforces.com/contest/799/problem/B
-        http://codeforces.com/blog/entry/51947
-
+}    
