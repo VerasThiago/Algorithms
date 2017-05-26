@@ -6,18 +6,15 @@ typedef struct{
 
 }Matriz;
 
-
 Matriz mul(int n , Matriz* A, Matriz* B){
   int i , j , k;
   Matriz C;
-
     for(i = 0 ; i < n ; i++)
       for(j = 0 ; j < n ; j++){
         C.m[i][j] = 0;
         for(k = 0 ; k < n ; k++)
           C.m[i][j] = (C.m[i][j] + (A->m[i][k]%13 * B->m[k][j]%13)%13)%13;
-      }   
-
+      } 
       return C;
 }
 
@@ -38,39 +35,22 @@ Matriz power(int n, Matriz base, long long int expo){
       resp = mul(n, &resp, &base);
     base = mul(n, &base, &base);
     expo /= 2;
-
-
   }
   return resp;  
 }
-
-
-
 int main(){
   int i , j , n, quantos, l,p;
   long long int expo;
   Matriz base;
 
-    scanf("%d %lld", &n, &expo);
-      for(i = 0 ; i < n ; i++)
-        for(j = 0 ; j < n ; j++)
-          scanf("%d", &base.m[i][j]);
+  scanf("%d %lld", &n, &expo);
+  for(i = 0 ; i < n ; i++) for(j = 0 ; j < n ; j++) scanf("%d", &base.m[i][j]);
+  base = power(n , base, expo);    
+  scanf("%d", &quantos);
+  for(i = 0 ; i < quantos; i++){
+    scanf("%d %d", &l, &p);
+    l--;
+    p--;
+    printf("%d\n",base.m[l][p]);
+  }
 
-    base = power(n , base, expo);
-    
-     scanf("%d", &quantos);
-     for(i = 0 ; i < quantos; i++){
-      scanf("%d %d", &l, &p);
-      l--;
-      p--;
-      printf("%d\n",base.m[l][p]);
-     }
-
-  return 0;     
-
-
-}
-
-5 9 0
-8 1 7
-11 6 1
