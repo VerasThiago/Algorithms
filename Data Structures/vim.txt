@@ -5,61 +5,54 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool ok(double a, double b){
-	return fabs(a-b) <= 1e-6	;
-}
 
-
-double L, R;
-double pai;
-double quero, h,base,topo;
+double L, R, master;
+double quero,topo;
 double comeco(){
+	double pai = L, mid;
 	for(int i = 0 ; i < 100 ; i++){
-		double mid = (L + R)/2.0; 
-		double area =(h-mid)*(h-mid) / (2.0*h);
-		cout << "to na altura " << mid << " e a area = " << area << " o L = " << L << " o R = " << R << endl; 
-		if(ok(area,quero)){
-			L = h = mid;
-			R = 0;
-			topo = (h-mid)/h;
-			base = 1;
-			return(h-mid); 
-		} 
-		else if(area < quero) L = mid;
+		mid = (L + R)/2.0; 
+		double area = (pai -mid)*(pai - mid) / (2.0*pai);
+		if(area < quero) L = mid;
 		else R = mid;
 	}
-}
-/*double deu(double alt){
-	return ((base*alt/h)+top)*alt/2.0;
+	
+	topo = (pai-mid)/pai;
+	L = mid;
+	R = 0;
+	return master-L; 
 }
 double resto(){
+	double pai = L, mid, h;
 	for(int i = 0 ; i < 100 ; i++){
-		double mid = (L+R)/2.0;
-		double area = deu(h-mid);
-		if(ok(area,quero)){
-			L = mid;
-			R = 0;
-			topo = base*(h-mid)/h;
-			return pai-mid;
-		}	
-		else if(area < quero) L = mid;
+		mid = (L+R)/2.0;
+		h = pai - mid;
+		double area = ((h/pai) + (double)topo)/2.0*h;	
+		if(area < quero) L = mid;
 		else R = mid;
 	}
-}*/
+	L = mid;
+	R = 0;
+	topo = (pai-mid)/h;
+	return master-L;
+}
 
 int main(){
+	double h;
 	int pieces;
 	cin >> pieces >> h;
+	master = h;
 	if(pieces == 1){
 		cout << h << endl;
 		return 0;
 	}
-	L = pai = h;
+	L = h;
 	R = 0;
 	quero = (h/2.0)/pieces;
-	cout << "quero " << pieces << " areas de " << quero << " tamanho" << endl;
-	cout << comeco() << " " << endl;
-//	for(int i = 1 ; i < pieces; i++){
-//		cout << resto(L,R,topo,base) << " " << endl;		
-//	}
+	printf("%.10lf ", comeco());
+	cout << "sobrou o trapézio de altura " << L << endl;
+	for(int i = 2 ; i < pieces; i++){			
+		printf("%.10lf ", resto());
+	}
+	cout << endl;
 }
