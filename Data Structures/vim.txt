@@ -1,2 +1,64 @@
 :highlight Normal ctermfg=grey ctermbg=darkblue
 :set nu
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool ok(double a, double b){
+	return fabs(a-b) <= 1e-6	;
+}
+
+
+double L, R;
+double pai;
+double quero, h,base,topo;
+double comeco(){
+	for(int i = 0 ; i < 100 ; i++){
+		double mid = (L + R)/2.0; 
+		double area =(h-mid)*(h-mid) / (2.0*h);
+		cout << "to na altura " << mid << " e a area = " << area << " o L = " << L << " o R = " << R << endl; 
+		if(ok(area,quero)){
+			L = h = mid;
+			R = 0;
+			topo = (h-mid)/h;
+			base = 1;
+			return(h-mid); 
+		} 
+		else if(area < quero) L = mid;
+		else R = mid;
+	}
+}
+/*double deu(double alt){
+	return ((base*alt/h)+top)*alt/2.0;
+}
+double resto(){
+	for(int i = 0 ; i < 100 ; i++){
+		double mid = (L+R)/2.0;
+		double area = deu(h-mid);
+		if(ok(area,quero)){
+			L = mid;
+			R = 0;
+			topo = base*(h-mid)/h;
+			return pai-mid;
+		}	
+		else if(area < quero) L = mid;
+		else R = mid;
+	}
+}*/
+
+int main(){
+	int pieces;
+	cin >> pieces >> h;
+	if(pieces == 1){
+		cout << h << endl;
+		return 0;
+	}
+	L = pai = h;
+	R = 0;
+	quero = (h/2.0)/pieces;
+	cout << "quero " << pieces << " areas de " << quero << " tamanho" << endl;
+	cout << comeco() << " " << endl;
+//	for(int i = 1 ; i < pieces; i++){
+//		cout << resto(L,R,topo,base) << " " << endl;		
+//	}
+}
