@@ -1,5 +1,6 @@
 :highlight Normal ctermfg=grey ctermbg=darkblue
 :set nu
+:set mouse=a
 
 #include <bits/stdc++.h>
 using namespace std;
