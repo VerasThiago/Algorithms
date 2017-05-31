@@ -38,9 +38,9 @@ http://codeforces.com/profile/Veras
 
 1. Binary Search:\
     [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025)\
-    [Corrida - 2396](https://www.urionlinejudge.com.br/judge/pt/problems/view/2396)\
+    [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)
     [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-    [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)  
+    [Cutting Carrot](http://codeforces.com/contest/794/problem/B)
     
 1. Fast prime:\
   	[Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
