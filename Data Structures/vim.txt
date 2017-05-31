@@ -5,35 +5,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 double L, R, master;
-double quero,topo;
+double quero,base_menor;
 double comeco(){
 	double pai = L, mid;
-	for(int i = 0 ; i < 100 ; i++){
-		mid = (L + R)/2.0; 
-		double area = (pai -mid)*(pai - mid) / (2.0*pai);
+	for(int i = 0 ; i < 100 ; ++i){
+		mid = (L + R)/(double)2.0; 
+		double area = (pai -mid)*(pai - mid) /(double)((double)2.0*pai);
 		if(area < quero) L = mid;
 		else R = mid;
 	}
-	
-	topo = (pai-mid)/pai;
+	base_menor = 1.0 - (mid/pai) ;
+	cout << "topo vale " << base_menor << endl;
 	L = mid;
-	R = 0;
+	R = 0.0;
 	return master-L; 
 }
 double resto(){
-	double pai = L, mid, h;
-	for(int i = 0 ; i < 100 ; i++){
+	double pai = L, mid, h, base_maior;
+	for(int i = 0 ; i < 100 ; ++i){
 		mid = (L+R)/2.0;
+		base_maior = 1.0 - (mid/pai);
 		h = pai - mid;
-		double area = ((h/pai) + (double)topo)/2.0*h;	
+		double area = (base_maior + base_menor)*h/2.0;	
 		if(area < quero) L = mid;
 		else R = mid;
 	}
 	L = mid;
 	R = 0;
-	topo = (pai-mid)/h;
+	base_menor = base_maior;
+	cout << "topo vale " << base_menor << endl;
 	return master-L;
 }
 
@@ -47,12 +48,10 @@ int main(){
 		return 0;
 	}
 	L = h;
-	R = 0;
-	quero = (h/2.0)/pieces;
-	printf("%.10lf ", comeco());
-	cout << "sobrou o trapézio de altura " << L << endl;
-	for(int i = 2 ; i < pieces; i++){			
-		printf("%.10lf ", resto());
-	}
+	R = 0.0;
+	quero = (h/2.0)/(double)pieces;
+	printf("%.14lf ", comeco());
+	cout << "sobrou o trapézio de altura "; printf("%.24lf", L); cout << endl;
+	for(int i = 2 ; i < pieces; ++i) printf("%.14lf ", resto());
 	cout << endl;
 }
