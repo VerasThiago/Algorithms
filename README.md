@@ -38,7 +38,7 @@ http://codeforces.com/profile/Veras
 
 1. Binary Search:\
     [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025)\
-    [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)
+    [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)\
     [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
     [Cutting Carrot](http://codeforces.com/contest/794/problem/B)
     
