@@ -1,4 +1,4 @@
-:highlight Normal ctermfg=grey ctermbg=darkblue
+:highlight Normal ctermfg=white ctermbg=darkblue
 :set nu
 :set mouse=a
 
