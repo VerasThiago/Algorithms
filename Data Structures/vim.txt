@@ -1,34 +1,3 @@
 :highlight Normal ctermfg=white ctermbg=darkblue
 :set nu
 :set mouse=a
-
-#include <bits/stdc++.h>
-using namespace std;
-
-double L, R, h;
-double quero,miojo;
-double find(){
-	double mid;
-	L = h , R = 0;
-	for(int i = 0 ; i < 100 ; ++i){
-		mid = (L + R)/(double)2.0; 
-		double area = (h-mid)*(h-mid)/(2.0*h);
-		if(area < quero) L = mid;
-		else R = mid;
-	}
-	quero += miojo; 
-	return	h -L; 
-}
-
-int main(){
-	int pieces;
-	cin >> pieces >> h;
-	if(pieces == 1){
-		cout << h << endl;
-		return 0;
-	}
-	quero = (h/2.0)/(double)pieces;
-	miojo = quero;
-	for(int i = 1 ; i < pieces; ++i) printf("%.14lf ", find());
-	cout << endl;
-}
