@@ -1,3 +1,63 @@
 :highlight Normal ctermfg=white ctermbg=darkblue
 :set nu
 :set mouse=a
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+vector<bool> visit(1001);
+vector<int> grafo[1001];
+vector<int> chave(1001);
+vector<bool> ok(1001);
+void cls(){
+	for(int i = 0 ; i < 1001 ; i++)grafo[i].clear(),visit[i] = ok[i] = false,chave[i] = -1 ;
+}
+
+void bfs(int u){
+	visit[u] = true;
+	ok[chave[u]] = true;
+	queue<int> q;
+	q.push(u);
+	while(!q.empty()){
+		int v = q.front();
+		q.pop();
+		for(int i = 0 ; i < grafo[u].size(); i++){
+			cout << "to indo pra sala " << grafo[u][i] << " e a chave = " << ok[grafo[u][i]] << endl;
+			if(!visit[grafo[u][i]] and ok[grafo[u][i]]){
+				visit[grafo[u][i]] = true;
+				ok[chave[grafo[u][i]]] = true;
+				q.push(grafo[u][i]);
+			}	
+		}
+	}
+
+
+}
+int main(){
+	
+	cls();
+	int v, e;
+	while(cin >>  v >> e){
+		cls();
+		ok[1] = true;
+		for(int i = 0 ; i < e; ++i){
+			int v1, v2;
+			cin >> v1 >> v2;
+			grafo[v1].pb(v2);
+			grafo[v2].pb(v1);
+		}
+		for(int i = 2; i <= v; i++){
+			int x;
+			cin >> x;
+			chave[x] = i;
+		}
+		bfs(1);
+		int ans = true;
+		for(int i  = 1; i <= v; i++) if(!visit[i]){ans = false; break;}
+		cout << (ans ? "sim":"nao") << endl;
+	}
+	
+
+
+
+}
