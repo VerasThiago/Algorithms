@@ -37,7 +37,7 @@ http://codeforces.com/profile/Veras
   	[Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Binary Search:\
-    [Onde está o Mármore? - 1025](https://www.urionlinejudge.com.br/judge/pt/problems/view/1025)\
+    [Cabo de Guerra - 1586](https://www.urionlinejudge.com.br/judge/pt/problems/view/1586)\
     [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)\
     [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
     [Cutting Carrot](http://codeforces.com/contest/794/problem/B)
