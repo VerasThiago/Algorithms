@@ -44,8 +44,8 @@ http://codeforces.com/profile/Veras
     
 1. Fast prime:\
   	[Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
-  	[Selos - 2402](https://www.urionlinejudge.com.br/judge/pt/problems/view/2402)
-
+  	[Selos - 2402](https://www.urionlinejudge.com.br/judge/pt/problems/view/2402)\
+	[Prime Words - 10924](https://uva.onlinejudge.org/external/109/p10924.pdf)
 1. Kadane:\
 	[Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)\
 	[Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)
