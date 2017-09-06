@@ -52,7 +52,7 @@ http://codeforces.com/profile/Veras
 
 1. Priority Queue:\
 	[Fila do Supermercado - 2065](https://www.urionlinejudge.com.br/judge/pt/problems/view/2065)\
-	[Planning](http://codeforces.com/contest/854/problem/C)\
+	[Planning](http://codeforces.com/contest/854/problem/C)
 1. Graphs:\
 	[Componentes Conexos - 1080](https://www.urionlinejudge.com.br/judge/pt/problems/view/1082)\
 	[The Tag Game](http://codeforces.com/contest/813/problem/C)\
