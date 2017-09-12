@@ -37,10 +37,11 @@ http://codeforces.com/profile/Veras
   	[Comparação de Substring - 1237](https://www.urionlinejudge.com.br/judge/pt/problems/view/1237)
 
 1. Binary Search:\
-    [Cabo de Guerra - 1586](https://www.urionlinejudge.com.br/judge/pt/problems/view/1586)\
-    [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)\
-    [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
-    [Cutting Carrot](http://codeforces.com/contest/794/problem/B)
+   	 [Cabo de Guerra - 1586](https://www.urionlinejudge.com.br/judge/pt/problems/view/1586)\
+   	 [Ajude Seu Madruga - 1942](https://www.urionlinejudge.com.br/judge/pt/problems/view/1912)\
+   	 [Voltage Keepsake](http://codeforces.com/contest/801/problem/C)\
+   	 [Cutting Carrot](http://codeforces.com/contest/794/problem/B)\
+	 [Exact sum](https://uva.onlinejudge.org/external/110/11057.pdf)
     
 1. Fast prime:\
   	[Primo Rápido - 1221](https://www.urionlinejudge.com.br/judge/pt/problems/view/1221)\
