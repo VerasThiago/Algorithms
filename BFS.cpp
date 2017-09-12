@@ -11,9 +11,10 @@ void bfs(int u){
 			int v = grafo[u][i];
 			if(!visit[v]){
 				q.push(v);
-				dist[v] = distA[u]+1; 
+				dist[v] = dist[u]+1; 
 				visit[v] = true;
 			}
 		}
 	}
 }
+
