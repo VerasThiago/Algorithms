@@ -11,7 +11,7 @@ k^3 => 	n^2(n+1)^2/4  	 =>  1 + 8 + 27 + 64 + ... + n³
 
 log10(n)+1
 
-CHAR_BIT 	8 						Defines the number of bits in a byte.
+CHAR_BIT 	8 						    Defines the number of bits in a byte.
 SCHAR_MIN 	-128 					Defines the minimum value for a signed char.
 SCHAR_MAX 	+127 					Defines the maximum value for a signed char.
 UCHAR_MAX 	255 					Defines the maximum value for an unsigned char.
