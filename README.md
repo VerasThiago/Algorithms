@@ -57,5 +57,5 @@ http://codeforces.com/profile/Veras
 1. Graphs:\
 	[Componentes Conexos - 1080](https://www.urionlinejudge.com.br/judge/pt/problems/view/1082)\
 	[The Tag Game](http://codeforces.com/contest/813/problem/C)\
-	[Inversão - 1550](https://www.urionlinejudge.com.br/judge/pt/problems/view/1550)
-
+	[Inversão - 1550](https://www.urionlinejudge.com.br/judge/pt/problems/view/1550)\
+    [Journey](http://codeforces.com/contest/839/problem/C)
