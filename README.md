@@ -60,5 +60,5 @@ http://codeforces.com/profile/Veras
 	[Inversão - 1550](https://www.urionlinejudge.com.br/judge/pt/problems/view/1550)\
     [Journey](http://codeforces.com/contest/839/problem/C)
 1. Segment Tree:\
-    [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804)
+    [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804)\
     [Compras em FdI - 2531](https://www.urionlinejudge.com.br/judge/pt/problems/view/2531)
