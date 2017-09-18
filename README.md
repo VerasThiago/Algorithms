@@ -59,3 +59,6 @@ http://codeforces.com/profile/Veras
 	[The Tag Game](http://codeforces.com/contest/813/problem/C)\
 	[Inversão - 1550](https://www.urionlinejudge.com.br/judge/pt/problems/view/1550)\
     [Journey](http://codeforces.com/contest/839/problem/C)
+1. Segment Tree:\
+    [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804)
+
