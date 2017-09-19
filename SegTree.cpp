@@ -1,39 +1,58 @@
+//  1804 - Precisa-se de Matemáticos em Marte 
+//  Made by: Thiago Veras
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-#define N (int) 4e5
+#define pb push_back
 
-vector <ii> seg(N);
-int v[N];
+#define ll  long long int
 
-void init(int idx, int L, int R){
-	if(L == R) seg[idx] = v[L],v[L];
+#define inf 0x7fffffff
+
+#define N (int)1e4+7
+
+int seg[1000000];
+int v[10000000];
+void SegInit(int idx, int L, int R){
+	if(L == R) seg[idx] = v[L];
 	else{
 		int mid = (L+R)/2;
-		init(idx*2, L, mid);
-		init(idx*2 + 1, mid+1, R);
-		seg[idx].ff = max(seg[idx*2].ff,seg[idx*2+1].ff);
-		seg[idx].ss = min(seg[idx*2].ss,seg[idx*2+1].ss);
+		SegInit(idx*2,L,mid);
+		SegInit((idx*2) + 1,mid+1, R);
+		seg[idx] = seg[idx*2] + seg[(idx*2) + 1];
 	}
 }
 
+int find(int idx, int L, int R, int S, int E){
+	if(S <= L and R <= E) return seg[idx];
+	if(L > E or S > R) return 0;
+	return (find(idx*2, L, (L+R)/2, S, E) + find(idx*2 + 1, (L+R)/2 + 1, R, S, E));
+
+}
+void update(int idx, int L , int R,int valor, int quem){
+	if( !(L <= quem and quem <= R) ) return;	
+	seg[idx] -= valor;
+	if(L == R) return;
+	int mid = (L+R)/2;
+	update(idx*2, L, mid, valor, quem);
+	update(idx*2 + 1, mid+1, R, valor,quem);
+}
 
 int main(){
 	int n;
-	cin << n;
-	for(int i = 0; i < n; i++) scanf("%d", v+i);
-	int op, i, k;
-	init(1,0,n-1);
-	for(int i = 0; i < N; i++){
-		if(seg[i].ff == 0) continue;
-		printf("Seg[%d] - Max = %d Min = %d\n",%d,seg[%d].ff,seg[%d].ss );
+	cin >> n;
+	for(int i = 0; i < n ; i++) scanf("%d", v+i);
+	SegInit(1,0,n-1);
+	char op;
+	int x;
+	while(scanf(" %c %d", &op,&x) == 2){		
+		if(op == '?')
+			cout << find(1,0,n-1,0,x-2) << endl;
+		else
+			update(1,0,n-1,v[x-1],x-1);
 	}
-	/*
-	while(scanf("%d %d %d", &op, &i, &j)){
-		if(op == 2) printf("%d\n",find(1,0,n-1,i,j));
-		else update(1,0,n-1,i,j);
-	}*/
-
 
 }
