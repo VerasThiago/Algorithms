@@ -1,18 +1,18 @@
 # My personal main goals
 ## Dinamic Programming (6/2017)
-- [ ] Teory of DP
+- [ ] Theory of DP
 - [X] Knapsack
 - [X] Some strings DP
 - [ ] More (?)
 ## Graphs (6/2017)
-- [X] Teory of Graph
+- [X] Theory of Graph
 - [X] Implement a Graph
 - [X] Dfs
 - [X] Bfs
 - [ ] Dijkstra
 - [ ] Minimum Spanning Trees
 ## Segment Tree (9/2017)
-- [X] Teory of Segment Tree
+- [X] Theory of Segment Tree
 - [X] Implement a Segment Tree
 - [X] Update number in a Segment Tree
 - [ ] Update Segment in a Seg Tree
@@ -21,7 +21,7 @@
 - [ ] Xor Seg Tree
 - [ ] Lazy Propagation
 ## Union Find (9/2017)
-- [ ] Teory Union Find
+- [ ] Theory Union Find
 - [ ] Implement Union Find
 ### Tasks List
 - [X] [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804) - Seg Tree
