@@ -1,4 +1,9 @@
 # My personal main goals
+## Dinamic Programming (6/2017)
+- [ ] Teory of DP
+- [X] Knapsack
+- [X] Some strings DP
+- [ ] More (?)
 ## Graphs (6/2017)
 - [X] Teory of Graph
 - [X] Implement a Graph
@@ -6,11 +11,6 @@
 - [X] Bfs
 - [ ] Dijkstra
 - [ ] Minimum Spanning Trees
-## Dinamic Programming (6/2017)
-- [ ] Teory of DP
-- [X] Knapsack
-- [X] Some strings DP
-- [ ] More (?)
 ## Segment Tree (9/2017)
 - [X] Teory of Segment Tree
 - [X] Implement a Segment Tree
