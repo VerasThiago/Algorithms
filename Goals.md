@@ -24,6 +24,9 @@
 - [ ] Teory Union Find
 - [ ] Implement Union Find
 ### Tasks List
-       .
-       .
-       .
+- [X] [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804) - Seg Tree
+- [X] [Compras em FdI - 2531](https://www.urionlinejudge.com.br/judge/pt/problems/view/2531)- Seg Tree
+- [ ] [Produto do Intervalo - 1301](https://www.urionlinejudge.com.br/judge/pt/problems/view/1301) - Seg Tree      
+- [ ] [Xor-tree](http://codeforces.com/contest/430/problem/C) - Graphs
+- [ ] [Pie Rules](http://codeforces.com/contest/859/problem/C) - Dp
+       
