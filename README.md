@@ -6,7 +6,8 @@ _URI profile:_
 https://www.urionlinejudge.com.br/judge/pt/profile/113065 \
 _Codefocers profile:_
 http://codeforces.com/profile/Veras \
-_[Personal Goals(Goals.md) Since (9/2017)]_
+_Personal Goals:_
+[Goals](Goals.md)\
 
 ### Some excercises that was solved with that algorithms:
 1. Segment Tree:\
