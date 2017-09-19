@@ -19,7 +19,7 @@
 - [ ] Teory of DP
 - [X] Knapsack
 - [X] Some strings DP
-- [ ] More (?) (9/2017)
+- [ ] More (?)
 ## Union Find (9/2017)
 - [ ] Teory Union Find
 - [ ] Implement Union Find
