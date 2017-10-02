@@ -1,7 +1,6 @@
 ## Welcome to my algorithm repository
 
 **Here you will find some useful algorithms that helped me doing some URI, Codefoces and UVA problems**
-
 _URI profile:_
 https://www.urionlinejudge.com.br/judge/pt/profile/113065\
 _Codefocers profile:_
@@ -64,8 +63,6 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md\
   [Selos - 2402](https://www.urionlinejudge.com.br/judge/pt/problems/view/2402)\
   [Prime Words - 10924](https://uva.onlinejudge.org/external/109/p10924.pdf)
 
-1. Kadane:
-
-  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)
-  
+1. Kadane:\
+  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)\
   [Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)
