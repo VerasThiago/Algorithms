@@ -65,6 +65,6 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Selos - 2402](https://www.urionlinejudge.com.br/judge/pt/problems/view/2402)\
   [Prime Words - 10924](https://uva.onlinejudge.org/external/109/p10924.pdf)
 
-1. Kadane:<br\>
-  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)<br\>
-  [Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)<br\>
+1. Kadane:<br \>
+  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)<br \>
+  [Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)<br \>
