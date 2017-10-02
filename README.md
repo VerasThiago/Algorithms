@@ -2,11 +2,11 @@
 
 **Here you will find some useful algorithms that helped me doing some URI, Codefoces and UVA problems**
 _URI profile:_
-https://www.urionlinejudge.com.br/judge/pt/profile/113065\
+https://www.urionlinejudge.com.br/judge/pt/profile/113065 \
 _Codefocers profile:_
-http://codeforces.com/profile/Veras\
+http://codeforces.com/profile/Veras \
 _Personal Goals:_
-https://github.com/VerasUnB/Algorithms/blob/master/Goals.md\
+https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
 
 ### Some excercises that was solved with that algorithms:
 1. Segment Tree:\
