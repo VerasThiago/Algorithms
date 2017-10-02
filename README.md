@@ -3,15 +3,12 @@
 **Here you will find some useful algorithms that helped me doing some URI, Codefoces and UVA problems**
 
 _URI profile:_
-
 https://www.urionlinejudge.com.br/judge/pt/profile/113065
 
 _Codefocers profile:_
-
 http://codeforces.com/profile/Veras 
 
 _Personal Goals:_
-
 https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
 
 
@@ -39,14 +36,16 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Jogando Cartas Fora - 1110](https://www.urionlinejudge.com.br/judge/pt/problems/view/1110)\
   [Acampamento de Férias - 1167](https://www.urionlinejudge.com.br/judge/pt/problems/view/1167)
 
-1. Stack:\
+1. Stack:
+
   [Estacionamento Linear - 1523](https://www.urionlinejudge.com.br/judge/pt/problems/view/1523)
   
   [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)
   
   [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062)
   
-  [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
+  [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)
+  
   [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
 1. Struct Sort:\
