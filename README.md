@@ -36,8 +36,7 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Jogando Cartas Fora - 1110](https://www.urionlinejudge.com.br/judge/pt/problems/view/1110)\
   [Acampamento de Férias - 1167](https://www.urionlinejudge.com.br/judge/pt/problems/view/1167)
 
-1. Stack:
-
+1. Stack:\
   [Estacionamento Linear - 1523](https://www.urionlinejudge.com.br/judge/pt/problems/view/1523)
   
   [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)
@@ -73,5 +72,7 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Prime Words - 10924](https://uva.onlinejudge.org/external/109/p10924.pdf)
 
 1. Kadane:\
-  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)\
+
+  [Saldo de Gols - 2191](https://www.urionlinejudge.com.br/judge/pt/problems/view/2191)
+  
   [Corredor - 2463](https://www.urionlinejudge.com.br/judge/pt/problems/view/2463)
