@@ -38,7 +38,7 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
   [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062)\
   [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
-  [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)\
+  [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
 1. Struct Sort:\
   [Quadro De Medalhas - 2312](https://www.urionlinejudge.com.br/judge/pt/problems/view/2312)\
