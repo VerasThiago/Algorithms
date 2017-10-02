@@ -35,9 +35,12 @@ https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
   [Acampamento de Férias - 1167](https://www.urionlinejudge.com.br/judge/pt/problems/view/1167)
 
 1. Stack:\
-  [Estacionamento Linear - 1523](https://www.urionlinejudge.com.br/judge/pt/problems/view/1523)\
-  [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)\
-  [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062)\
+  [Estacionamento Linear - 1523](https://www.urionlinejudge.com.br/judge/pt/problems/view/1523)
+  
+  [Balanço de Parênteses I - 1068](https://www.urionlinejudge.com.br/judge/pt/problems/view/1068)
+  
+  [Trilhos - 1062](https://www.urionlinejudge.com.br/judge/pt/problems/view/1062)
+  
   [Trilhos Novamente... Traçando Movimentos - 1063](https://www.urionlinejudge.com.br/judge/pt/problems/view/1063)\
   [BRINDE FACE 2015 - 1944](https://www.urionlinejudge.com.br/judge/pt/problems/view/1944)
   
