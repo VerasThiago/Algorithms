@@ -25,6 +25,8 @@
     <!-- Custom styles for this template -->
     <link href="css/landing-page.css" rel="stylesheet">
 
+    <script type="text/javascript" src="syntaxhighlighter.js"></script>
+
   </head>
 
   <style>
@@ -77,27 +79,45 @@
     
     <div class = "container">
       <div class="card-panel teal lighten-2">
-        <xms>
-        void bfs(int u){
-            queue<int> q;
-            dist[u] = 0;
-            q.push(u);
-            vector<bool> visit(N,false);
-            visit[u] = true;
-            while(!q.empty()){
-              int u = q.front();
-              q.pop();
-              for(int i = 0 ; i < grafo[u].size(); ++i){
-                int v = grafo[u][i];
-                if(!visit[v]){
-                  q.push(v);
-                  dist[v] = dist[u]+1; 
-                  visit[v] = true;
-                }
-              }
-            }
-        }
-      </xms>
+         <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%; color:white;"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">bfs</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u){</span>
+  <span style="color: #f8f8f2">queue</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">q;</span>
+  <span style="color: #f8f8f2">dist[u]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+  <span style="color: #f8f8f2">q.push(u);</span>
+  <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">visited(N,false);</span>
+  <span style="color: #f8f8f2">visited[u]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+  <span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">q.empty()){</span>
+    <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">q.front();</span>
+    <span style="color: #f8f8f2">q.pop();</span>
+    <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">grafo[u].size();</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
+      <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">grafo[u][i];</span>
+      <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">visited[v]){</span>
+        <span style="color: #f8f8f2">q.push(v);</span>
+        <span style="color: #f8f8f2">dist[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">dist[u]</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> 
+        <span style="color: #f8f8f2">visited[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span> 
+  <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+</pre></td></tr></table></div>
+
       </div>
     </div>
 

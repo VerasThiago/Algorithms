@@ -41,6 +41,8 @@
       padding-top: 10%;
       padding-bottom: 5%;
     }
+    
+
   </style>
 
  
@@ -76,50 +78,147 @@
         </div>
       </div>
     </header>
-      <!-- Navbar goes here -->
 
-    <!-- Page Layout here -->
-    <div class="row">
 
-      <div class="col s3">
-        <ul class="list-inline intro-social-buttons">
-            <li class="list-inline-item">
-              <a href="bfs.html" class="btn btn-secondary btn-lg">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <span class="network-name">BFS</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="seg_tree.html" class="btn btn-secondary btn-lg">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <span class="network-name">Segment Tree</span>
-              </a>
-            </li>
-          </ul>
-      </div>
 
-      <div class="col s9">
-        <ul class="list-inline intro-social-buttons">
-            <li class="list-inline-item">
-              <a href="bfs.html" class="btn btn-secondary btn-lg">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <span class="network-name">BFS</span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="seg_tree.html" class="btn btn-secondary btn-lg">
-                <i class="fa fa-code" aria-hidden="true"></i>
-                <span class="network-name">Segment Tree</span>
-              </a>
-            </li>
-          </ul>
-      </div>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'BFS')">BFS</button>
+      <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
+      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="BFS" class="tabcontent">
+      <h3>BFS</h3>
+      <div class = "container">
+			<div class="card-panel teal lighten-2">
+               <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%; color:white;"> 1
+       2
+       3
+       4
+       5
+       6
+       7
+       8
+       9
+      10
+      11
+      12
+      13
+      14
+      15
+      16
+      17
+      18
+      19</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">bfs</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u){</span>
+        <span style="color: #f8f8f2">queue</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">q;</span>
+        <span style="color: #f8f8f2">dist[u]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">q.push(u);</span>
+        <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">visited(N,false);</span>
+        <span style="color: #f8f8f2">visited[u]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+        <span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">q.empty()){</span>
+          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">q.front();</span>
+          <span style="color: #f8f8f2">q.pop();</span>
+          <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">grafo[u].size();</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
+            <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">grafo[u][i];</span>
+            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">visited[v]){</span>
+              <span style="color: #f8f8f2">q.push(v);</span>
+              <span style="color: #f8f8f2">dist[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">dist[u]</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> 
+              <span style="color: #f8f8f2">visited[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+            <span style="color: #f8f8f2">}</span>
+          <span style="color: #f8f8f2">}</span> 
+        <span style="color: #f8f8f2">}</span>
+      <span style="color: #f8f8f2">}</span>
+      </pre></td></tr></table></div>
+
+            </div>
+          </div></div>
+
+    <div id="Segment Tree" class="tabcontent">
+      <h3>Sement Tree</h3>
+      <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%;color: white;"> 1
+       2
+       3
+       4
+       5
+       6
+       7
+       8
+       9
+      10
+      11
+      12
+      13
+      14
+      15
+      16
+      17
+      18
+      19
+      20
+      21
+      22
+      23
+      24
+      25
+      26</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">seg[</span><span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">];</span>
+      <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v[</span><span style="color: #ae81ff">10000000</span><span style="color: #f8f8f2">];</span>
+      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">SegInit</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R){</span>
+      	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">v[L];</span>
+      	<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">{</span>
+      		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+      		<span style="color: #f8f8f2">SegInit(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,L,mid);</span>
+      		<span style="color: #f8f8f2">SegInit((idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R);</span>
+      		<span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">seg[idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">seg[(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">];</span>
+      	<span style="color: #f8f8f2">}</span>
+      <span style="color: #f8f8f2">}</span>
+
+      <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">find</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">S,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">E){</span>
+      	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(S</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">E)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">seg[idx];</span>
+      	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">E</span> <span style="color: #f8f8f2">or</span> <span style="color: #f8f8f2">S</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+      	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E));</span>
+
+      <span style="color: #f8f8f2">}</span>
+      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">update</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">quem){</span>
+      	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span> <span style="color: #f92672">!</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>	
+      	<span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">-=</span> <span style="color: #f8f8f2">valor;</span>
+      	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>
+      	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+      	<span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">mid,</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #f8f8f2">quem);</span>
+      	<span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">valor,quem);</span>
+      <span style="color: #f8f8f2">}</span>
+      </pre></td></tr></table></div>
 
     </div>
-    
-          
-      
-    </header>
+
+    <div id="Tokyo" class="tabcontent">
+      <h3>Tokyo</h3>
+      <p>Tokyo is the capital of Japan.</p>
+    </div> 
+	
+  	<script>
+  		function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+} 
+  	</script>
+
+
 
 
 </html>
