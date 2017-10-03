@@ -11,6 +11,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -21,9 +27,99 @@
 
   </head>
 
+  <style>
+    .intro-header {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      text-align: center;
+      color: #f8f8f8;
+      background: url(img/algorithms-bg.jpeg) no-repeat center center;
+      background-size: cover;
+    }
+    .intro-message {
+      position: relative;
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+  </style>
+
+ 
+
   <body>
-  	<p> Piroca </p>
-  </body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Thiago Veras</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+      <div class="container">
+        <div class="intro-message">
+          <h1>Algorithms</h1>
+          <hr class="intro-divider">   
+        </div>
+      </div>
+    </header>
+      <!-- Navbar goes here -->
+
+    <!-- Page Layout here -->
+    <div class="row">
+
+      <div class="col s3">
+        <ul class="list-inline intro-social-buttons">
+            <li class="list-inline-item">
+              <a href="bfs.html" class="btn btn-secondary btn-lg">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span class="network-name">BFS</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="seg_tree.html" class="btn btn-secondary btn-lg">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span class="network-name">Segment Tree</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+
+      <div class="col s9">
+        <ul class="list-inline intro-social-buttons">
+            <li class="list-inline-item">
+              <a href="bfs.html" class="btn btn-secondary btn-lg">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span class="network-name">BFS</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="seg_tree.html" class="btn btn-secondary btn-lg">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span class="network-name">Segment Tree</span>
+              </a>
+            </li>
+          </ul>
+      </div>
+
+    </div>
+    
+          
+      
+    </header>
 
 
 </html>
