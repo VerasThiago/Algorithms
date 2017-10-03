@@ -14,6 +14,18 @@ body, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.size{
+  width: 150px;
+}
+.thick-border {
+  border-color: gray;
+  border-style: solid;
+  border-radius: 10px;
+}
+.size2{
+  width: 200px;
+}
+  
 .intro-header {
   padding-top: 50px;
   padding-bottom: 50px;
