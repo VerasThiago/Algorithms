@@ -17,7 +17,10 @@ long long pot(long long x, long long n, long long mod){
 
 2- O(Log(n))
 
-int sq(int x){return x*x;}
+int sq(int x){
+	return x*x;
+}
+
 ll pot(ll b, ll n){
 	if(n == 0) return 1;
 	if(n&1) return b * pot(b,n-1);
