@@ -227,9 +227,16 @@ div.tab button.active {
 /* Style the tab content */
 .tabcontent {
     float: left;
-    padding: 0px 12px;
+    padding-left: 100px;
     border: 1px solid #ccc;
-    width: 70%;
+    width: 65%;
     border-left: none;
-    height: 300px;
+    height: 0px;
 } 
+
+  h3{
+
+  }
+
+
+
