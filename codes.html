@@ -91,201 +91,248 @@
       <button class="tablinks" onclick="openCity(event, 'KMP')">KMP</button>
       <button class="tablinks" onclick="openCity(event, 'Knapsack')">Knapsack</button>
       <button class="tablinks" onclick="openCity(event, 'Longest Common Subsequence')">Longest Common Subsequence</button>
+      <button class="tablinks" onclick="openCity(event, 'Longest Palindromic Subsequence')">Longest Palindromic Subsequence</button>
+      <button class="tablinks" onclick="openCity(event, 'Merge Sort')">Merge Sort</button>
+      <button class="tablinks" onclick="openCity(event, 'String Period')">String Period</button>
+      <button class="tablinks" onclick="openCity(event, 'Struct Sort')">Struct Sort</button>
+      <button class="tablinks" onclick="openCity(event, 'Token')">Token</button>
+      <button class="tablinks" onclick="openCity(event, 'Z Function')">Z Function</button>
 
 
-    </div>
+	</div>
 
-    <div id="BFS" class="tabcontent">
-      <h3>BFS</h3>
-            <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">bfs</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u){</span>
-        <span style="color: #f8f8f2">queue</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">q;</span>
-        <span style="color: #f8f8f2">dist[u]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">q.push(u);</span>
-        <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">visited(N,false);</span>
-        <span style="color: #f8f8f2">visited[u]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
-        <span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">q.empty()){</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">q.front();</span>
-          <span style="color: #f8f8f2">q.pop();</span>
-          <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">grafo[u].size();</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
-            <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">grafo[u][i];</span>
-            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">visited[v]){</span>
-              <span style="color: #f8f8f2">q.push(v);</span>
-              <span style="color: #f8f8f2">dist[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">dist[u]</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> 
-              <span style="color: #f8f8f2">visited[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
-            <span style="color: #f8f8f2">}</span>
-          <span style="color: #f8f8f2">}</span> 
-        <span style="color: #f8f8f2">}</span>
-      <span style="color: #f8f8f2">}</span>
-      </pre></div>
-      </p>
-    </div>
+	<div id="BFS" class="tabcontent">
+	<h3>BFS</h3>
+	<p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">bfs</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u){</span>
+	<span style="color: #f8f8f2">queue</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">q;</span>
+	<span style="color: #f8f8f2">dist[u]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">q.push(u);</span>
+	<span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">visited(N,false);</span>
+	<span style="color: #f8f8f2">visited[u]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+	<span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">q.empty()){</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">u</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">q.front();</span>
+	<span style="color: #f8f8f2">q.pop();</span>
+	<span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">grafo[u].size();</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">grafo[u][i];</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">visited[v]){</span>
+	  <span style="color: #f8f8f2">q.push(v);</span>
+	  <span style="color: #f8f8f2">dist[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">dist[u]</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> 
+	  <span style="color: #f8f8f2">visited[v]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #f8f8f2">}</span> 
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #f8f8f2">}</span>
+	</pre></div>
+	</p>
+	</div>
 
-    <div id="Segment Tree" class="tabcontent">
-      <h3>Segment Tree</h3>
-            <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">seg[</span><span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">];</span>
-      <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v[</span><span style="color: #ae81ff">10000000</span><span style="color: #f8f8f2">];</span>
-      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">SegInit</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R){</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">v[L];</span>
-        <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">{</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-          <span style="color: #f8f8f2">SegInit(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,L,mid);</span>
-          <span style="color: #f8f8f2">SegInit((idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R);</span>
-          <span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">seg[idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">seg[(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">];</span>
-        <span style="color: #f8f8f2">}</span>
-      <span style="color: #f8f8f2">}</span>
+	<div id="Segment Tree" class="tabcontent">
+	<h3>Segment Tree</h3>
+	<p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">seg[</span><span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">];</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v[</span><span style="color: #ae81ff">10000000</span><span style="color: #f8f8f2">];</span>
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">SegInit</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R){</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">v[L];</span>
+	<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">SegInit(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,L,mid);</span>
+	<span style="color: #f8f8f2">SegInit((idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R);</span>
+	<span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">seg[idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">seg[(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">];</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #f8f8f2">}</span>
 
-      <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">find</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">S,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">E){</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(S</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">E)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">seg[idx];</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">E</span> <span style="color: #f8f8f2">or</span> <span style="color: #f8f8f2">S</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E));</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">find</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">S,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">E){</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(S</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">E)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">seg[idx];</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">E</span> <span style="color: #f8f8f2">or</span> <span style="color: #f8f8f2">S</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">find(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">S,</span> <span style="color: #f8f8f2">E));</span>
 
-      <span style="color: #f8f8f2">}</span>
-      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">update</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">quem){</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span> <span style="color: #f92672">!</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>  
-        <span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">-=</span> <span style="color: #f8f8f2">valor;</span>
-        <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">mid,</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #f8f8f2">quem);</span>
-        <span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">valor,quem);</span>
-      <span style="color: #f8f8f2">}</span>
-      </pre></div>
-      </p> 
-    </div>
-    
-    <div id="Binary Search" class="tabcontent">
-      <h3>Binary Search</h3>
-            <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">PesquisaBinaria</span> <span style="color: #f8f8f2">(</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">k[],</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">who</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
-        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">inf,sup,meio;</span>
-        <span style="color: #f8f8f2">inf</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">sup</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">n</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">(inf</span><span style="color: #f92672">&lt;=</span><span style="color: #f8f8f2">sup)</span>
-        <span style="color: #f8f8f2">{</span>
-          <span style="color: #f8f8f2">meio</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">(inf</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">sup)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-          <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(who</span><span style="color: #f92672">==</span><span style="color: #f8f8f2">k[meio])</span>
-               <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(who</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">k[meio])</span>
-               <span style="color: #f8f8f2">sup</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">meio</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-          <span style="color: #66d9ef">else</span>
-               <span style="color: #f8f8f2">inf</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">meio</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>  
-      <span style="color: #f8f8f2">}</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">update</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">idx,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">R,</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">quem){</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span> <span style="color: #f92672">!</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">quem</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">R)</span> <span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>  
+	<span style="color: #f8f8f2">seg[idx]</span> <span style="color: #f92672">-=</span> <span style="color: #f8f8f2">valor;</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(L</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">R)</span> <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">L,</span> <span style="color: #f8f8f2">mid,</span> <span style="color: #f8f8f2">valor,</span> <span style="color: #f8f8f2">quem);</span>
+	<span style="color: #f8f8f2">update(idx</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">mid</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R,</span> <span style="color: #f8f8f2">valor,quem);</span>
+	<span style="color: #f8f8f2">}</span>
+	</pre></div>
+	</p> 
+	</div>
 
-      <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">IterativeBinaryS</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v[],</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
-        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">ans</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
-        <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
-          <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(v[mid]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">x)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(v[mid]</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">x)</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mid</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">L</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #f8f8f2">}</span>
-        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
-      <span style="color: #f8f8f2">}</span>
-      </pre></div>
-      </p>
-    </div>
+	<div id="Binary Search" class="tabcontent">
+	<h3>Binary Search</h3>
+	<p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">PesquisaBinaria</span> <span style="color: #f8f8f2">(</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">k[],</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">who</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">inf,sup,meio;</span>
+	<span style="color: #f8f8f2">inf</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">sup</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">n</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">(inf</span><span style="color: #f92672">&lt;=</span><span style="color: #f8f8f2">sup)</span>
+	<span style="color: #f8f8f2">{</span>
+	<span style="color: #f8f8f2">meio</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">(inf</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">sup)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(who</span><span style="color: #f92672">==</span><span style="color: #f8f8f2">k[meio])</span>
+	   <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+	<span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(who</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">k[meio])</span>
+	   <span style="color: #f8f8f2">sup</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">meio</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">else</span>
+	   <span style="color: #f8f8f2">inf</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">meio</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>  
+	<span style="color: #f8f8f2">}</span>
 
-    <div id="Coin Change Algorithm" class="tabcontent">
-      <h3>Coin Change Algorithm</h3>
-          <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">coin</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">troco,</span> <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">moedas){</span>
-            <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">ans(troco</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1e9</span><span style="color: #f92672">+</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">);</span>
-            <span style="color: #f8f8f2">ans[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">troco;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
-              <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">moedas.size();</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
-                <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">moedas[j])</span> <span style="color: #66d9ef">break</span><span style="color: #f8f8f2">;</span>
-                <span style="color: #f8f8f2">ans[i]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(ans[i],</span><span style="color: #ae81ff">1</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">ans[i</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">moedas[j]]);</span>
-              <span style="color: #f8f8f2">}</span>
-            <span style="color: #f8f8f2">}</span>
-            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">ans[troco];</span>
-          <span style="color: #f8f8f2">}</span>
-          </pre></div>
-    </div>
+	<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">IterativeBinaryS</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">v[],</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span> <span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">L</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">ans</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
+	<span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">100</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(L</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">R)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(v[mid]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">x)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+	<span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(v[mid]</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">x)</span> <span style="color: #f8f8f2">R</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mid</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">L</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mid</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
+	<span style="color: #f8f8f2">}</span>
+	</pre></div>
+	</p>
+	</div>
 
-    <div id="Edit Distance" class="tabcontent">
-      <h3>Edit Distance</h3>
-                <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">st[MAX_M][MAX_N];</span>
-      <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">c_i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_r</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_s</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<div id="Coin Change Algorithm" class="tabcontent">
+			<h3>Coin Change Algorithm</h3>
+			<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">int</span> <span style="color: #a6e22e">coin</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">troco,</span> <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">moedas){</span>
+			<span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">ans(troco</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1e9</span><span style="color: #f92672">+</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">);</span>
+			<span style="color: #f8f8f2">ans[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+			<span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">troco;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
+			  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">moedas.size();</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">){</span>
+			    <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">moedas[j])</span> <span style="color: #66d9ef">break</span><span style="color: #f8f8f2">;</span>
+			    <span style="color: #f8f8f2">ans[i]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(ans[i],</span><span style="color: #ae81ff">1</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">ans[i</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">moedas[j]]);</span>
+			  <span style="color: #f8f8f2">}</span>
+			<span style="color: #f8f8f2">}</span>
+			<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">ans[troco];</span>
+			<span style="color: #f8f8f2">}</span>
+			</pre></div>
+	</div>
 
-      <span style="color: #66d9ef">double</span> <span style="color: #a6e22e">edit</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">s,</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">r)</span>
-      <span style="color: #f8f8f2">{</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">m</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">s.size();</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">r.size();</span>
+	<div id="Edit Distance" class="tabcontent">
+			<h3>Edit Distance</h3>
+			    <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">st[MAX_M][MAX_N];</span>
+			<span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">c_i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_r</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_s</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
 
-          <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">m;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i)</span>
-              <span style="color: #f8f8f2">st[i][</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">c_r;</span>
+			<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">edit</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">s,</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">r)</span>
+			<span style="color: #f8f8f2">{</span>
+			<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">m</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">s.size();</span>
+			<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">r.size();</span>
 
-          <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">j)</span>
-              <span style="color: #f8f8f2">st[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">c_i;</span>
+			<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">m;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i)</span>
+			  <span style="color: #f8f8f2">st[i][</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">c_r;</span>
 
-          <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">m;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i)</span>
-              <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">j)</span>
-              <span style="color: #f8f8f2">{</span>
-                  <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">insertion</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i][j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_i;</span>
-                  <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">deletion</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">][j]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_r;</span>
-                  <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">change</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">][j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_s</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">(s[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">r[j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">?</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">:</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span>
-                  <span style="color: #f8f8f2">st[i][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(insertion,</span> <span style="color: #f8f8f2">deletion);</span>
-                  <span style="color: #f8f8f2">st[i][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(st[i][j],</span> <span style="color: #f8f8f2">change);</span>
-              <span style="color: #f8f8f2">}</span>
+			<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">j)</span>
+			  <span style="color: #f8f8f2">st[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">c_i;</span>
 
-          <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">st[m][n];</span>
-      <span style="color: #f8f8f2">}</span>
-      </pre></div>
-      </p> 
-    </div>
+			<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">m;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i)</span>
+			  <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">j)</span>
+			  <span style="color: #f8f8f2">{</span>
+			      <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">insertion</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i][j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_i;</span>
+			      <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">deletion</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">][j]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_r;</span>
+			      <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">change</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">st[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">][j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">c_s</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">(s[i</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">r[j</span> <span style="color: #f92672">-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">?</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">:</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span>
+			      <span style="color: #f8f8f2">st[i][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(insertion,</span> <span style="color: #f8f8f2">deletion);</span>
+			      <span style="color: #f8f8f2">st[i][j]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">min(st[i][j],</span> <span style="color: #f8f8f2">change);</span>
+			  <span style="color: #f8f8f2">}</span>
 
-    <div id="Fast Prime" class="tabcontent">
-      <h1>Fast Prime</h1>
-                    <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">isPrime</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
-              <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i;</span>
+			<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">st[m][n];</span>
+			<span style="color: #f8f8f2">}</span>
+			</pre></div>
+			</p> 
+	</div>
 
-              <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">==</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
-                  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+	<div id="Fast Prime" class="tabcontent">
+			<h1>Fast Prime</h1>
+			        <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">isPrime</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
+			  <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i;</span>
 
-              <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #ae81ff">2</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
-                  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
+			  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">==</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+			      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
 
-              <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(i</span><span style="color: #f92672">=</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">;i</span><span style="color: #f92672">&lt;=</span><span style="color: #f8f8f2">sqrt(n);i</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
-                  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
-                      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
+			  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #ae81ff">2</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+			      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
 
-              <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
-          <span style="color: #f8f8f2">}</span>
+			  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(i</span><span style="color: #f92672">=</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">;i</span><span style="color: #f92672">&lt;=</span><span style="color: #f8f8f2">sqrt(n);i</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+			      <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+			          <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
 
-          <span style="color: #75715e">// Eratóstenes algorithm</span>
+			  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+			<span style="color: #f8f8f2">}</span>
 
-          <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">prime(N,</span> <span style="color: #f8f8f2">true);</span>
-          <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">sqrt(N);</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
-            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">prime[i])</span> <span style="color: #66d9ef">continue</span><span style="color: #f8f8f2">;</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">i;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">N;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">i)</span> <span style="color: #f8f8f2">prime[k]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
-          <span style="color: #f8f8f2">}</span> 
-          </pre></div>
-          </p>
-    </div>
+			<span style="color: #75715e">// Eratóstenes algorithm</span>
 
-    <div id="Fast Exponential" class="tabcontent">
-    </div>
+			<span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">prime(N,</span> <span style="color: #f8f8f2">true);</span>
+			<span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">sqrt(N);</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
+			<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">prime[i])</span> <span style="color: #66d9ef">continue</span><span style="color: #f8f8f2">;</span>
+			<span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">i;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">N;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">i)</span> <span style="color: #f8f8f2">prime[k]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
+			<span style="color: #f8f8f2">}</span> 
+			</pre></div>
+			</p>
+ 	</div>
 
-    <div id="Fast Matrix Exponential" class="tabcontent">
-    </div>
+	<div id="Fast Exponential" class="tabcontent">
+		<h3> Fast Exponential </h3>
+ 				<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #ae81ff">1</span><span style="color: #f92672">-</span>
 
-    <div id="Kadane" class="tabcontent">
-    </div>
-
-    <div id="KMP" class="tabcontent">
-    </div>
-
-    <div id="Knapsack" class="tabcontent">
-    </div>
-
-    <div id="Longest Common Subsequence" class="tabcontent">
-    </div>
+ 				<span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">pot(</span><span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">x,</span> <span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">n,</span> <span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">mod){</span>
+ 					<span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">ans</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+ 					<span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(n){</span>
+ 						<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span> <span style="color: #f92672">&amp;</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">ans</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(ans</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">x)</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">mod;</span>
+ 						<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(x</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">x)</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">mod;</span>
+ 						<span style="color: #f8f8f2">n</span> <span style="color: #f92672">&gt;&gt;=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+ 					<span style="color: #f8f8f2">}</span>
+ 					<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">ans;</span>
+ 				<span style="color: #f8f8f2">}</span>
 
 
+ 				<span style="color: #ae81ff">2</span><span style="color: #f92672">-</span> <span style="color: #f8f8f2">O(Log(n))</span>
 
+ 				<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">sq(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x){</span>
+ 					<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">x;</span>
+ 				<span style="color: #f8f8f2">}</span>
 
+ 				<span style="color: #f8f8f2">ll</span> <span style="color: #f8f8f2">pot(ll</span> <span style="color: #f8f8f2">b,</span> <span style="color: #f8f8f2">ll</span> <span style="color: #f8f8f2">n){</span>
+ 					<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+ 					<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">&amp;</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">b</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">pot(b,n</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span>
+ 					<span style="color: #66d9ef">else</span> <span style="color: #66d9ef">return</span> <span style="color: #a6e22e">sq</span><span style="color: #f8f8f2">(pot(b,n</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">));</span>
+ 				<span style="color: #f8f8f2">}</span>
+ 				</pre></div>
+ 	</div>
 
- 
+	<div id="Fast Matrix Exponential" class="tabcontent">
+	</div>
+
+	<div id="Kadane" class="tabcontent">
+	</div>
+
+	<div id="KMP" class="tabcontent">
+	</div>
+
+	<div id="Knapsack" class="tabcontent">
+	</div>
+
+	<div id="Longest Common Subsequence" class="tabcontent">
+	</div>
+
+	<div id="Longest Palindromic Subsequence" class="tabcontent">
+	</div>
+
+	<div id="Merge Sort" class="tabcontent">
+	</div>
+
+	<div id="String Period" class="tabcontent">
+	</div>
+
+	<div id="Struct Sort" class="tabcontent">
+	</div>
+
+	<div id="Token" class="tabcontent">
+ 	</div>
+
+	<div id="Z Function" class="tabcontent">
+		<pre lang="c++">
+		    
+		</pre>
+ 	</div>	
 
     <script>
     function openCity(evt, cityName) {
