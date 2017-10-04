@@ -16,8 +16,8 @@ bool isPrime(long long int n){
 
 // Eratóstenes algorithm
 
-	vector<bool> prime(N, true);
-	for(int i = 2; i <= sqrt(N); ++i){
-		if(!prime[i]) continue;
-		for(int k = i+i; k <= N; k += i) prime[k] = false;
-	} 
+vector<bool> prime(N, true);
+for(int i = 2; i <= sqrt(N); ++i){
+	if(!prime[i]) continue;
+	for(int k = i+i; k <= N; k += i) prime[k] = false;
+} 

@@ -203,7 +203,7 @@
     </div>
 
     <div id="Edit Distance" class="tabcontent">
-      <h3>Edit Distance<br>Cost to transform string s into r</h3>
+      <h3>Edit Distance</h3>
                 <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">st[MAX_M][MAX_N];</span>
       <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">c_i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_r</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">c_s</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
 
@@ -235,6 +235,32 @@
     </div>
 
     <div id="Fast Prime" class="tabcontent">
+      <h1>Fast Prime</h1>
+                    <p><!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">bool</span> <span style="color: #a6e22e">isPrime</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">long</span> <span style="color: #66d9ef">long</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n){</span>
+              <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i;</span>
+
+              <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">==</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+                  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+
+              <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #ae81ff">2</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+                  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
+
+              <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(i</span><span style="color: #f92672">=</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">;i</span><span style="color: #f92672">&lt;=</span><span style="color: #f8f8f2">sqrt(n);i</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+                  <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">)</span>
+                      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">false;</span>
+
+              <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">true;</span>
+          <span style="color: #f8f8f2">}</span>
+
+          <span style="color: #75715e">// Eratóstenes algorithm</span>
+
+          <span style="color: #f8f8f2">vector</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">bool</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">prime(N,</span> <span style="color: #f8f8f2">true);</span>
+          <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">sqrt(N);</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i){</span>
+            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">!</span><span style="color: #f8f8f2">prime[i])</span> <span style="color: #66d9ef">continue</span><span style="color: #f8f8f2">;</span>
+            <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">i;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">N;</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">i)</span> <span style="color: #f8f8f2">prime[k]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
+          <span style="color: #f8f8f2">}</span> 
+          </pre></div>
+          </p>
     </div>
 
     <div id="Fast Exponential" class="tabcontent">
