@@ -320,6 +320,41 @@
 	</div>
 
 	<div id="String Period" class="tabcontent">
+    <h3>String Period</h3>
+        <div class="snippet-container"><div class="sh_darkblue snippet-wrap"><div class="snippet-menu sh_sourceCode"><a class="snippet-window sh_url" href="#">pop-up</a><a class="snippet-text sh_url" href="#">text</a></div><pre class="shi_pre sh_cpp snippet-formatted sh_sourceCode"><ol class="snippet-num"><li><span class="sh_usertype">vector&lt;int&gt;</span><span class="sh_normal"> </span><span class="sh_function">strong_borders</span><span class="sh_symbol">(</span><span class="sh_keyword">const</span> string<span class="sh_symbol">&amp;</span> pat<span class="sh_symbol">)</span><span class="sh_cbracket">{</span></li><li>    <span class="sh_type">int</span> m <span class="sh_symbol">=</span> pat<span class="sh_symbol">.</span><span class="sh_function">size</span><span class="sh_symbol">();</span></li><li>    <span class="sh_usertype">vector&lt;int&gt;</span><span class="sh_normal"> </span><span class="sh_function">sbord</span><span class="sh_symbol">(</span>m<span class="sh_symbol">);</span></li><li>    <span class="sh_type">int</span> t <span class="sh_symbol">=</span> <span class="sh_symbol">-</span><span class="sh_number">1</span><span class="sh_symbol">;</span></li><li>    sbord<span class="sh_symbol">[</span><span class="sh_number">0</span><span class="sh_symbol">]</span> <span class="sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span></li><li></li><li>    <span class="sh_keyword">for</span> <span class="sh_symbol">(</span><span class="sh_type">int</span> j <span class="sh_symbol">=</span> <span class="sh_number">1</span><span class="sh_symbol">;</span> j <span class="sh_symbol">&lt;</span> m<span class="sh_symbol">;</span> <span class="sh_symbol">++</span>j<span class="sh_symbol">)</span><span class="sh_cbracket">{</span> </li><li>        <span class="sh_keyword">while</span><span class="sh_symbol">(</span> <span class="sh_symbol">(</span>t <span class="sh_symbol">&gt;</span> <span class="sh_symbol">-</span><span class="sh_number">1</span><span class="sh_symbol">)</span> <span class="sh_usertype">and</span><span class="sh_normal"> </span>pat<span class="sh_symbol">[</span>t<span class="sh_number">+1</span><span class="sh_symbol">]</span> <span class="sh_symbol">!=</span> pat<span class="sh_symbol">[</span>j<span class="sh_symbol">])</span><span class="sh_cbracket">{</span></li><li>            t <span class="sh_symbol">=</span> sbord<span class="sh_symbol">[</span>t<span class="sh_symbol">]-</span><span class="sh_number">1</span><span class="sh_symbol">;</span></li><li>        <span class="sh_cbracket">}</span></li><li>        <span class="sh_keyword">if</span><span class="sh_symbol">(</span> pat<span class="sh_symbol">[</span>t<span class="sh_number">+1</span><span class="sh_symbol">]</span> <span class="sh_symbol">==</span> pat<span class="sh_symbol">[</span>j<span class="sh_symbol">])</span></li><li>            t<span class="sh_symbol">++;</span></li><li>       </li><li>        sbord<span class="sh_symbol">[</span>j<span class="sh_symbol">]</span> <span class="sh_symbol">=</span> t<span class="sh_number">+1</span><span class="sh_symbol">;</span></li><li>    <span class="sh_cbracket">}</span></li><li>    <span class="sh_keyword">return</span> sbord<span class="sh_symbol">;</span></li><li><span class="sh_cbracket">}</span></li><li></li><li></li><li><span class="sh_type">int</span> <span class="sh_function">period</span><span class="sh_symbol">(</span><span class="sh_keyword">const</span> string<span class="sh_symbol">&amp;</span> a<span class="sh_symbol">)</span><span class="sh_cbracket">{</span></li><li>    <span class="sh_usertype">string</span><span class="sh_normal"> </span>aux <span class="sh_symbol">=</span> a<span class="sh_symbol">;</span></li><li>    aux <span class="sh_symbol">+=</span> aux<span class="sh_symbol">;</span></li><li>    <span class="sh_type">int</span> m <span class="sh_symbol">=</span> aux<span class="sh_symbol">.</span><span class="sh_function">size</span><span class="sh_symbol">();</span></li><li>    <span class="sh_type">int</span> ans<span class="sh_symbol">;</span></li><li>    <span class="sh_usertype">vector&lt;int&gt;</span><span class="sh_normal"> </span>v <span class="sh_symbol">=</span> <span class="sh_function">strong_borders</span><span class="sh_symbol">(</span>aux<span class="sh_symbol">);</span></li><li>    </li><li>    <span class="sh_keyword">for</span><span class="sh_symbol">(</span><span class="sh_type">int</span> i <span class="sh_symbol">=</span> <span class="sh_number">0</span> <span class="sh_symbol">;</span> i <span class="sh_symbol">&lt;</span> aux<span class="sh_symbol">.</span><span class="sh_function">size</span><span class="sh_symbol">();</span> i<span class="sh_symbol">++)</span></li><li>        <span class="sh_keyword">if</span><span class="sh_symbol">(</span>v<span class="sh_symbol">[</span>i<span class="sh_symbol">]</span> <span class="sh_symbol">&gt;=</span> m<span class="sh_symbol">/</span><span class="sh_number">2</span><span class="sh_symbol">)</span><span class="sh_cbracket">{</span>            </li><li>            ans <span class="sh_symbol">=</span> i <span class="sh_symbol">-</span> v<span class="sh_symbol">[</span>i<span class="sh_symbol">]</span> <span class="sh_symbol">+</span> <span class="sh_number">1</span><span class="sh_symbol">;</span></li><li>            <span class="sh_keyword">return</span> ans<span class="sh_symbol">;</span></li><li>        <span class="sh_cbracket">}</span></li><li>    </li><li><span class="sh_cbracket">}</span></li></ol></pre><pre class="snippet-textonly sh_sourceCode" style="display:none;" tabindex="0" contenteditable="">vector&lt;int&gt; strong_borders(const string&amp; pat){
+            int m = pat.size();
+            vector&lt;int&gt; sbord(m);
+            int t = -1;
+            sbord[0] = 0;
+
+            for (int j = 1; j &lt; m; ++j){ 
+                while( (t &gt; -1) and pat[t+1] != pat[j]){
+                    t = sbord[t]-1;
+                }
+                if( pat[t+1] == pat[j])
+                    t++;
+               
+                sbord[j] = t+1;
+            }
+            return sbord;
+        }
+
+
+        int period(const string&amp; a){
+            string aux = a;
+            aux += aux;
+            int m = aux.size();
+            int ans;
+            vector&lt;int&gt; v = strong_borders(aux);
+            
+            for(int i = 0 ; i &lt; aux.size(); i++)
+                if(v[i] &gt;= m/2){            
+                    ans = i - v[i] + 1;
+                    return ans;
+                }
+            
+        }
+        </pre></div></div>
 	</div>
 
 	<div id="Struct Sort" class="tabcontent">
