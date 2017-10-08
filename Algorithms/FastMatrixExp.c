@@ -53,4 +53,3 @@ int main(){
     p--;
     printf("%d\n",base.m[l][p]);
   }
-
