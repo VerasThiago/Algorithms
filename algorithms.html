@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Veras Repository</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <link rel="stylesheet"  href="syntax/tomorrow_night.css">
+    <script src = "syntax/prettify.js"></script>
+
+  </head>
+
+  <style>
+    .intro-header {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      text-align: center;
+      color: #f8f8f8;
+      background: url(img/algorithms-bg.jpeg) no-repeat center center;
+      background-size: cover;
+    }
+    .intro-message {
+      position: relative;
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+    
+
+  </style>
+
+ 
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Thiago Veras</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+      <div class="container">
+        <div class="intro-message">
+          <h1>Algorithms</h1>
+          <hr class="intro-divider">   
+        </div>
+      </div>
+    </header>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'BFS')" id="defaultOpen">BFS</button>
+      <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
+      <button class="tablinks" onclick="openCity(event, 'Binary Search')">Binary Search</button>
+      <button class="tablinks" onclick="openCity(event, 'Coin Change Algorithm')">Coin Change Algorithm</button>
+      <button class="tablinks" onclick="openCity(event, 'Edit Distance')">Edit Distance</button>
+      <button class="tablinks" onclick="openCity(event, 'Fast Prime')">Fast Prime</button>
+      <button class="tablinks" onclick="openCity(event, 'Fast Exponential')">Fast Exponential</button>
+      <button class="tablinks" onclick="openCity(event, 'Fast Matrix Exponential')">Fast Matrix Exponential</button>
+      <button class="tablinks" onclick="openCity(event, 'Kadane')">Kadane</button>
+      <button class="tablinks" onclick="openCity(event, 'KMP')">KMP</button>
+      <button class="tablinks" onclick="openCity(event, 'Knapsack')">Knapsack</button>
+      <button class="tablinks" onclick="openCity(event, 'Longest Common Subsequence')">Longest Common Subsequence</button>
+      <button class="tablinks" onclick="openCity(event, 'Longest Palindromic Subsequence')">Longest Palindromic Subsequence</button>
+      <button class="tablinks" onclick="openCity(event, 'Merge Sort')">Merge Sort</button>
+      <button class="tablinks" onclick="openCity(event, 'String Period')">String Period</button>
+      <button class="tablinks" onclick="openCity(event, 'Struct Sort')">Struct Sort</button>
+      <button class="tablinks" onclick="openCity(event, 'Token')">Token</button>
+      <button class="tablinks" onclick="openCity(event, 'Z Function')">Z Function</button>
+
+
+	</div>
+
+<div id="BFS" class="tabcontent">
+<h3 >BFS</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+void bfs(int u){
+  queue<int> q;
+  dist[u] = 0;
+  q.push(u);
+  vector<bool> visit(N,false);
+  visit[u] = true;
+  while(!q.empty()){
+    int u = q.front();
+    q.pop();
+    for(int i = 0 ; i < grafo[u].size(); ++i){
+      int v = grafo[u][i];
+      if(!visit[v]){
+        q.push(v);
+        dist[v] = dist[u]+1; 
+        visit[v] = true;
+      }
+    }
+  }
+}
+</pre> 
+</div>
+
+<div id="Segment Tree" class="tabcontent">
+<h3>Segment Tree</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int seg[1000000];
+int v[10000000];
+void SegInit(int idx, int L, int R){
+  if(L == R) seg[idx] = v[L];
+  else{
+    int mid = (L+R)/2;
+    SegInit(idx*2,L,mid);
+    SegInit((idx*2) + 1,mid+1, R);
+    seg[idx] = seg[idx*2] + seg[(idx*2) + 1];
+  }
+}
+
+int find(int idx, int L, int R, int S, int E){
+  if(S <= L and R <= E) return seg[idx];
+  if(L > E or S > R) return 0;
+  return (find(idx*2, L, (L+R)/2, S, E) + find(idx*2 + 1, (L+R)/2 + 1, R, S, E));
+
+}
+void update(int idx, int L , int R,int valor, int quem){
+  if( !(L <= quem and quem <= R) ) return;  
+  seg[idx] -= valor;
+  if(L == R) return;
+  int mid = (L+R)/2;
+  update(idx*2, L, mid, valor, quem);
+  update(idx*2 + 1, mid+1, R, valor,quem);
+}
+
+int main(){
+  int n;
+  cin >> n;
+  for(int i = 0; i < n ; i++) scanf("%d", v+i);
+  SegInit(1,0,n-1);
+  char op;
+  int x;
+  while(scanf("%c %d", &op,&x) == 2){    
+    if(op == '?')
+      cout << find(1,0,n-1,0,x-2) << endl;
+    else
+      update(1,0,n-1,v[x-1],x-1);
+  }
+}  
+</pre>
+</div>
+
+<div id="Binary Search" class="tabcontent">
+<h3>Binary Search</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+bool PesquisaBinaria ( int k[], int who , int n){
+  int inf,sup,meio;
+  inf=0;
+  sup=n-1;
+  while (inf<=sup)
+  {
+    meio=(inf+sup)/2;
+    if (who==k[meio])
+         return true;
+    else if (who< k[meio])
+         sup=meio-1;
+    else
+         inf=meio+1;
+  }
+  return false;  
+}
+
+bool IterativeBinaryS(int v[], int x , int n){
+  int L = 0, R = n-1;
+  bool ans = false;
+  for(int i = 0 ; i < 100; i++){
+    int mid = (L+R)/2;
+    if(v[mid] == x) return true;
+    else if(v[mid] > x) R = mid-1;
+    else L = mid + 1;
+  }
+  return false;
+}
+
+int main(){
+  int x,n;
+  printf("Tamanho do vetor: ");
+  cin >> n;
+  int v[n];
+  printf("Digite os valores do vetor\n");
+  for(int i = 0; i < n ; i++) scanf("%d", v+i);
+  printf("Qual numero deseja buscar?\n");
+  scanf("%d", &x);
+  printf("%s\n", IterativeBinaryS(v,x,n) ? "Achou":"Nao achou");
+  printf("%s\n", PesquisaBinaria(v,x,n) ? "Achou":"Nao achou");
+}  
+</pre>	
+</div>
+
+<div id="Coin Change Algorithm" class="tabcontent">
+<h3>Coin Change Algorithm</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int coin(int troco, vector<int> moedas){
+  vector<int> ans(troco+1,1e9+7);
+  ans[0] = 0;
+  for(int i = 1 ; i <= troco; i++){
+    for(int j = 0 ; j < moedas.size(); j++){
+      if(i < moedas[j]) break;
+      ans[i] = min(ans[i],1+ans[i - moedas[j]]);
+    }
+  }
+  return ans[troco];
+}
+</pre> 		
+</div>
+
+<div id="Edit Distance" class="tabcontent">
+<h3>Edit Distance</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+double st[MAX_M][MAX_N];
+double c_i = 2.5, c_r = 0.5, c_s = 1;
+
+double edit(const string& s, const string& r)
+{
+    int m = s.size();
+    int n = r.size();
+
+    for (int i = 0; i <= m; ++i)
+        st[i][0] = i*c_r;
+
+    for (int j = 1; j <= n; ++j)
+        st[0][j] = j*c_i;
+
+    for (int i = 1; i <= m; ++i)
+        for (int j = 1; j <= n; ++j)
+        {
+            double insertion = st[i][j - 1] + c_i;
+            double deletion = st[i - 1][j] + c_r;
+            double change = st[i - 1][j - 1] + c_s * (s[i - 1] == r[j - 1] ? 0 : 1);
+            st[i][j] = min(insertion, deletion);
+            st[i][j] = min(st[i][j], change);
+        }
+
+    return st[m][n];
+}
+</pre>    
+</div>
+
+<div id="Fast Prime" class="tabcontent">
+<h1>Fast Prime</h1>
+<h3>Common algorithm</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+bool isPrime(long long int n){
+    int i;
+
+    if(n==2)
+        return true;
+
+    if(n%2==0)
+        return false;
+
+    for(i=3;i<=sqrt(n);i+=2)
+        if(n%i==0)
+            return false;
+
+    return true;
+}
+</pre>
+<h3>Eratóstenes algorithm</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+vector<bool> prime(N, true);
+for(int i = 2; i <= sqrt(N); ++i){
+  if(!prime[i]) continue;
+  for(int k = i+i; k <= N; k += i) prime[k] = false;
+}
+</pre> 		
+</div>
+
+<div id="Fast Exponential" class="tabcontent">
+<h1> Fast Exponential </h1>
+<h3>1:</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+long long pot(long long x, long long n, long long mod){
+  long long ans = 1;
+  while(n){
+    if(n & 1) ans = (ans * x) % mod;
+    x = (x * x) % mod;
+    n >>= 1;
+  }
+  return ans;
+}
+</pre>
+
+<h3>2:</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int sq(int x){
+  return x*x;
+}
+
+ll pot(ll b, ll n){
+  if(n == 0) return 1;
+  if(n&1) return b * pot(b,n-1);
+  else return sq(pot(b,n/2));
+}
+</pre>
+
+</div>
+
+<div id="Fast Matrix Exponential" class="tabcontent">
+<h3>Fast Matrix Exponential</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+typedef struct{
+  int m[1006][1006];
+
+}Matriz;
+
+Matriz mul(int n , Matriz* A, Matriz* B){
+  int i , j , k;
+  Matriz C;
+    for(i = 0 ; i < n ; i++)
+      for(j = 0 ; j < n ; j++){
+        C.m[i][j] = 0;
+        for(k = 0 ; k < n ; k++)
+          C.m[i][j] = (C.m[i][j] + (A->m[i][k]%13 * B->m[k][j]%13)%13)%13;
+      } 
+      return C;
+}
+
+Matriz power(int n, Matriz base, long long int expo){
+  int i , j;
+  Matriz resp;
+
+  for(i = 0 ; i < n ; i++)
+    for(j = 0 ; j < n ; j++){
+      if( i == j)
+        resp.m[i][j] = 1;
+      else
+         resp.m[i][j] = 0;
+    }
+
+  while(expo > 0){
+    if( expo%2 == 1)
+      resp = mul(n, &resp, &base);
+    base = mul(n, &base, &base);
+    expo /= 2;
+  }
+  return resp;  
+}
+int main(){
+  int i , j , n, quantos, l,p;
+  long long int expo;
+  Matriz base;
+  scanf("%d %lld", &n, &expo);
+  for(i = 0 ; i < n ; i++) for(j = 0 ; j < n ; j++) scanf("%d", &base.m[i][j]);
+  base = power(n , base, expo);    
+  scanf("%d", &quantos);
+  for(i = 0 ; i < quantos; i++){
+    scanf("%d %d", &l, &p);
+    l--;
+    p--;
+    printf("%d\n",base.m[l][p]);
+  }
+}
+</pre>
+</div>
+
+<div id="Kadane" class="tabcontent">
+<h3>Kadane</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int ans = 0, temp = 0;
+for(int i = 0 ; i < n ; i++){
+  temp+=v[i];
+  ans = max(ans,temp);
+  if(temp < 0) temp = 0;
+}
+cout << ans << endl;
+</pre>  
+</div>
+
+<div id="KMP" class="tabcontent">
+<h3>KMP</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+vector<int> strong_borders(const string& pat){
+    int m = pat.size();
+    vector<int> sbord(m);
+    int t = -1;
+    sbord[0] = 0;
+
+    for (int j = 1; j < m; ++j){ 
+        while( (t > -1) and pat[t+1] != pat[j]){
+            t = sbord[t]-1;
+        }
+        if( pat[t+1] == pat[j])
+            t++;
+       
+        sbord[j] = t+1;
+    }
+    return sbord;
+}
+
+void KMP(const string& text, const string& pat){
+    int n = text.size()-1;
+    int m = pat.size()-1;
+    int i = 0, j = 0, occ = 0, k = 0;
+
+    vector<int> bords = strong_borders(pat);
+
+    while (n - k >= m)
+    {
+        while (j <= m and text[i] == pat[j]){
+            ++j;
+            ++i;
+        }
+
+        if (j > m) cout << k << " ";
+
+        if(j-1 >= 0 and bords[j-1] > 0) k = i - bords[j-1];
+   
+        else{
+            if(i == k) i++;
+            k = i;
+        }
+
+        if(j > 0) j = bords[j-1];
+    }     
+}
+</pre>
+</div>
+
+<div id="Knapsack" class="tabcontent">
+<h3>Knapsack</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+for(int i = 1; i <= n; i++){
+  for(int j = 1; j <= t; j++){
+    if(p[i].ff <= j) dp[i][j] = max( p[i].ss + dp[i][j - p[i].ff], dp[i-1][j]);
+    else dp[i][j] = dp[i-1][j];
+  }
+}
+cout << dp[n][t] << endl;
+</pre>
+</div>
+
+<div id="Longest Common Subsequence" class="tabcontent">
+<h3>Longest Common Subsequence</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int st[MAX_M][MAX_N], a[MAX_N], b[MAX_N];
+int c_i = 0, c_r = 0, c_s = 1;      // Custos adaptados
+char ps[MAX_M][MAX_N];
+
+// Implementação _bottom-up_, O(mn), memória O(mn)
+int lcs(const string& s, const string& t)
+{
+    int m = s.size();
+    int n = t.size();
+
+    for (int i = 0; i <= m; ++i)
+        st[i][0] = i*c_r;
+
+    for (int j = 1; j <= n; ++j)
+        st[0][j] = j*c_i;
+
+    for (int i = 1; i <= m; ++i)
+        for (int j = 1; j <= n; ++j)
+        {
+            int insertion = st[i][j - 1] + c_i;
+            int deletion = st[i - 1][j] + c_r; 
+            int change = st[i - 1][j - 1] + c_s * (s[i - 1] == t[j - 1] ? 1 : -INF);
+            st[i][j] = max(insertion, deletion);
+            st[i][j] = max(st[i][j], change);
+        }
+
+    return st[m][n];
+}
+</pre>
+</div>
+
+<div id="Longest Palindromic Subsequence" class="tabcontent">
+<h3>Longest Palindromic Subsequence</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+int dp[MAX][MAX];
+
+int main(){ 
+  
+  string a;
+  cin >> a;
+  int n = a.size();
+  
+  for(int i = 0 ; i < n ; i++){
+    dp[i][i] = 1;
+    if(i < n-1) dp[i][i+1] = a[i] == a[i+1] ? 2:1;  
+  }
+  
+  for(int i = 2 ; i < n ; i++){
+    for(int j = 0 ; j < n-i ; j++){
+      if(a[j] == a[j+i])dp[j][j+i] = 2+dp[j+1][j+i-1];
+      
+      else dp[j][j+i] = max(dp[j+1][j+i],dp[j][j+i-1]);
+    }
+  }
+  cout << dp[0][n-1] << endl;
+}   
+</pre>
+</div>
+
+<div id="Merge Sort" class="tabcontent">
+<pre class = "prettyprint linenums:1">
+
+void intercalar (int v[],int aux[],int ini1, int ini2,int fim2){
+ 
+  int in1=ini1,in2=ini2,fim1=in2-1,au=0,i;
+    while(in1<=fim1 and in2<=fim2){
+     
+      if (v[in1] < v[in2])      
+          aux[au++] = v[in1++];
+      
+        else
+          aux[au++] = v[in2++];   
+    }
+    while(in1<=fim1)
+      aux[au++] = v[in1++];
+     
+    while(in2<=fim2) 
+      aux[au++] = v[in2++];
+    
+    for(i=0 ; i < au; i++) 
+      v[i+ini1]=aux[i];
+}
+void mergeSort (int v[], int aux[],int esq, int dir){
+  int meio;
+    if(esq < dir){
+      meio=(esq+dir)/2;
+      mergeSort(v,aux,esq,meio);
+      mergeSort(v,aux,meio+1,dir);
+      intercalar(v,aux,esq,meio+1,dir);  
+    }
+}
+</pre>
+</div>
+
+<div id="String Period" class="tabcontent">
+<h3>String Period</h3>
+<pre = class = "prettyprint lang-cpp linenums:1">
+vector<int> strong_borders(const string& pat){
+    int m = pat.size();
+    vector<int> sbord(m);
+    int t = -1;
+    sbord[0] = 0;
+
+    for (int j = 1; j < m; ++j){ 
+        while( (t > -1) and pat[t+1] != pat[j]){
+            t = sbord[t]-1;
+        }
+        if( pat[t+1] == pat[j])
+            t++;
+       
+        sbord[j] = t+1;
+    }
+    return sbord;
+}
+
+
+int period(const string& a){
+    string aux = a;
+    aux += aux;
+    int m = aux.size();
+    int ans;
+    vector<int> v = strong_borders(aux);
+    
+    for(int i = 0 ; i < aux.size(); i++)
+        if(v[i] >= m/2){            
+            ans = i - v[i] + 1;
+            return ans;
+        }
+    
+}
+</pre> 
+</div>
+
+<div id="Struct Sort" class="tabcontent">
+<h3>Strcut Sort</h3>
+<pre class="prettyprint lang-cpp linenums:1"> 
+typedef struct {
+  char pais[200];
+  int ouro, prata,bronze;
+}selecao;
+
+int cmp (const void *p1, const void *p2){
+  selecao *a = (selecao*)p1;
+  selecao *b = (selecao*)p2;
+
+  if ( a->ouro > b->ouro)
+    return 1;
+
+  else if(a->ouro < b->ouro)
+    return -1;
+
+  else{ 
+    if ( a->prata > b->prata)
+      return 1;
+    else if(a->prata < b->prata)
+      return -1;
+    else{
+      if ( a->bronze > b->bronze)
+        return 1;
+      else if(a->bronze < b->bronze)
+        return -1;
+      else
+        return strcmp(b->pais,a->pais);
+    }
+  }
+}
+int main (){
+  int n, i;
+    scanf("%d", &n);
+      selecao v[n];
+        for( i = 0 ; i < n ; i++){
+          scanf(" %s %d %d %d", v[i].pais, &v[i].ouro, &v[i].prata, &v[i].bronze);
+        }
+        qsort(v,n,sizeof(selecao),cmp);
+        for( i = n-1 ; i >= 0 ; i--)
+        printf("%s %d %d %d\n", v[i].pais, v[i].ouro, v[i].prata, v[i].bronze);          
+}
+</pre>
+</div>
+
+<div id="Token" class="tabcontent">
+<h3>Token</h3>
+<pre = class="prettyprint lang-cpp linenums:1">
+int main (){
+    string a;
+    getline(cin,a);
+    a+=' ';
+    stringstream ss(a);
+    int cont = 0;
+    for(int i = 0 ; i < a.size() ; i++)
+        if(a[i] == ' ')
+            cont++;
+    vector<string> v(cont);
+    int i = 0;
+    while (getline(ss, a, ' ')) {
+        v[i++] = a;
+    }
+    for(int i = 0 ; i < cont ; i++)
+        cout << v[i] << endl;
+}
+</pre>
+</div>
+
+<div id="Z Function" class="tabcontent">
+<h3>Z Function</h3>
+<pre = class="prettyprint lang-cpp linenums:1">
+vector<int> z_function(const string &s) {
+    int n = s.size();
+    vector<int> z(n, 0);
+    int L = 0, R = 0;
+    for(int i = 1; i < n; i++) {
+        if(i <= R) {
+            z[i] = min(z[i - L], R - i + 1);
+        }
+        while(z[i] + i < n && s[z[i] + i] == s[z[i]]) {
+            z[i]++;
+        }
+        if(R < i + z[i] - 1) {
+            L = i, R = i + z[i] - 1;
+        }
+    }
+    return z;
+}
+
+// cada posição do vetor retornado é a maior subsequencia começado em i
+/*   i    - 0 1 2 3 4 5 6 7 8 9
+    S    - a b a c a b a b a c
+    z[i] - 0 0 1 0 3 0 4 0 1 0
+*/
+
+//achar matching perfeito
+int main(){
+  string s , a;
+  cin >> s >> a;
+  int x = s.size();
+  s += "#";
+  s += a;
+  int n = s.size();
+  vector<int> v(n);
+  v = z_function(s);
+  int ans = 0;
+  for(int i = x; i < n ; i++) if(v[i] == x) ans++;
+  cout << ans << endl;
+  
+}
+</pre>	
+</div>	
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+  prettyPrint();
+</script>
+</body>
+</html> 
+
+
+    
