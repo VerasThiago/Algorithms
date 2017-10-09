@@ -7,7 +7,7 @@ https://www.urionlinejudge.com.br/judge/pt/profile/113065 \
 _Codefocers profile:_
 http://codeforces.com/profile/Veras \
 _Personal Goals:_
-https://github.com/VerasUnB/Algorithms/blob/master/Goals.md
+https://github.com/VerasUnB/Algorithms/blob/master/codes/Goals.md
 
 ### Some excercises that was solved with that algorithms:
 1. Segment Tree:\
