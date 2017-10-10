@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Veras Repository</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <link rel="stylesheet"  href="syntax/tomorrow_night.css">
+    <script src = "syntax/prettify.js"></script>
+
+  </head>
+
+  <style>
+    .intro-header {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      text-align: center;
+      color: #f8f8f8;
+      background: url(img/data-structure-bg.jpeg) no-repeat center center;
+      background-size: cover;
+    }
+    .intro-message {
+      position: relative;
+      padding-top: 10%;
+      padding-bottom: 5%;
+    }
+    
+
+  </style>
+
+ 
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Thiago Veras</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+      <div class="container">
+        <div class="intro-message">
+          <h1>Data Structures</h1>
+          <hr class="intro-divider">   
+        </div>
+      </div>
+    </header>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'List')" id="defaultOpen">List</button>
+      <button class="tablinks" onclick="openCity(event, 'Queue')">Queue</button>
+      <button class="tablinks" onclick="openCity(event, 'Stack')">Stack</button>
+      <button class="tablinks" onclick="openCity(event, 'Tree')">Tree</button>
+    </div>
+
+<div id="List" class="tabcontent">
+<h3 >List</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef struct nodo{
+    string nome;
+    string resp;
+    int len;
+    struct nodo* prox;
+    struct nodo* ant;    
+}No;
+
+typedef struct{
+    No* prim;
+    No* ult;
+}Lista;
+
+Lista* cria_lista (void){
+    Lista *l; 
+    l = (Lista*) malloc(sizeof(Lista));
+    l->prim = NULL;
+    l->ult = NULL;
+    return l;
+}
+
+bool lista_vazia (Lista* l) {
+    return (l->prim == NULL);
+}
+
+void lista_insere (Lista* l, string nome, string resp) {    /* insere no inicio */
+
+    No *nodo; 
+
+    nodo = (No*) malloc(sizeof(No));
+
+    nodo -> nome = nome;
+    nodo -> resp = resp;
+   // nodo -> len = len;
+    if(lista_vazia(l)){
+        l->ult = nodo;
+        l->prim = nodo;
+        nodo -> ant = NULL;
+        nodo -> prox = NULL;
+        
+    }
+    else{
+
+        nodo->prox = NULL;
+
+        nodo->ant = l -> ult;
+
+        l->ult->prox = nodo;
+
+        l->ult = nodo;
+
+       
+    }
+}
+
+
+void lista_remove(Lista *l, No *aux){ /* aux ponteiro pro no que deseja remover */
+    
+    if(aux == l->ult && aux == l->prim){ /* apenas 1 elemento */
+        l->ult == NULL;
+        l->prim == NULL;
+        free(aux);
+        return;
+    }
+
+    if(aux == l->ult){
+        l->ult = aux->ant;
+    }
+    else if(aux == l->prim){
+        l->prim = aux->prox;
+    }
+
+    aux->ant->prox = aux->prox;
+
+    aux->prox->ant = aux->ant;
+
+    free(aux);
+}
+
+void lista_libera(Lista *l){
+
+    No *aux;
+
+    aux = l->prim;
+
+    for(;aux != l->ult; aux = aux->prox){
+        lista_remove(l, aux);
+    }
+
+    lista_remove(l ,aux);
+
+}
+void imprimeLista(Lista * l){
+   if(l->prim == NULL){
+       printf("Lista Vazia\n");
+    }
+    else{
+        No * p = l->prim;
+       
+       while(p != NULL){
+           cout << p->nome << " " <<  p->len << endl;
+          
+          p = p->prox;
+       }
+
+     }
+     
+}
+
+string busca ( string nome, Lista * l){
+    No * aux = l->prim;
+    if(aux == l->prim && aux -> nome == nome){
+        //cout << (aux -> resp) << endl;
+        return aux -> resp;
+    }
+
+    No* ant = NULL;
+
+    while(aux -> nome != nome && aux -> prox != NULL){
+        ant = aux;
+        aux = aux -> prox;
+    }
+    if(aux -> nome != nome){
+        //cout << "Nao tem no banco" << endl;
+        return "Nao tem no banco";
+    }
+    ant -> prox = aux -> prox;
+    aux -> prox = l -> prim;
+    l->prim = aux;
+    //cout  << (aux -> resp) << endl;
+    return aux -> resp;
+
+}
+    
+int main(){
+
+    int n, k, m, i, j;
+    string aux, sn;
+    Lista *l = cria_lista();
+   
+    while(cin >> aux, aux != "FIM"){
+        cin >> sn;
+        //if(sn == "YES"){
+            //k = aux.size();
+            lista_insere(l,aux, sn);
+        //}
+    }
+
+    cout << endl << endl << "Lista esta :" << endl << endl;
+    
+    imprimeLista(l);
+    
+    cout << endl;
+    cout << "Quantas buscas?"
+    cin >> n;
+    
+    for(int i = 0 ; i < n ; i++){
+      cin >> aux;
+      cout << busca(aux,l) << endl;
+      
+    }
+  
+    cout << endl << endl << "Lista ficou :" << endl << endl;
+    imprimeLista(l);
+}
+</pre> 
+</div>
+
+<div id="Queue" class="tabcontent">
+<h3 >Queue</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+#include < stdio.h >
+#include < stdlib.h >
+#include < stdbool.h >
+typedef struct nodo{
+    int info;
+    struct nodo* prox;
+    struct nodo* ant;
+  
+}No;
+
+typedef struct{
+    No* prim;
+    No* ult;
+}Fila;
+
+Fila* cria_fila (void){
+    Fila *f; 
+    f = (Fila*) malloc(sizeof(Fila));
+    f->prim = NULL;
+    f->ult = NULL;
+    return f;
+}
+
+bool fila_vazia (Fila* f) {
+    return (f->prim == NULL);
+}
+
+void fila_insere (Fila* f, int valor) {    /* insere no final */
+
+    No *nodo; 
+
+    nodo = (No*) malloc(sizeof(No));
+
+    nodo -> info = valor;
+    
+    nodo -> ant = NULL;
+
+    if(fila_vazia(f)){
+        f->ult = nodo;
+        f->prim = nodo;
+
+    }
+    else{
+
+        nodo -> prox = f->ult;
+
+        f -> ult -> ant = nodo;
+
+        f -> ult = nodo;
+    }    
+
+   
+}
+
+int fila_remove(Fila *f){ /* aux ponteiro pro no que deseja remover */
+    if(fila_vazia(f)){
+        printf("Vazia seu burro\n");
+        return -1;
+    }
+    No *aux = f->prim;
+    int r = aux->info;
+    if(aux == f->ult){ /* apenas 1 elemento */
+        f->ult = NULL;
+        f->prim = NULL;
+    } 
+    else{
+        f->prim = aux->ant;
+        aux->ant->prox = NULL;
+    }
+    
+    free(aux);
+    return r;
+}
+
+void fila_libera(Fila *f){
+
+    No *aux;
+    aux = f->prim;
+    while(!fila_vazia(f)) fila_remove(f);
+
+  
+
+}
+
+int imprimeFila(Fila * f){
+  if(f->prim == NULL){
+       printf("Fila Vazia\n");
+       return 0 ;
+  }
+  else{
+      No * p = f->prim;
+      int i  = 1;
+     
+       while(p != NULL){           
+        printf("Pos: %d; Valor: %d\n",i++,p->info);
+     
+        p = p->prox;          
+         
+       }
+       
+
+  }
+
+}
+
+int main(){
+ 
+    Fila *f = cria_fila();
+    int n;
+    scanf("%d", &n);
+    for(int i = 0; i < n ; i++){
+        int x;
+        scanf("%d", &x);
+        fila_insere(f,x);
+    }
+    imprimeFila(f);
+    printf("%d\n",fila_remove(f));
+    
+
+    return 0;
+}
+
+</pre>
+</div>
+
+<div id="Stack" class="tabcontent">
+<h3 >Stack</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+typedef struct nodo{
+    char a;
+    char b;
+    char c;
+    char d;
+    struct nodo* prox;
+    struct nodo* ant;
+}No;
+
+typedef struct{
+    No* prim;
+    No* ult;
+}pilha;
+
+pilha* cria_pilha (void){
+    pilha *l; 
+    l = (pilha*) malloc(sizeof(pilha));
+    l->prim = NULL;
+    l->ult = NULL;
+    return l;
+}
+
+bool pilha_vazia (pilha* l) {
+    return (l->prim == NULL);
+}
+
+void empilha (pilha* l, char a, char b , char c , char d) {    /* insere no final */
+
+    No *nodo; 
+
+    nodo = (No*) malloc(sizeof(No));
+
+    
+    nodo -> a = a;
+    nodo -> b = b;
+    nodo -> c = c;
+    nodo -> d = d;
+    if(pilha_vazia(l)){
+       
+        l->ult = nodo;
+        l->prim = nodo;
+        nodo -> ant = NULL;
+        nodo -> prox = NULL;
+        
+    }
+    else{
+
+        nodo->prox = NULL;
+
+        nodo->ant = l -> ult;
+
+        l->ult->prox = nodo;
+
+        l->ult = nodo;
+    }
+}
+void desempilha(pilha *l){
+    No * aux;
+    aux = l->ult;
+
+    if(aux == l->ult && aux == l->prim){ /* apenas 1 elemento */
+       
+        l->ult = NULL;
+        l->prim = NULL;
+        free(aux);
+        return;
+    }
+
+  l->ult->ant->prox = NULL;   
+    l->ult = l->ult->ant;
+    free(aux);
+}
+
+void pilha_libera(pilha *l){
+
+    No *aux;
+
+    aux = l->prim;
+
+    for(;aux != l->ult; aux = aux->prox){
+        pilha_remove(l, aux);
+    }
+
+    pilha_remove(l ,aux);
+
+}
+
+</pre>
+</div>
+
+
+<div id="Tree" class="tabcontent">
+<h3 >Tree</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+#include <bits/stdc++.h>
+using namespace std;
+
+
+typedef struct nodo {
+   int data;   
+   struct nodo *FilhoE;
+   struct nodo *FilhoD;
+}node;
+
+
+node* cria_node(int data){
+  node *tempNode = (node*) malloc(sizeof(node));
+  tempNode->data = data;
+  tempNode->FilhoE = NULL;
+  tempNode->FilhoD = NULL;
+  return tempNode;
+}
+node* insert (node *root, node *novo) {
+
+    if (root == NULL) return novo;
+
+    if (root->data > novo->data) root->FilhoE = insert (root->FilhoE, novo);
+    
+    else root->FilhoD = insert (root->FilhoD, novo);
+    
+    return root;
+}
+bool search(node *root,int data) {
+  if(root == NULL) return false;
+
+  printf("     To no %d\n",root->data);
+  if(data > root->data){
+    if(root->FilhoD == NULL)return false;
+    return search(root->FilhoD,data);
+  }
+  else if( data < root->data){
+    if(root->FilhoE == NULL) return false;
+    return search(root->FilhoE,data);
+  }
+  return true;
+}
+void folhas(node*root, int &ans, int &soma){
+  if(root != NULL){
+    printf("     To no %d\n",root->data);
+    if(root->FilhoD == NULL and root->FilhoE == NULL){
+      printf("%d EH FOLHA, VIADO\n",root->data );
+      soma+= root->data;
+      ans++;
+    }
+    else{
+      if(root->FilhoE != NULL)
+        folhas(root->FilhoE,ans,soma);
+      if(root->FilhoD != NULL)
+        folhas(root->FilhoD,ans,soma);
+    }
+  }
+  
+}
+void pre_order (node * root){
+  if(root != NULL){
+    printf("%d ",root->data);
+    pre_order(root->FilhoE);
+    pre_order(root->FilhoD);
+  }
+}
+void in_order (node * root){
+  if(root != NULL){
+    in_order(root->FilhoE);
+    printf("%d ",root->data);
+    in_order(root->FilhoD);
+  }
+}
+void pos_order (node * root){
+  if(root != NULL){
+    pos_order(root->FilhoE);
+    pos_order(root->FilhoD);
+    printf("%d ",root->data);
+  }
+}
+void comp_tree(node* root1, node* root2, bool &ans){
+    if(root1 != NULL and root2 != NULL){
+      if(root1->data != root2->data) ans = false;
+      comp_tree(root1->FilhoE, root2->FilhoE,ans);
+      comp_tree(root1->FilhoD, root2->FilhoD,ans);
+    }
+    else if( root1 != NULL or root2 != NULL ) ans = false; 
+}
+int altura(node* root){
+  if (root == NULL) return 0;
+
+  int hr = altura(root->FilhoD)+1;
+  int he = altura(root->FilhoE)+1;
+
+  return (hr >= he ? hr:he);
+
+}
+int main(){
+  node *root =  NULL;
+  int n, x;
+  cout << "Quantos numeros deseja inserir na arvore ? ";
+  cin >> n;
+  for(int i = 0 ; i < n ; ++i){
+    cin >> x;
+    node* aux = cria_node(x);
+    root = insert(root,aux);
+  }
+  cout << "Quer buscar quem ? ";
+  cin >> x;
+  cout << "\n\n    Buscando...\n" << endl;  
+  cout << (search(root,x) ? "\n   --ACHOU--":"\n   --NAO TEM--") << endl;
+  printf("\n\nContando as folhas...\n\n");
+  int ans = 0, soma = 0;
+  folhas(root,ans,soma);
+  cout << "\n----TEM " << ans << " FOLHAS----\n\n" << endl;
+  cout << "----SUA SOMA DAS FOLHAS EH " << soma << "----\n\n";
+  cout << "--- SUA ALTURA EH  "<< altura(root) << " ---\n\n";
+  cout << "Pre order:\n";
+  pre_order(root);
+  cout << "\n\nIn order:\n";
+  in_order(root);
+  cout << "\n\nPos order:\n";
+  pos_order(root);
+
+}
+</pre>
+</div>
+
+</body>
+  </html> 
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+  prettyPrint();
+</script>
+
