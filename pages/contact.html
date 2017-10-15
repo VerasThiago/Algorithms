@@ -33,20 +33,21 @@
 
   <style>
     .intro-header {
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding-top: 0px;
+      padding-bottom: 0px;
       text-align: center;
       color: #f8f8f8;
       background: url(img/contact-banner-bg.jpeg) no-repeat center center;
       background-size: cover;
+      font-size: 10px;
     }
     .intro-message {
       position: relative;
       padding-top: 10%;
       padding-bottom: 5%;
+      top: 60px;
+      font-size: 50px;
     }
-
-
   </style>
 
  
@@ -63,10 +64,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="../index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#">About</a>
         </li>
       </ul>
     </div>
@@ -77,14 +78,13 @@
 <header class="intro-header">
   <div class="container">
     <div class="intro-message" 	>
-      <h1 style="position: relative; top: 130px;">Contact</h1>
+      <h1">Contact Us</h1>
       <hr class="intro-divider">   
     </div>
   </div>
 </header>
 <div class="container">
-	<h2>Send me an e-mail:</h2>
-
+	<h2 align="center">Send me an e-mail:</h2>
 	<form action="mailto:thiago.veras.machado@gmail.com" method="post" enctype="text/plain">
 	Name:<br>
 	<input type="text" name="name"><br>
@@ -96,12 +96,50 @@
 	<input type="reset" value="Reset">
 	</form>
 </div>
-<div class="container">
-	<h2>CV:</h2>
-	<a href="img/cv.pdf" download>
-		<img src="img/cv-bg.jpeg" width="100" height="100">
-	</a>
+<div class="row">
+  <div class="container">
+    <div class= "col s3">
+      <h2 style="display: block;" >CV:</h2>
+    	<a href="img/cv.pdf" download>
+    		<img src="img/cv-bg.jpeg" width="100" height="100">
+    	</a>
+    </div>
+    <div class= "col s3">
+      <h2>CV:</h2>
+      <a href="img/cv.pdf" download>
+        <img src="img/cv-bg.jpeg" width="100" height="100">
+      </a>
+    </div>
+    <div class= "col s3">
+      <h2>CV:</h2>
+      <a href="img/cv.pdf" download>
+        <img src="img/cv-bg.jpeg" width="100" height="100">
+      </a>
+    </div>
+    <div class= "col s3">
+      <h2>CV:</h2>
+      <a href="img/cv.pdf" download>
+        <img src="img/cv-bg.jpeg" width="100" height="100">
+      </a>
+    </div> 
+  </div>
 </div>
+
+
+<footer>
+    <div class="container" align="center">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="../index.html">Home</a>
+        </li>
+        <li class="footer-menu-divider list-inline-item">&sdot;</li>
+        <li class="list-inline-item">
+          <a href="#about">About</a>
+        </li>
+      </ul>
+      <p class="copyright text-muted small">Copyright &copy; Veras's 2017. All Rights Reserved</p>
+    </div>
+  </footer>
 
 </body>
 </html> 
