@@ -61,7 +61,13 @@ div.panel {
 
 } 
 
-
+a:hover{
+  color: gray;
+}
+a{
+  color: black;
+  text-decoration: none !important;
+}
 
 .intro-message {
   position: relative;
