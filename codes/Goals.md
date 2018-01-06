@@ -23,6 +23,12 @@
 ## Union Find (9/2017)
 - [ ] Theory Union Find
 - [ ] Implement Union Find
+## Hash Table (9/2017)
+- [ ] Theory Hash Table
+- [ ] Implement Hash Table
+## Tries (9/2017)
+- [ ] Theory Tries
+- [ ] Implement Tries
 ### Tasks List
 - [X] [Precisa-se de Matemáticos em Marte - 1804](https://www.urionlinejudge.com.br/judge/pt/problems/view/1804) - Seg Tree
 - [X] [Compras em FdI - 2531](https://www.urionlinejudge.com.br/judge/pt/problems/view/2531)- Seg Tree
