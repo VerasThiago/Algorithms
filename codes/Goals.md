@@ -41,3 +41,6 @@
 - [ ] [Fox And Names](http://codeforces.com/problemset/problem/510/C) - Graphs DFS
 - [ ] [Magic Formulas](http://codeforces.com/contest/424/problem/C) - XOR
 - [ ] [Mahmoud and Ehab and the xor](http://codeforces.com/contest/862/problem/C) - XOR
+- [ ] [Ones](https://www.urionlinejudge.com.br/judge/pt/problems/view/1213) - Mat
+- [ ] [O Último Dígito Não-Zero](https://www.urionlinejudge.com.br/judge/pt/problems/view/1544) - Mat
+
