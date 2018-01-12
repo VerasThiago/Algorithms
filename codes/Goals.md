@@ -34,7 +34,7 @@
 - [X] [Compras em FdI - 2531](https://www.urionlinejudge.com.br/judge/pt/problems/view/2531)- Seg Tree
 - [X] [Pontes de São Petersburgo](https://www.urionlinejudge.com.br/judge/pt/problems/view/1203) - DP
 - [X] [El Dorado](https://www.urionlinejudge.com.br/judge/pt/problems/view/1645) - DP
-- [ ] [Pie Rules](http://codeforces.com/contest/859/problem/C) - DP
+- [X] [Pie Rules](http://codeforces.com/contest/859/problem/C) - DP
 - [ ] [Produto do Intervalo - 1301](https://www.urionlinejudge.com.br/judge/pt/problems/view/1301) - Seg Tree      
 - [ ] [Fox And Names](https://www.urionlinejudge.com.br/judge/pt/problems/view/1084) - Seg Tree     
 - [ ] [Xor-tree](http://codeforces.com/contest/430/problem/C) - Graphs
