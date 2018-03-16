@@ -83,8 +83,9 @@
     </header>
 
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'BFS')" id="defaultOpen">BFS</button>
-      <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
+      <button class="tablinks" onclick="openCity(event, 'Segment Tree')" id="defaultOpen">Segment Tree</button>
+      <button class="tablinks" onclick="openCity(event, 'Dijkstra')" >Dijkstra</button>
+      <button class="tablinks" onclick="openCity(event, 'BFS')" >BFS</button>
       <button class="tablinks" onclick="openCity(event, 'Binary Search')">Binary Search</button>
       <button class="tablinks" onclick="openCity(event, 'Coin Change Algorithm')">Coin Change Algorithm</button>
       <button class="tablinks" onclick="openCity(event, 'Edit Distance')">Edit Distance</button>
@@ -105,30 +106,6 @@
 
 	</div>
 
-<div id="BFS" class="tabcontent">
-<h3 >BFS</h3>
-<pre class = "prettyprint linenums:1 lang-cpp">
-void bfs(int u){
-  queue<int> q;
-  dist[u] = 0;
-  q.push(u);
-  vector<bool> visit(N,false);
-  visit[u] = true;
-  while(!q.empty()){
-    int u = q.front();
-    q.pop();
-    for(int i = 0 ; i < grafo[u].size(); ++i){
-      int v = grafo[u][i];
-      if(!visit[v]){
-        q.push(v);
-        dist[v] = dist[u]+1; 
-        visit[v] = true;
-      }
-    }
-  }
-}
-</pre> 
-</div>
 
 <div id="Segment Tree" class="tabcontent">
 <h3>Segment Tree</h3>
@@ -176,6 +153,66 @@ int main(){
 }  
 </pre>
 </div>
+
+<div id="Dijkstra" class="tabcontent">
+<h3 >Dijkstra</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+#define ll long long
+#define ii pair< ll,int >
+#define ff first
+#define ss second
+#define mp make_pair
+vector< ii > grafo[N];
+vector< ll > dist;  // All values set to inf
+void dijkstra(int ini){
+  priority_queue< int,vector< int >,greater< int > > pq;
+  pq.push(mp(0,ini));
+  dist[ini] = 0;
+  while(!pq.empty()){
+    int u = pq.top().ss;
+    int d = pq.top().ff;
+    pq.pop();
+    if(dist[u] < d) continue;
+    for(auto x: grafo[u]){
+      int v = x.ss;
+      int peso = x.ff;
+      if(dist[v] > (dist[u] + peso) ){
+        dist[v] = dist[u] + peso;
+        pq.push(mp(dist[v],v));
+      }
+    }
+  }
+  return;
+}
+</pre> 
+</div>
+
+
+<div id="BFS" class="tabcontent">
+<h3 >BFS</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+void bfs(int u){
+  queue<int> q;
+  dist[u] = 0;
+  q.push(u);
+  vector<bool> visit(N,false);
+  visit[u] = true;
+  while(!q.empty()){
+    int u = q.front();
+    q.pop();
+    for(int i = 0 ; i < grafo[u].size(); ++i){
+      int v = grafo[u][i];
+      if(!visit[v]){
+        q.push(v);
+        dist[v] = dist[u]+1; 
+        visit[v] = true;
+      }
+    }
+  }
+}
+</pre> 
+</div>
+
 
 <div id="Binary Search" class="tabcontent">
 <h3>Binary Search</h3>
