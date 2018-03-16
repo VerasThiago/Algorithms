@@ -9,7 +9,7 @@
 - [X] Implement a Graph
 - [X] Dfs
 - [X] Bfs
-- [ ] Dijkstra
+- [X] Dijkstra
 - [ ] Minimum Spanning Trees
 ## Segment Tree (9/2017)
 - [X] Theory of Segment Tree
