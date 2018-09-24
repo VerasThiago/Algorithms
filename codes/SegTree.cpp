@@ -1,19 +1,3 @@
-//  1804 - Precisa-se de Matemáticos em Marte 
-//  Made by: Thiago Veras
-
-
-#include <bits/stdc++.h>
-
-using namespace std;
-
-#define pb push_back
-
-#define ll  long long int
-
-#define inf 0x7fffffff
-
-#define N (int)1e4+7
-
 int seg[1000000];
 int v[10000000];
 void SegInit(int idx, int L, int R){
@@ -54,5 +38,4 @@ int main(){
 		else
 			update(1,0,n-1,v[x-1],x-1);
 	}
-
 }
