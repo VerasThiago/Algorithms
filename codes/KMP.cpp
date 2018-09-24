@@ -1,5 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
 vector<int> strong_borders(const string& pat){
     int m = pat.size();
     vector<int> sbord(m);
@@ -17,7 +15,6 @@ vector<int> strong_borders(const string& pat){
     }
     return sbord;
 }
-
 void KMP(const string& text, const string& pat){
     int n = text.size()-1;
     int m = pat.size()-1;
@@ -44,12 +41,4 @@ void KMP(const string& text, const string& pat){
         
         if(j > 0) j = bords[j-1];
     }     
-}
-
-
-
-int main (){
-    string a , b;
-    cin >> a >> b;
-    KMP(a,b);
 }
