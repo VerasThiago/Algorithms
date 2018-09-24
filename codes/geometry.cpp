@@ -1,16 +1,3 @@
-#include <bits/stdc++.h>
-#define ff first
-#define ss second
-#define pb push_back
-#define ll long long
-#define ii pair<ll,ll>
-#define MAX 132675
-#define INF 2000050000
-
-
-using namespace std;
-
-
 typedef struct {		
 	int x,y;
 }Point;
@@ -18,8 +5,6 @@ typedef struct {
 typedef struct{
 	Point b, t;
 }Rect;
-
-
 long long get_line_dist(Point p1, Point p2){
 	long long dx = p1.x - p2.x;
 	long long dy = p1.y - p2.y;
@@ -43,9 +28,6 @@ Rect get_rec_intersection(Rect r1, Rect r2){
 
 	return r;
 }
-
-
-
 int main(){
 	int n,m;
 	scanf("%d %d", &n, &m);
@@ -73,7 +55,5 @@ int main(){
 
 	if(ok(area))
 		// Existe intercessão de todos os retangulos
-	
-
 	return 0;
 }
