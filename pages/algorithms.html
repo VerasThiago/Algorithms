@@ -235,7 +235,6 @@ int main(){
 #define ss second
 #define mp make_pair
 vector< ii > grafo[N];
-vector< ll > dist;  // All values set to inf
 void dijkstra(int inicio, int destino){
   vector< ii > dist(v+1, mp(inf,0));
   priority_queue< ii,vector< ii >,greater< ii > > pq;
