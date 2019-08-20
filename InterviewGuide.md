@@ -8,7 +8,7 @@
 
 ## Tools
 
-- coderpad.io (Sharing dev environment)
+- [coderpad.io](https://coderpad.io/) (Sharing dev environment)
 
 ## Tips to a Tech Interview
 
@@ -29,9 +29,9 @@
 
 ## Where to Study ?
 
-[Leetcode]([https://leetcode.com/problemset/all/#](https://leetcode.com/problemset/all/#)) (I use this for coding)
+[Leetcode](https://leetcode.com/problemset/all/#) (I use this for coding)
 
-[Pramp]([https://www.pramp.com/dashboard#/](https://www.pramp.com/dashboard#/)) (I use this for praticing video interviews)
+[Pramp](https://www.pramp.com/dashboard#/) (I use this for praticing video interviews)
 
 [Open Kattis](https://workable.com/nr?l=https%3A%2F%2Fopen.kattis.com%2F "https://workable.com/nr?l=https%3A%2F%2Fopen.kattis.com%2F")
 
@@ -48,11 +48,11 @@ I'm a undergraduated Computer Science student at University of Brasília. I star
 
 ### Programming Laguages Skills
 
-First of all I was introduced in C language, where I learned how to code my first lines of code, using some algorithms like binary search, then I moved to C++ to start in competitive programming area where I leard a lot of data structures and solving problems using eficient algorithms. Last Year I started learning more about developing softwares, my first project I used Javascript and SQL database, then learned Python to the Health News Search Software, C# was to a company challenge, Go Lang was to Programming Course Platform and Java plus Docker plus Kubernetes for IBM.
+First of all I was introduced in C language, where I learned how to code my first lines of code, using some algorithms like binary search, then I moved to C++ to start in competitive programming area where I leard a lot of data structures and solving problems using eficient algorithms. Last Year I started learning more about developing softwares, my first project I used Javascript and SQL database, then learned Python to the Health News Search Software, C# was to a company challenge, Go Lang was to Programming Course Platform and Java/Docker/Kubernetes for IBM project.
 
 ### Projects
 
--  Health  News Search Software
+-  **Health  News Search Software**
  
  This was my second software that was actually used by a real client (Medical School of University of Brasília). This Medical School have a process called “Clipping Method” that consist in searching into the internet news about some subject, for example they want to find out what is going on with HIV in some region here in Brasil, they were looking manually each news and reading all of them and picking some pieces of the news that was considerated  “interesting” and then putting all of them in a report. 
 
@@ -62,7 +62,7 @@ Since the number of clients was so small (2 or 3 people using 2 times in a week)
 
  I'm proud of this project because we reduced from 2 to 3 weeks of work to 2 to 3 hours of searching and reading, they really enjoyed our work and for that reason my teacher, responsible for us in that project, invited us to publish a paper related to that project, we submitted that paper this week and waiting for a response
 
-- Programming Course Platform
+- **Programming Course Platform**
 
 
 This project is the biggest project that I have participated in my entire life. This project was divided into 2 parts, each of them needed 1 year to be done (the second part is still in production). The first part I was invited to rewrite all the material of a subject, because they were used to have class using Power Point and that stuff, so I moved that content to a website where the students can follow what is going on in that subject (called APC), then I was responsible for changing every content was not good or interesting to have in that subject, like removing merge sort implementation without any help in the exam or adding some ASCII information. Then the second part I suggested creating a new platform that the students can access information about the class, news, consult grades and send projects, so that the professor can follow the class evolution. 
