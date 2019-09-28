@@ -111,39 +111,53 @@
 <h3>Geometry</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
 typedef struct {    
-  int x,y;
+  long long x,y;
 }Point;
-
-typedef struct{
-  Point b, t;
-}Rect;
-
-
+  
 long long get_line_dist(Point p1, Point p2){
   long long dx = p1.x - p2.x;
   long long dy = p1.y - p2.y;
   return ((dx * dx) + (dy * dy));
 }
-
-bool check_rec_area(Rect r){
-  if( (r.t.x - r.b.x < 0) or (r.t.y - r.b.y) < 0)
-    return false;
-  return true;
-}
-
-Rect get_rec_intersection(Rect r1, Rect r2){
   
-  Rect r;
-
-  r.t.x = min(r1.t.x,r2.t.x);
-  r.b.x = max(r1.b.x,r2.b.x);
-  r.t.y = min(r1.t.y,r2.t.y);
-  r.b.y = max(r1.b.y,r2.b.y);
-
-  return r;
-}
-
-
+class Rect{
+  
+  public:
+  
+    Point b, t;
+  
+    Rect(int bx, int by, int tx, int ty){
+      b.x = bx;
+      b.y = by;
+      t.x = tx;
+      t.y = ty;
+    }
+  
+    Rect(){
+      b.x = b.y = t.x = t.y = 0;
+    }
+  
+    bool check_area(){
+      if( (t.x - b.x < 0) or (t.y - b.y) < 0)
+        return false;
+      return true;
+    }
+  
+    long long area(){
+        if(!check_area()) return 0;
+        return ((t.y - b.y) * (t.x - b.x));
+    }
+  
+    Rect intersect(Rect r){
+      Rect inter;
+      inter.t.x = min(t.x, r.t.x);
+      inter.b.x = max(b.x, r.b.x);
+      inter.t.y = min(t.y, r.t.y);
+      inter.b.y = max(b.y, r.b.y);
+      return inter;
+    }
+  
+};
 
 int main(){
   int n,m;
@@ -168,14 +182,13 @@ int main(){
   area = rec[0];
   
   for(int i = 0; i < m; i++)
-    area = get_newArea(rec[i],area);
+    area = area.intersect(rec[i]);;
 
-  if(ok(area))
+  if(area.check_area())
     // Existe intercessão de todos os retangulos
-  
-
   return 0;
 }
+  
 </pre>
 </div>
 
