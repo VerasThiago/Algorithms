@@ -83,6 +83,7 @@
     </header>
 
     <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Trie')" id="defaultOpen">Trie</button>
       <button class="tablinks" onclick="openCity(event, 'Histogram')" id="defaultOpen">Area from Histogram</button>
       <button class="tablinks" onclick="openCity(event, 'DSU')" id="defaultOpen">DSU</button>
       <button class="tablinks" onclick="openCity(event, 'oset')">Ordered Set</button>
@@ -109,6 +110,75 @@
 
 
 	</div>
+
+<div id="Trie" class="tabcontent">
+<h3 >Trie</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+class Trie {
+private:
+    class Node {
+    public:
+        vector<Node*> children;
+        bool isLeaf;
+
+        Node(){
+            children.resize(26,NULL);
+            isLeaf = false;
+        }
+    };
+public:
+    
+    Node *main;
+
+    Trie() {
+        main = new Node();
+    }
+    
+    Node* walk(string word){
+        Node *root = main;
+        for(auto letter : word){
+            int indexLetter = letter - 'a';
+            if(!root->children[indexLetter])
+                return NULL;
+            root = root->children[indexLetter]; 
+        }
+        return root;
+    }
+    
+    void insert(string word) {
+        Node *root = main;
+        for(auto letter : word){
+            int indexLetter = letter - 'a';
+            if(!root->children[indexLetter])
+                root->children[indexLetter] = new Node();
+            root = root->children[indexLetter]; 
+        }
+        root->isLeaf = true;
+    }
+    
+    bool search(string word) {
+        Node *node = walk(word);
+        return (node != NULL and node->isLeaf);
+    }
+    
+    bool startsWith(string prefix) {
+        Node *node = walk(prefix);
+        return node != NULL;
+    }
+};
+
+int main(){
+
+	Trie *root = new Trie();
+
+	root->insert("apple");
+	cout << (root->search("apple") ? "apple TRUE":"apple FALSE") << endl;
+	cout << (root->search("app") ? "app TRUE":"app FALSE") << endl;
+	cout << (root->startsWith("app") ? "app starts TRUE":"app starts FALSE") << endl;
+	return 0;
+}
+</pre> 
+</div>
 
 <div id="Histogram" class="tabcontent">
 <h3 >Area from Histogram</h3>
