@@ -116,9 +116,11 @@
 <pre class = "prettyprint linenums:1 lang-cpp">
 class Trie {
 private:
+    Node *main;
+    
     class Node {
     public:
-        vector<Node*> children;
+        vector< Node* > children;
         bool isLeaf;
 
         Node(){
@@ -126,10 +128,9 @@ private:
             isLeaf = false;
         }
     };
+    
 public:
     
-    Node *main;
-
     Trie() {
         main = new Node();
     }
@@ -358,7 +359,7 @@ int main(){
 <pre class = "prettyprint linenums:1 lang-cpp">
 class SegTree{
 
-  vector<int> st;
+  vector< int > st;
   int n;
   
   void upd(int p, int nodeL, int nodeR, int queryL, int queryR, int v){
@@ -454,10 +455,10 @@ void dijkstra(int inicio, int destino){
 <h3 >BFS</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
 void bfs(int u){
-  queue<int> q;
+  queue< int > q;
   dist[u] = 0;
   q.push(u);
-  vector<bool> visit(N,false);
+  vector< bool > visit(N,false);
   visit[u] = true;
   while(!q.empty()){
     int u = q.front();
@@ -526,8 +527,8 @@ int main(){
 <div id="Coin Change Algorithm" class="tabcontent">
 <h3>Coin Change Algorithm</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
-int coin(int troco, vector<int> moedas){
-  vector<int> ans(troco+1,1e9+7);
+int coin(int troco, vector< int > moedas){
+  vector< int > ans(troco+1,1e9+7);
   ans[0] = 0;
   for(int i = 1 ; i <= troco; i++){
     for(int j = 0 ; j < moedas.size(); j++){
@@ -594,7 +595,7 @@ bool isPrime(long long int n){
 </pre>
 <h3>Eratóstenes algorithm</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
-vector<bool> prime(N, true);
+vector< bool > prime(N, true);
 for(int i = 2; i <= sqrt(N); ++i){
   if(!prime[i]) continue;
   for(int k = i+i; k <= N; k += i) prime[k] = false;
@@ -706,9 +707,9 @@ cout << ans << endl;
 <div id="KMP" class="tabcontent">
 <h3>KMP</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
-vector<int> strong_borders(const string& pat){
+vector< int > strong_borders(const string& pat){
     int m = pat.size();
-    vector<int> sbord(m);
+    vector< int > sbord(m);
     int t = -1;
     sbord[0] = 0;
 
@@ -729,7 +730,7 @@ void KMP(const string& text, const string& pat){
     int m = pat.size()-1;
     int i = 0, j = 0, occ = 0, k = 0;
 
-    vector<int> bords = strong_borders(pat);
+    vector< int > bords = strong_borders(pat);
 
     while (n - k >= m)
     {
@@ -866,9 +867,9 @@ void mergeSort (int v[], int aux[],int esq, int dir){
 <div id="String Period" class="tabcontent">
 <h3>String Period</h3>
 <pre = class = "prettyprint lang-cpp linenums:1">
-vector<int> strong_borders(const string& pat){
+vector< int > strong_borders(const string& pat){
     int m = pat.size();
-    vector<int> sbord(m);
+    vector< int > sbord(m);
     int t = -1;
     sbord[0] = 0;
 
@@ -890,7 +891,7 @@ int period(const string& a){
     aux += aux;
     int m = aux.size();
     int ans;
-    vector<int> v = strong_borders(aux);
+    vector< int > v = strong_borders(aux);
     
     for(int i = 0 ; i < aux.size(); i++)
         if(v[i] >= m/2){            
@@ -975,9 +976,9 @@ int main (){
 <div id="Z Function" class="tabcontent">
 <h3>Z Function</h3>
 <pre = class="prettyprint lang-cpp linenums:1">
-vector<int> z_function(const string &s) {
+vector< int > z_function(const string &s) {
     int n = s.size();
-    vector<int> z(n, 0);
+    vector< int > z(n, 0);
     int L = 0, R = 0;
     for(int i = 1; i < n; i++) {
         if(i <= R) {
@@ -1007,7 +1008,7 @@ int main(){
   s += "#";
   s += a;
   int n = s.size();
-  vector<int> v(n);
+  vector< int > v(n);
   v = z_function(s);
   int ans = 0;
   for(int i = x; i < n ; i++) if(v[i] == x) ans++;
