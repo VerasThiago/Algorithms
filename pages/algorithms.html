@@ -86,6 +86,7 @@
       <button class="tablinks" onclick="openCity(event, 'Trie')" id="defaultOpen">Trie</button>
       <button class="tablinks" onclick="openCity(event, 'Histogram')" id="defaultOpen">Area from Histogram</button>
       <button class="tablinks" onclick="openCity(event, 'DSU')" id="defaultOpen">DSU</button>
+      <button class="tablinks" onclick="openCity(event, 'psum2d')" id="defaultOpen">Prefix Sum 2D</button>
       <button class="tablinks" onclick="openCity(event, 'oset')">Ordered Set</button>
       <button class="tablinks" onclick="openCity(event, 'Geometry')">Geometry</button>
       <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
@@ -203,7 +204,30 @@ int getMaxAreaFromHistogram(vector< int > hist){
 </pre> 
 </div>
     
+<div id="psum2d" class="tabcontent">
+<h3 >Prefix Sum 2D</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+vector< vector<int> > buildPsum(int n, int m, vector< vector< int > >& mat){
+    vector< vector<int> > psum(n + 1, vector<int>(m + 1, 0));
+    psum[1][1] = mat[0][0];
 
+    for(int i = 2; i <= m; i++) psum[1][i] = psum[1][i - 1] + mat[0][i - 1];
+    for(int i = 2; i <= n; i++) psum[i][1] = psum[i - 1][1] + mat[i - 1][0];
+    
+    for(int i = 2; i <= n; i++)
+        for(int j = 2; j <= m; j++)
+            psum[i][j] = psum[i - 1][j] + psum[i][j - 1] - psum[i - 1][j - 1] + mat[i - 1][j - 1];
+    
+    return psum;
+    
+}
+
+int calcArea(int i, int j, int width, int high, vector< vector< int > > &psum){
+    if(i - high < 0 or j - width < 0) return -1;
+    return psum[i][j] - psum[i - high][j] - psum[i][j - width] + psum[i - high][j - width];
+}
+</pre> 
+</div>
 
 <div id="DSU" class="tabcontent">
 <h3 >DSU</h3>
