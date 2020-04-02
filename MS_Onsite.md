@@ -39,15 +39,15 @@ output: list of product ids
 
 Leetcode equivalent questions of my Onsite
 
-1 - [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) :closed_book: *HARD*
+[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) :closed_book: *HARD*
 
-2 - [Regular expression matching](https://leetcode.com/problems/regular-expression-matching/) :closed_book: *HARD*
+[Regular expression matching](https://leetcode.com/problems/regular-expression-matching/) :closed_book: *HARD*
 
-3 - [Word search II](https://leetcode.com/problems/word-search-ii/) :closed_book: *HARD*
+[Word search II](https://leetcode.com/problems/word-search-ii/) :closed_book: *HARD*
 
-4 - [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) :orange_book: *MEDIUM*
+[Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) :orange_book: *MEDIUM*
 
-5 - [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) :orange_book: *MEDIUM*
+[Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) :orange_book: *MEDIUM*
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
