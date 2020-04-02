@@ -103,11 +103,13 @@ The interviewer directly started with the most interesting project which I have 
 
 [Crossword word suggestion](https://www.geeksforgeeks.org/solve-crossword-puzzle/) :orange_book:
 
-*Exact question* : Given the input string with underscore ( _ ) represent the blanks and the list of string, output all the possible list of strings which would fit the blanks. (If anyone get the exact code in leetcode or geeksforgeeks or any other website please comment it and I will update my post.)
+✔ **Exact question** : Given the input string with underscore ( _ ) represent the blanks and the list of string, output all the possible list of strings which would fit the blanks. (If anyone get the exact code in leetcode or geeksforgeeks or any other website please comment it and I will update my post.)
 
 input string : a _ _ l _
 input list of string : apple, angle, ball, cat, ......... etc
 output expected : apple, angle
+
+[SOLUTION O( max(n, 26^underscores) )](https://pastebin.com/nuWeHdZn)
 
 ### **Fourth Round**
 The interviewer many questions related to my resume and we discussed completely about the projects listed in the resume.
