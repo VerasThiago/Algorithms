@@ -101,7 +101,7 @@ The interviewer directly started with the coding questions. The inteview was als
 ### **Third Round**
 The interviewer directly started with the most interesting project which I have worked on after that discussion he asked me a coding question.
 
-Coding question : Crossword word suggestion. (I did not get the exact question online but here is the similar question)
+[Crossword word suggestion](https://www.geeksforgeeks.org/solve-crossword-puzzle/) :orange_book:
 
 *Exact question* : Given the input string with underscore ( _ ) represent the blanks and the list of string, output all the possible list of strings which would fit the blanks. (If anyone get the exact code in leetcode or geeksforgeeks or any other website please comment it and I will update my post.)
 
