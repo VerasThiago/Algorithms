@@ -109,6 +109,10 @@ input string : a _ _ l _
 input list of string : apple, angle, ball, cat, ......... etc
 output expected : apple, angle
 
+```PS: n = input size, m = list of strings size```
+
+[SOLUTION O( n*m )](https://pastebin.com/1bvfLeVZ)
+
 [SOLUTION O( max(n, 26^underscores) )](https://pastebin.com/nuWeHdZn)
 
 ### **Fourth Round**
