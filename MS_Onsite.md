@@ -39,34 +39,38 @@ output: list of product ids
 
 Leetcode equivalent questions of my Onsite
 
-1 - [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) <span style="color:RED">HARD</span>.
-2 - [Regular expression matching](https://leetcode.com/problems/regular-expression-matching/) <span style="color:RED">HARD</span>.
-3 - [Word search II](https://leetcode.com/problems/word-search-ii/) <span style="color:RED">HARD</span>.
-4 - [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) <span style="color:ORANGE">MEDIUM</span>.
-5 - [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) <span style="color:ORANGE">MEDIUM</span>.
+1 - [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) :closed_book: *HARD*
+
+2 - [Regular expression matching](https://leetcode.com/problems/regular-expression-matching/) :closed_book: *HARD*
+
+3 - [Word search II](https://leetcode.com/problems/word-search-ii/) :closed_book: *HARD*
+
+4 - [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) :orange_book: *MEDIUM*
+
+5 - [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) :orange_book: *MEDIUM*
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
 ### **First Round** (45min):
 
 I had to design a data structure (I used Python)
-[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) <span style="color:ORANGE">MEDIUM</span>.
+[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/) :orange_book: *MEDIUM*
 
 ### **Second Round** (45min):
 
 I had to code a DFS on a 2D grid of coloured cells (I used CPP)
-[Number of Islands](https://leetcode.com/problems/number-of-islands/) <span style="color:ORANGE">MEDIUM</span>.
+[Number of Islands](https://leetcode.com/problems/number-of-islands/) :orange_book: *MEDIUM*
 
 ### **Third Round** (45min):
 
 Find Kth largest element in unsorted array using a heap (I used Python)
 I was then asked to implement a max-heap on the whiteboard
 
-[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) <span style="color:ORANGE">MEDIUM</span>.
+[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) :orange_book: *MEDIUM*
 
 After solving the above questions, I was asked to talk through a solution to this problem
 
-[Single Number](https://leetcode.com/problems/single-number/) <span style="color:GREEN">EASY</span>.
+[Single Number](https://leetcode.com/problems/single-number/) :green_book: *EASY*
 
 ### **Fourth Round** (45min):
 
@@ -74,7 +78,7 @@ I was asked questions about how to handle conflicts in a team
 I was asked about group communication skills
 I had to talk through how to create a Soduku solver
 
-[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) span style="color:ORANGE">MEDIUM</span>.
+[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) :orange_book: *MEDIUM*
 
 The Microsoft office in Vancouver has a great view of the city and is located in the centre of downtown. There is a makerspace, a VR room, and free drinks and fruit. Management is nice and places an emphasis on having a good work-life balance. Rent in downtown Vancouver is very expensive!
 
@@ -84,13 +88,13 @@ The Microsoft office in Vancouver has a great view of the city and is located in
 ### **First Round**
 The interviewer asked few behavioral questions and few questions related to my resume and a coding quesiton.
 
-✔ [N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) <span style="color:ORANGE">MEDIUM</span>.
+✔ [N-ary Tree Level Order Traversal](https://leetcode.com/problems/n-ary-tree-level-order-traversal/) :orange_book: *MEDIUM*
 
 ### **Second Round**
 
 The interviewer directly started with the coding questions. The inteview was also interested in the overall complexity of all the codes which I was writing.
 
-✔ [Diameter of Binary](https://leetcode.com/problems/diameter-of-binary-tree/). <span style="color:GREEN">EASY</span>.
+✔ [Diameter of Binary](https://leetcode.com/problems/diameter-of-binary-tree/). :green_book: *EASY*
 
 *PREMIUM* [Alien Dictionary](https://leetcode.com/accounts/login/?next=/problems/alien-dictionary/). *Only the approach with the complexity of the code*
  
@@ -108,4 +112,4 @@ output expected : apple, angle
 ### **Fourth Round**
 The interviewer many questions related to my resume and we discussed completely about the projects listed in the resume.
 
-[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/). <span style="color:ORANGE">MEDIUM</span>.
+[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/). :orange_book: *MEDIUM*
