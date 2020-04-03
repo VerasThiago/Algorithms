@@ -66,7 +66,7 @@ I had to code a DFS on a 2D grid of coloured cells (I used CPP)
 Find Kth largest element in unsorted array using a heap (I used Python)
 I was then asked to implement a max-heap on the whiteboard
 
-[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) :orange_book: 
+[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) :orange_book: [SOLUTION O( n log k )](https://pastebin.com/VAvszaUs)
 
 After solving the above questions, I was asked to talk through a solution to this problem
 
