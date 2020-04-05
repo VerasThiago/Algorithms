@@ -47,7 +47,7 @@ Leetcode equivalent questions of my Onsite
 
 [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) :orange_book: 
 
-[Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) :orange_book: 
+✔ [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) :orange_book: [SOLUTION O(N * M)](https://pastebin.com/WfEPUXq2)
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
@@ -66,11 +66,11 @@ I had to code a DFS on a 2D grid of coloured cells (I used CPP)
 Find Kth largest element in unsorted array using a heap (I used Python)
 I was then asked to implement a max-heap on the whiteboard
 
-[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) :orange_book: [SOLUTION O( n log k )](https://pastebin.com/VAvszaUs)
+✔ [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) :orange_book: [SOLUTION O( n log k )](https://pastebin.com/VAvszaUs)
 
 After solving the above questions, I was asked to talk through a solution to this problem
 
-[Single Number](https://leetcode.com/problems/single-number/) :green_book: 
+✔ [Single Number](https://leetcode.com/problems/single-number/) :green_book: [SOLUTION O(N)](https://pastebin.com/0XivddzS)
 
 ### **Fourth Round** (45min):
 
