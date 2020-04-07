@@ -119,3 +119,101 @@ output expected : apple, angle
 The interviewer many questions related to my resume and we discussed completely about the projects listed in the resume.
 
 ✔ [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/). :orange_book: [SOLUTION](https://pastebin.com/8BiBdFcw)
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
+
+### **First Round**
+
+✔ In a binary tree, if in the path from root to the node A, there is no node with greater value than A’s, this node A is visible. We need to count the number of visible nodes in a binary tree. :orange_book:
+
+**Example 1:**
+
+```
+Input:
+        5
+     /    \
+    3     10
+  /  \    /
+20   21  1
+
+Output: 4
+Explanation: There are 4 visible nodes: 5, 20, 21, and 10.
+```
+
+**Example 2:**
+
+```
+Input:
+  -10
+    \
+    -15
+       \
+       -1
+
+Output: 2
+Explanation: Visible nodes are -10 and -1.
+```
+
+[SOLUTION T = O(n) | M = O(1)](https://pastebin.com/2yy7NMwL)
+
+### **Second Round**
+
+✔ [Find N Unique Integers Sum up to Zero](https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/) :green_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/WuA4pz5x)
+
+### **Third Round**
+
+A non-empty zero-indexed array A consisting of N integers is given. :orange_book:
+
+Array A represents a linked list. A list is constructed from this array as follows:
+
+• the first node (the head) is located at index 0;
+
+• the value of a node located at index K is ```A[K]```;
+
+• the successor of a node located at index K is located at index ```A[K + 1]```;
+
+• if the value of a node is −1 then it is the last node of the list. For example, for array A such that: 
+
+```
+A[0] = 1
+A[1] = 4
+A[2] = -1
+A[3] = 3
+A[4] = 2
+```
+
+the following list is constructed:
+
+• the first node (the head) is located at index 0 and has a value of 1;
+
+• the second node is located at index 1 and has a value of 4;
+
+• the third node is located at index 4 and has a value of 2;
+
+• the fourth node is located at index 2 and has a value of −1.
+
+
+Write a function:
+
+int FindLength (int[] A);
+
+that, given a non-empty zero-indexed array A consisting of N integers, returns the length of the list constructed from A in the above manner.
+
+For example, given array A such that:
+
+```
+A[0] = 1
+A[1] = 4
+A[2] = -1
+A[3] = 3
+A[4] = 2
+```
+the function should return 4, as explained in the example above.
+
+The below are the assumptions that helps you to solve the problem:
+
+• N is an integer within the range ```[1..200,000]```;
+
+• each element of array A is an integer within the range ```[−1..200,000]```;
+
+• it will always be possible to construct the list and its length will be finite.
