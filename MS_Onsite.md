@@ -217,3 +217,35 @@ The below are the assumptions that helps you to solve the problem:
 • each element of array A is an integer within the range ```[−1..200,000]```;
 
 • it will always be possible to construct the list and its length will be finite.
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
+
+# Leet Code Premium On-Site Mocks
+
+
+## Mock 1
+
+### **First Question**
+
+✔ [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) :green_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/qBzuGg7A)
+
+### **Second Question**
+
+✔ [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/) :orange_book: [SOLUTION T = O( n! / ( (n - 3)! * 3! ) ) | M = O( n! / ( (n - 3)! * 3! ) )](https://pastebin.com/NetT1XAh)
+
+### **Third Question**
+✔ [Candy](https://leetcode.com/problems/candy/) :closed_book: [SOLUTION T = O(n) | M = O(n) )](https://pastebin.com/wZZSK5g9)
+
+## Mock 2
+
+### **First Question**
+
+✔ [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) :orange_book: [SOLUTION T = O(n²) | M = O(n²)](https://pastebin.com/zEnq5rSv)
+
+### **Second Question**
+
+✔ [Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression/) :orange_book: [SOLUTION T = O(n) | M = O(n)](https://pastebin.com/13piW0PL)
+
+### **Third Question**
+✔ [Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) :closed_book: [SOLUTION T = O(n²) | M = O(n²) )](https://pastebin.com/MMFKg2KM)
+
