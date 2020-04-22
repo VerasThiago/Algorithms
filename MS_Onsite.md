@@ -270,10 +270,10 @@ The below are the assumptions that helps you to solve the problem:
 
 ### **Second Question**
 
-✔ [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) :orange_book: [SOLUTION T = O(n²) | M = O(1)](https://pastebin.com/VwPjQ52s) [Problem Description](https://pastebin.com/N8Z6bAEr)
+✔ [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) :orange_book: [SOLUTION T = O(n²) | M = O(1)](https://pastebin.com/VwPjQ52s) [ ](https://pastebin.com/N8Z6bAEr)
 
 ### **Third Question**
-✔ [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) :closed_book: [SOLUTION T = O(1) | M = O(n)](https://pastebin.com/xvLBF3tR) [Problem Description](https://pastebin.com/kEQQArfM)
+✔ [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) :closed_book: [SOLUTION T = O(1) | M = O(n)](https://pastebin.com/xvLBF3tR) [ ](https://pastebin.com/kEQQArfM)
 
 ### **Fourth Question**
 ✔ [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) :closed_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/iiZmzHqQ)
