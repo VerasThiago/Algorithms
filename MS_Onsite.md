@@ -222,9 +222,6 @@ The below are the assumptions that helps you to solve the problem:
 
 # Leet Code Premium On-Site Mocks
 
-
-## Mock 1
-
 ### **First Question**
 
 ✔ [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) :green_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/qBzuGg7A)
@@ -236,7 +233,7 @@ The below are the assumptions that helps you to solve the problem:
 ### **Third Question**
 ✔ [Candy](https://leetcode.com/problems/candy/) :closed_book: [SOLUTION T = O(n) | M = O(n) )](https://pastebin.com/wZZSK5g9)
 
-## Mock 2
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
 ### **First Question**
 
@@ -249,7 +246,7 @@ The below are the assumptions that helps you to solve the problem:
 ### **Third Question**
 ✔ [Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) :closed_book: [SOLUTION T = O(n²) | M = O(n²) )](https://pastebin.com/MMFKg2KM)
 
-## Mock 3
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
 ### **First Question**
 
@@ -265,7 +262,7 @@ The below are the assumptions that helps you to solve the problem:
 ### **Fourth Question**
 [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) :closed_book:
 
-## Mock 4
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
 ### **First Question**
 
