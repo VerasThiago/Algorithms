@@ -249,3 +249,36 @@ The below are the assumptions that helps you to solve the problem:
 ### **Third Question**
 ✔ [Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) :closed_book: [SOLUTION T = O(n²) | M = O(n²) )](https://pastebin.com/MMFKg2KM)
 
+## Mock 3
+
+### **First Question**
+
+✔ [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) :green_book: [SOLUTION T = O(log26(n)) | M = O(1)](https://pastebin.com/EYFKN0gq)
+
+### **Second Question**
+
+✔ [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) :orange_book: [SOLUTION T = O(n²) | M = O(1)](https://pastebin.com/jRnRXCKA)
+
+### **Third Question**
+✔ [Remove Comments](https://leetcode.com/problems/remove-comments/) :closed_book: [SOLUTION T = O(n*m) | M = O(1)* )](https://pastebin.com/zuF4DKPR)
+
+### **Fourth Question**
+[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) :closed_book:
+
+## Mock 4
+
+### **First Question**
+
+✔ [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) :green_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/J8aHy96V)
+
+### **Second Question**
+
+✔ [Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/) :orange_book: [SOLUTION T = O(n²) | M = O(1)](https://pastebin.com/VwPjQ52s) [Problem Description](https://pastebin.com/N8Z6bAEr)
+
+### **Third Question**
+✔ [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/) :closed_book: [SOLUTION T = O(1) | M = O(n)](https://pastebin.com/xvLBF3tR) [Problem Description](https://pastebin.com/kEQQArfM)
+
+### **Fourth Question**
+✔ [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) :closed_book: [SOLUTION T = O(n) | M = O(1)](https://pastebin.com/iiZmzHqQ)
+
+
