@@ -220,7 +220,7 @@ The below are the assumptions that helps you to solve the problem:
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
-# Leet Code Premium On-Site Mocks
+# Leet Code On-Site Mocks
 
 ### **First Question**
 
