@@ -260,7 +260,7 @@ The below are the assumptions that helps you to solve the problem:
 ✔ [Remove Comments](https://leetcode.com/problems/remove-comments/) :closed_book: [SOLUTION T = O(n*m) | M = O(1)* )](https://pastebin.com/zuF4DKPR)
 
 ### **Fourth Question**
-[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) :closed_book:
+✔ [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) :closed_book:
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdaZIU8oWsPLbauvh2vzy0fBt3mrRJsihmXd4WJxpJj1hVtmO0&usqp=CAU)
 
