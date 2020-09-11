@@ -83,34 +83,112 @@
     </header>
 
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'Trie')" id="defaultOpen">Trie</button>
-      <button class="tablinks" onclick="openCity(event, 'Histogram')" id="defaultOpen">Area from Histogram</button>
-      <button class="tablinks" onclick="openCity(event, 'DSU')" id="defaultOpen">DSU</button>
-      <button class="tablinks" onclick="openCity(event, 'psum2d')" id="defaultOpen">Prefix Sum 2D</button>
-      <button class="tablinks" onclick="openCity(event, 'oset')">Ordered Set</button>
-      <button class="tablinks" onclick="openCity(event, 'Geometry')">Geometry</button>
-      <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
-      <button class="tablinks" onclick="openCity(event, 'Dijkstra')" >Dijkstra</button>
-      <button class="tablinks" onclick="openCity(event, 'BFS')" >BFS</button>
-      <button class="tablinks" onclick="openCity(event, 'Binary Search')">Binary Search</button>
-      <button class="tablinks" onclick="openCity(event, 'Coin Change Algorithm')">Coin Change Algorithm</button>
-      <button class="tablinks" onclick="openCity(event, 'Edit Distance')">Edit Distance</button>
-      <button class="tablinks" onclick="openCity(event, 'Fast Prime')">Fast Prime</button>
-      <button class="tablinks" onclick="openCity(event, 'Fast Exponential')">Fast Exponential</button>
-      <button class="tablinks" onclick="openCity(event, 'Fast Matrix Exponential')">Fast Matrix Exponential</button>
-      <button class="tablinks" onclick="openCity(event, 'Kadane')">Kadane</button>
-      <button class="tablinks" onclick="openCity(event, 'KMP')">KMP</button>
-      <button class="tablinks" onclick="openCity(event, 'Knapsack')">Knapsack</button>
-      <button class="tablinks" onclick="openCity(event, 'Longest Common Subsequence')">Longest Common Subsequence</button>
-      <button class="tablinks" onclick="openCity(event, 'Longest Palindromic Subsequence')">Longest Palindromic Subsequence</button>
-      <button class="tablinks" onclick="openCity(event, 'Merge Sort')">Merge Sort</button>
-      <button class="tablinks" onclick="openCity(event, 'String Period')">String Period</button>
-      <button class="tablinks" onclick="openCity(event, 'Struct Sort')">Struct Sort</button>
-      <button class="tablinks" onclick="openCity(event, 'Token')">Token</button>
-      <button class="tablinks" onclick="openCity(event, 'Z Function')">Z Function</button>
-
-
+        <button class="tablinks" onclick="openCity(event, 'LCA')" id="defaultOpen">LCA</button>   
+        <button class="tablinks" onclick="openCity(event, 'Trie')" id="defaultOpen">Trie</button>
+        <button class="tablinks" onclick="openCity(event, 'Histogram')" id="defaultOpen">Area from Histogram</button>
+        <button class="tablinks" onclick="openCity(event, 'DSU')" id="defaultOpen">DSU</button>
+        <button class="tablinks" onclick="openCity(event, 'psum2d')" id="defaultOpen">Prefix Sum 2D</button>
+        <button class="tablinks" onclick="openCity(event, 'oset')">Ordered Set</button>
+        <button class="tablinks" onclick="openCity(event, 'Geometry')">Geometry</button>
+        <button class="tablinks" onclick="openCity(event, 'Segment Tree')">Segment Tree</button>
+        <button class="tablinks" onclick="openCity(event, 'Dijkstra')" >Dijkstra</button>
+        <button class="tablinks" onclick="openCity(event, 'BFS')" >BFS</button>
+        <button class="tablinks" onclick="openCity(event, 'Binary Search')">Binary Search</button>
+        <button class="tablinks" onclick="openCity(event, 'Coin Change Algorithm')">Coin Change Algorithm</button>
+        <button class="tablinks" onclick="openCity(event, 'Edit Distance')">Edit Distance</button>
+        <button class="tablinks" onclick="openCity(event, 'Fast Prime')">Fast Prime</button>
+        <button class="tablinks" onclick="openCity(event, 'Fast Exponential')">Fast Exponential</button>
+        <button class="tablinks" onclick="openCity(event, 'Fast Matrix Exponential')">Fast Matrix Exponential</button>
+        <button class="tablinks" onclick="openCity(event, 'Kadane')">Kadane</button>
+        <button class="tablinks" onclick="openCity(event, 'KMP')">KMP</button>
+        <button class="tablinks" onclick="openCity(event, 'Knapsack')">Knapsack</button>
+        <button class="tablinks" onclick="openCity(event, 'Longest Common Subsequence')">Longest Common Subsequence</button>
+        <button class="tablinks" onclick="openCity(event, 'Longest Palindromic Subsequence')">Longest Palindromic Subsequence</button>
+        <button class="tablinks" onclick="openCity(event, 'Merge Sort')">Merge Sort</button>
+        <button class="tablinks" onclick="openCity(event, 'String Period')">String Period</button>
+        <button class="tablinks" onclick="openCity(event, 'Struct Sort')">Struct Sort</button>
+        <button class="tablinks" onclick="openCity(event, 'Token')">Token</button>
+        <button class="tablinks" onclick="openCity(event, 'Z Function')">Z Function</button>
 	</div>
+
+<div id="LCA" class="tabcontent">
+<h3 >LCA</h3>
+<pre class = "prettyprint linenums:1 lang-cpp">
+class LCA{
+
+public:
+
+    int n, logN;
+    bool builded;
+
+    vector<int> level;
+    vector<bool> visited;
+    vector<vector<int>> dp;
+    vector<vector<int>> graph;
+
+    void populateDP(int u, int parent){
+        if(~parent) level[u] = level[parent] + 1;
+        visited[u] = true;
+        dp[u][0] = parent;
+        for(auto v : graph[u]) if(!visited[v]) populateDP(v, u);
+        
+    }
+
+    int walk(int u, int d){
+        while(d){
+            int jump = (int)log2(d);
+            u = dp[u][jump];
+            d -= (1 << jump);
+        }
+        return u;
+    }
+
+    void build(){
+        builded = true;
+        for(int i = 1; i <= n; i++) visited[i] = false;
+        populateDP(1, -1);
+        for(int col = 1; col < logN; col++)
+            for(int i = 2; i <= n; i++)
+                dp[i][col] = dp[i][col - 1] == -1 ? -1:dp[dp[i][col - 1]][col - 1];
+    }
+
+    LCA(int _n){
+        n = _n;
+        builded = false;
+        logN = (int)log2(n * 2);
+        level = vector<int>(n * 2, 0);
+        graph = vector<vector<int>>(n * 2);
+        visited = vector<bool>(n * 2, false);
+        dp = vector<vector<int>>(n * 2, vector<int>(logN * 2, -1));
+    }
+
+    void insert(int x, int y){
+        graph[x].push_back(y);
+        graph[y].push_back(x);
+    }
+
+    int getLCA(int u, int v){
+        if(!builded) build();
+        int du = level[u], dv = level[v];
+        if(du < dv) return getLCA(v, u);
+
+        int diff = du - dv;
+        u = walk(u, diff);
+        
+        if(u == v) return u;
+
+        for(int i = logN; i >= 0; i--){
+            if(dp[u][i] != -1 and dp[u][i] != dp[v][i]) u = dp[u][i], v = dp[v][i];
+        }
+        return dp[u][0];
+    }
+
+    int dist(int u, int v){
+        return level[u] + level[v] - 2 * level[getLCA(u, v)];
+    }
+};
+</pre> 
+</div>
 
 <div id="Trie" class="tabcontent">
 <h3 >Trie</h3>
@@ -171,13 +249,13 @@ public:
 
 int main(){
 
-	Trie *root = new Trie();
+    Trie *root = new Trie();
 
-	root->insert("apple");
-	cout << (root->search("apple") ? "apple TRUE":"apple FALSE") << endl;
-	cout << (root->search("app") ? "app TRUE":"app FALSE") << endl;
-	cout << (root->startsWith("app") ? "app starts TRUE":"app starts FALSE") << endl;
-	return 0;
+    root->insert("apple");
+    cout << (root->search("apple") ? "apple TRUE":"apple FALSE") << endl;
+    cout << (root->search("app") ? "app TRUE":"app FALSE") << endl;
+    cout << (root->startsWith("app") ? "app starts TRUE":"app starts FALSE") << endl;
+    return 0;
 }
 </pre> 
 </div>
