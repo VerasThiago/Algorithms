@@ -83,8 +83,7 @@
     </header>
 
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Suffix_Array')" id="defaultOpen">Suffix Array</button>   
-        <button class="tablinks" onclick="openCity(event, 'Manacher')" id="defaultOpen">Manacher</button>   
+        <button class="tablinks" onclick="openCity(event, 'MST')" id="defaultOpen">MST</button>   
         <button class="tablinks" onclick="openCity(event, 'LCA')" id="defaultOpen">LCA</button>   
         <button class="tablinks" onclick="openCity(event, 'Trie')" id="defaultOpen">Trie</button>
         <button class="tablinks" onclick="openCity(event, 'Histogram')" id="defaultOpen">Area from Histogram</button>
@@ -111,94 +110,76 @@
         <button class="tablinks" onclick="openCity(event, 'Struct Sort')">Struct Sort</button>
         <button class="tablinks" onclick="openCity(event, 'Token')">Token</button>
         <button class="tablinks" onclick="openCity(event, 'Z Function')">Z Function</button>
-	</div>
-<div id="Suffix_Array" class="tabcontent">
-<h3>Suffix Array</h3>
+    </div>
+    
+<div id="MST" class="tabcontent">
+<h3>MST</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
-// n log² n 
-class SuffixArray {
-public:
-    template<class T>
-    vector<int> buildSuffix(const T &array) {
-        int n = array.size();
-        vector<int> sa(n);
-        for(int i = 0; i < n; i++) {
-            sa[i] = i;
+#include <bits/stdc++.h>
+
+#define N 200005
+using namespace std;
+
+struct Edge {
+    int u, v, weight;
+    Edge(int uu, int vv, int ww): u(uu), v(vv), weight(ww) {};
+};
+
+int p[N];
+int s[N];
+
+int find(int a) {
+    if (p[a] == a) return a;
+    return p[a] = find(p[a]);
+}
+    
+void join(int a, int b) {
+    a = find(a);
+    b = find(b);
+    if (a != b) {
+        if (s[a] < s[b]) swap(a, b);
+        p[b] = a;
+        s[a] += s[b];
+    }
+}
+
+vector<Edge> mst(vector<Edge> edges, int n){
+
+    vector<Edge> result;
+    n++, cost = 0;
+
+    for(int i = 0; i < N; i++)p[i] = i, s[i] = 1;
+
+    sort(edges.begin(), edges.end(), [](const Edge &A, const Edge &B  ){
+        return A.weight < B.weight;
+    });
+
+    for (Edge e : edges) {
+        if (find(e.u) != find(e.v)) {
+            cost += e.weight;
+            result.push_back(e);
+            table[{e.u, e.v}] = true;
+            join(e.u, e.v);
         }
-        sort(sa.begin(), sa.end(), [&](int a, int b) { return array[a] < array[b]; });
-        int cur = 0;
-        vector<int> inv(n);
-        vector<int> nxt(n);
-        inv[sa[0]] = 0;
-        for(int i = 1; i < n; i++) {
-            inv[sa[i]] = (array[sa[i - 1]] != array[sa[i]] ? ++cur : cur);
-        }
-        cur++;
-        for(int k = 0; cur < n; k++) {
-            cur = 0;
-            auxSort(sa, inv, 1 << k);
-            for(int l = 0, r = 0; l < n; l = r, cur++) {
-                while(r < n && getPair(inv, sa[l], 1 << k) == getPair(inv, sa[r], 1 << k)) {
-                    nxt[sa[r++]] = cur;
-                }
-            }
-            nxt.swap(inv);
-        }
-        return sa;
     }
     
-    template<class T>
-    vector<int> buildLCP(const vector<int> &sa, const T &array) {
-        int n = sa.size();
-        vector<int> inv(n);
-        for(int i = 0; i < n; i++) {
-            inv[sa[i]] = i;
-        }
-        vector<int> lcp(n, 0);
-        for(int i = 0, k = 0; i < n; i++) {
-            if(inv[i] + 1 == n) {
-                k = 0;
-                continue;
-            }
-            int j = sa[inv[i] + 1];
-            while(i + k < n && j + k < n && array[i + k] == array[j + k]) {
-                k++;
-            }
-            lcp[inv[i]] = k;
-            if(k > 0) {
-                k--;
-            }
-        }
-        return lcp;
-    }
-private:
-    void auxSort(vector<int> &sa, const vector<int> &inv, int offset) {
-        // O(nlogn) step, O(nlog^2n) total
-        sort(sa.begin(), sa.end(), [&](int a, int b) { return getPair(inv, a, offset) < getPair(inv, b, offset); });
-        // O(n) step, O(nlogn) total -- TO DO --
-    }
-    pair<int, int> getPair(const vector<int> &inv, int pos, int offset) {
-        return pair<int, int>(inv[pos], pos + offset < (int) inv.size() ? inv[pos + offset] : -1);
-    }
-};
-</pre>	
-</div>
+    return result;
+}
 
-<div id="Manacher" class="tabcontent">
-<h3>Manacher</h3>
-<pre class = "prettyprint linenums:1 lang-cpp">
-array<vector<int>, 2> manacher(const string& s) {
-    int n = (int) s.size();
-    array<vector<int>, 2> p = {vector<int>(n+1), vector<int>(n)};
-    for(int z = 0; z < 2; z++) for (int i = 0, l = 0, r = 0; i < n; i++) {
-        int t = r-i+!z;
-        if (i<r) p[z][i] = min(t, p[z][l+t]);
-        int L = i-p[z][i], R = i+p[z][i]-!z;
-        while (L>=1 && R+1<n && s[L-1] == s[R+1])
-            p[z][i]++, L--, R++;
-        if (R>r) l=L, r=R;
+int main(){
+    int n, m;
+    scanf("%d %d", &n, &m);
+    vector<Edge> edges;
+
+    for(int i = 0; i < m; i++){
+        int a, b, w;
+        scanf("%d %d %d", &a, &b, &w);
+        edges.push_back(Edge(a, b, w));
+        edgeCost[{a,b}] = w;
+        edgeCost[{b,a}] = w;
     }
-    return p;
+
+    vector<Edge> result = mst(edges, n);
 }
 </pre>	
 </div>
@@ -223,14 +204,10 @@ array<vector<int>, 2> manacher(const string& s) {
 
 using namespace std;
     
-vector< int > subTreeSize;
-    
-int buildSize(int u, vector< bool > &visited, vector< vector < int > > &graph){
-    visited[u] = true;
-    for(auto v : graph[u]) if(!visited[v]) subTreeSize[u] += buildSize(v, visited, graph);
-    return subTreeSize[u];
-}
-    
+struct Edge {
+    int u, v, weight;
+    Edge(int uu, int vv, int ww): u(uu), v(vv), weight(ww) {};
+};
     
 class LCA{
     
@@ -241,34 +218,37 @@ public:
     bool builded;
     
     vector< vector< int > > dp;
-    vector< vector< int > > graph;
-    vector< bool > visited;
+    vector< vector< pair<int,int> > > graph;
     vector< int > level;
+    vector< vector< int >  > maxEdge;
     
-    void populateDP(int u, int parent){
-        if(~parent) level[u] = level[parent] + 1;
-        visited[u] = true;
-        dp[u][0] = parent;
-        for(auto v : graph[u]) if(!visited[v]) populateDP(v, u);
-        
+    void populateDP(int u, int nodeParent){
+        if(~nodeParent) level[u] = level[nodeParent] + 1;
+        dp[u][0] = nodeParent;
+        maxEdge[u][0] = edgeCost[{u, nodeParent}];
+        for(auto v : graph[u]) if(v.first != nodeParent) populateDP(v.first, u);
     }
     
-    int walk(int u, int d){
+    pair<int,int> walk(int u, int d){
+        int ans = 0;
         while(d){
             int jump = (int)log2(d);
+            ans = max(ans, maxEdge[u][jump]);
             u = dp[u][jump];
             d -= (1 << jump);
         }
-        return u;
+        return {u, ans};
     }
     
     void build(){
         builded = true;
-        for(int i = 1; i <= n; i++) visited[i] = false;
         populateDP(1, -1);
-        for(int col = 1; col < logN; col++)
-            for(int i = 2; i <= n; i++)
+        for(int col = 1; col < logN; col++){
+            for(int i = 2; i <= n; i++){
                 dp[i][col] = dp[i][col - 1] == -1 ? -1:dp[dp[i][col - 1]][col - 1];
+                maxEdge[i][col] = dp[i][col - 1] == -1 ? -1:max(maxEdge[i][col - 1], maxEdge[dp[i][col - 1]][col - 1]);
+            }
+        }
     }
     
     LCA(int _n){
@@ -276,15 +256,15 @@ public:
         builded = false;
         logN = (int)log2(n * 2);
         level = vector< int >(n * 2, 0);
-        graph = vector< vector< int > >(n * 2);
-        visited = vector< bool >(n * 2, false);
+        graph = vector< vector< pair<int, int> > >(n * 2);
         dp = vector< vector< int > >(n * 2, vector< int >(logN * 2, -1));
+        maxEdge =  vector< vector< int > >(n * 2, vector< int >(logN * 2, -1));
     }
-    
-    
-    void insert(int x, int y){
-        graph[x].push_back(y);
-        graph[y].push_back(x);
+
+
+    void insert(Edge e){
+        graph[e.u].push_back({e.v, e.weight});
+        graph[e.v].push_back({e.u, e.weight});
     }
     
     int getLCA(int u, int v){
@@ -293,17 +273,35 @@ public:
         if(du < dv) return getLCA(v, u);
     
         int diff = du - dv;
-        u = walk(u, diff);
+        u = walk(u, diff).first;
         
         if(u == v) return u;
     
-        for(int i = logN; i >= 0; i--){
-            if(dp[u][i] != -1 and dp[u][i] != dp[v][i]) u = dp[u][i], v = dp[v][i];
-        }
+        for(int i = logN; i >= 0; i--) if(dp[u][i] != -1 and dp[u][i] != dp[v][i]) u = dp[u][i], v = dp[v][i];
+        
         return dp[u][0];
     }
+
+    int getMax(int u, int v){
+        if(!builded) build();
+
+        int du = level[u], dv = level[v];
+        if(du < dv) return getMax(v, u);
+
+        int ans = 0;
+        int diff = du - dv;
+        tie(u, ans) = walk(u, diff);
+        
+        if(u == v)  return ans;
+
+        for(int i = logN; i >= 0; i--) 
+            if(dp[u][i] != -1 and dp[u][i] != dp[v][i]) 
+                ans = max(ans, maxEdge[u][i]), ans = max(ans, maxEdge[v][i]), u = dp[u][i], v = dp[v][i];
+            
+        return max(ans, max(maxEdge[u][0], maxEdge[v][0]));
+    }
     
-    int dist(int u, int v){
+    int dist(int u, int v){ // Only if edge = 1
         return level[u] + level[v] - 2 * level[getLCA(u, v)];
     }
 };
@@ -312,21 +310,17 @@ void solve(){
     int n;
     scanf("%d", &n);
     
-    subTreeSize = vector<int>(2 * n, 1);
-    
     LCA l(n);
     
     for(int i = 1; i < n; i++){
-        int x, y;
-        scanf("%d %d", &x, &y);
-        // build graph
-        l.insert(x,y); 
+        int a, b, w;
+        scanf("%d %d %d", &a, &b, &w);
+        l.insert(Edge(a, b, w));
     }
 
-    // Populate subtree size
-    buildSize(1, l.visited, l.graph);
     auto lca = l.getLCA(a, b);
-    auto dist = l.dist(a, b)
+    auto dist = l.dist(a, b);
+    auto maxEdge = l.getMax(a, b);
 }
 </pre> 
 </div>
