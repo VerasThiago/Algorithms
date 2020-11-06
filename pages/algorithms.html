@@ -175,8 +175,6 @@ int main(){
         int a, b, w;
         scanf("%d %d %d", &a, &b, &w);
         edges.push_back(Edge(a, b, w));
-        edgeCost[{a,b}] = w;
-        edgeCost[{b,a}] = w;
     }
 
     vector<Edge> result = mst(edges, n);
