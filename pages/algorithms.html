@@ -745,42 +745,38 @@ public:
 <div id="Dijkstra" class="tabcontent">
 <h3 >Dijkstra</h3>
 <pre class = "prettyprint linenums:1 lang-cpp">
-#define ll long long
-#define ii pair< ll,int >
-#define ff first
-#define ss second
-#define mp make_pair
-vector< ii > grafo[N];
-void dijkstra(int inicio, int destino){
-  vector< ii > dist(v+1, mp(inf,0));
-  priority_queue< ii,vector< ii >,greater< ii > > pq;
-  pq.push(mp(0,inicio));
-  dist[inicio] = mp(0,-1);
-  while(!pq.empty()){
-    int u = pq.top().ss;
-    int w = pq.top().ff;
-    pq.pop();
-    if(dist[u].ff < w) continue; //Lazy delection
-    for(auto x: grafo[u]){
-      int v = x.ss;
-      int peso = x.ff;
-      if(dist[v].ff > peso + dist[u].ff){
-        dist[v] = mp(peso + dist[u].ff, u);
-        pq.push(mp(dist[v].ff,v));
-      }
+vector< pair < int,int > > dist(N, {INT_MAX, - 1});
+vector< pair < int,int > > graph[N];
+
+void dijkstra(int start){
+    priority_queue< pair < int,int >, vector < pair < int,int > >, greater< pair < int,int > > > pq;
+    
+    dist[start] = {0, -1};
+    pq.push({0, start});
+
+    while(!pq.empty()){
+        auto currPai = pq.top(); pq.pop();
+        int distPai = currPai.first;
+        int pai = currPai.second;
+
+        for(auto currFilho: graph[currPai.second]){
+            int distPaiFilho = currFilho.second;
+            int filho = currFilho.first;
+
+            if(distPai + distPaiFilho < dist[filho].first){
+                dist[filho] = {distPai + distPaiFilho, pai};
+                pq.push({dist[filho].first, filho});
+            }
+        }
     }
-  }
+}
 
-  // Pegando pontos do final para o começo
-  printf("%d", destino);
-  int x = dist[destino].ss;
-  while(x != inicio){
-    printf(" %d",x);
-    x = dist[x].ss;
-  }
-  printf(" %d\n",inicio);
-
-  return;
+void printCaminho(int x){
+    while(x != -1){
+        cout << x << " ";
+        x = dist[x].second;
+    }
+    cout << endl;
 }
 </pre> 
 </div>
